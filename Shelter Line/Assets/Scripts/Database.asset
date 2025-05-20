@@ -14,22 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsData:
   - <Name>k__BackingField: Floor
+    <ID>k__BackingField: 0
+    <Size>k__BackingField: {x: 1, y: 1}
+    <Prefab>k__BackingField: {fileID: 5988296629504302378, guid: 720e043bb0c2dcd41b451d836e172faf,
+      type: 3}
+  - <Name>k__BackingField: Tree1
     <ID>k__BackingField: 1
-    <Size>k__BackingField: {x: 1, y: 1}
-    <Prefab>k__BackingField: {fileID: 8277550355580275851, guid: 4e7f618b3cab47543abf3117c9323bd1,
-      type: 3}
-  - <Name>k__BackingField: BedDouble
-    <ID>k__BackingField: 2
     <Size>k__BackingField: {x: 2, y: 2}
-    <Prefab>k__BackingField: {fileID: 606672170773726451, guid: 6c535c0bced6c0e4da9dcd8fe1d1d884,
+    <Prefab>k__BackingField: {fileID: 4487132075392949238, guid: 18b81dad7740a024b9219617f0f8f301,
       type: 3}
-  - <Name>k__BackingField: Chair
-    <ID>k__BackingField: 3
+  - <Name>k__BackingField: Tree2
+    <ID>k__BackingField: 2
     <Size>k__BackingField: {x: 1, y: 1}
-    <Prefab>k__BackingField: {fileID: 8653157165658480657, guid: 3303273b5405da148a572fe27c641fbb,
+    <Prefab>k__BackingField: {fileID: 382758238310959270, guid: ba7e97f75c771ba41a90c9b454f25c5e,
       type: 3}
-  - <Name>k__BackingField: Table
-    <ID>k__BackingField: 4
+  - <Name>k__BackingField: Tree3
+    <ID>k__BackingField: 3
     <Size>k__BackingField: {x: 2, y: 1}
-    <Prefab>k__BackingField: {fileID: 8484129249725277804, guid: 238bdb583d9c3e54f80a1a9da2df1dfe,
+    <Prefab>k__BackingField: {fileID: 21176443930334442, guid: f515b74b942452a4c8e66d78d2bef8af,
       type: 3}

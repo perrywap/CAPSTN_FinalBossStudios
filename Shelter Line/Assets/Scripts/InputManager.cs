@@ -14,12 +14,16 @@ public class InputManager : MonoBehaviour
     public event Action OnClicked;
     public event Action OnExit;
 
+    public bool isInUI;
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
             OnClicked?.Invoke();
         if(Input.GetKeyDown(KeyCode.Escape))
             OnExit?.Invoke();
+
+        isInUI = IsPointerOverUI() ? true : false;
     }
 
     public bool IsPointerOverUI()
