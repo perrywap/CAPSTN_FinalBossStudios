@@ -638,6 +638,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Test Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5060370965185283586, guid: dcaba0cba4fa3104ea42e8780ece9100,
+        type: 3}
+      propertyPath: wpManager
+      value: 
+      objectReference: {fileID: 1922555633}
     - target: {fileID: 6288295489927469918, guid: dcaba0cba4fa3104ea42e8780ece9100,
         type: 3}
       propertyPath: m_LocalPosition.x

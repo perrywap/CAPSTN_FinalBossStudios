@@ -31,9 +31,6 @@ public class Enemy : MonoBehaviour
     
     [SerializeField]
     private float accuracy = 0.5f;
-    
-    [SerializeField]
-    private float rotationSpeed = 5f;
 
     [SerializeField]
     private GameObject[] waypoints;
@@ -88,9 +85,8 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            Quaternion lookRotation = Quaternion.LookRotation(direction);
-            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
-            transform.Translate(Vector3.forward * _speed * Time.deltaTime);
+            Vector3 moveDirection = direction.normalized;
+            transform.position += moveDirection * _speed * Time.deltaTime;
         }
     }
 
