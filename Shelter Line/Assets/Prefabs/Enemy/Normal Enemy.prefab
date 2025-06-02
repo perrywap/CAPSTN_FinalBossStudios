@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1154323202371077879}
   - component: {fileID: 5060370965185283586}
   m_Layer: 0
-  m_Name: Test Enemy
+  m_Name: Normal Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148,13 +148,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad2423e41d38a394cbfb447c27962d6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hp: 0
-  _armor: 0
-  _speed: 2
+  _hp: 15
+  _armor: 1
+  _speed: 1
   _damage: 25
-  _rewardOnKill: 0
+  _rewardOnKill: 50
   wpManager: {fileID: 0}
   accuracy: 1
-  rotationSpeed: 3
   waypoints: []
   currentWaypointIndex: 0
