@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - CardPanel
+  - DeployPanel
+  - WaypointManager
   layers:
   - Default
   - TransparentFX

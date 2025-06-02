@@ -5,19 +5,20 @@ using UnityEngine.UI;
 
 public class UiManager : MonoBehaviour
 {
-    public CardManager cardManager;
-    public GameObject[] cardSlots;
+    public static UiManager Instance { get; private set; }
 
-    private void Start()
+    [Header("MANA")]
+    public Image manaBar;
+    public Text manaText;
+
+    private void Awake()
     {
-        DisplayCards();
+        Instance = this;
     }
 
-    private void DisplayCards()
+    private void Update()
     {
-        for(int i = 0; i < cardManager.cards.Count; i++)
-        {
-
-        }
+        manaBar.fillAmount = GameManager.Instance.manaCount / 10;
+        manaText.text = GameManager.Instance.manaCount.ToString();
     }
 }

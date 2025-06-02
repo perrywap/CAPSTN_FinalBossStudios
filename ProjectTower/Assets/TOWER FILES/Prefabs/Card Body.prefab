@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 3435786315874062600}
   - component: {fileID: 7998708259514929451}
   m_Layer: 5
-  m_Name: ManaCost
+  m_Name: ManaCostText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -382,7 +382,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 2
+  m_Text: 000
 --- !u!1 &6219461665710545052
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 1555080683279886706}
   - component: {fileID: 8341336312226516231}
   m_Layer: 5
-  m_Name: Health
+  m_Name: HealthText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -461,7 +461,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 99
+  m_Text: 000
 --- !u!1 &7357288415231138802
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,7 +540,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sundalo
+  m_Text: xxx
 --- !u!1 &8211305878482184005
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,6 +553,7 @@ GameObject:
   - component: {fileID: 268214859523491587}
   - component: {fileID: 4037928586527307132}
   - component: {fileID: 981833553599163633}
+  - component: {fileID: 5142261654714720568}
   m_Layer: 5
   m_Name: Card Body
   m_TagString: Untagged
@@ -634,7 +635,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5142261654714720568}
+          m_TargetAssemblyTypeName: Card, Assembly-CSharp
+          m_MethodName: OnCardClicked
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &5142261654714720568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8211305878482184005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aafbe4c66a205b249857a66a2b35621b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitName: {fileID: 8172125077286847968}
+  unitManaCost: {fileID: 7998708259514929451}
+  unitHp: {fileID: 8341336312226516231}
+  unitSprite: {fileID: 5991037991372767720}
+  unitType: {fileID: 4687220373030514426}
+  TypeIcons:
+  - {fileID: 21300000, guid: 2659e82611226aa4fa1567ad9b9c644b, type: 3}
+  - {fileID: 21300000, guid: b1a2915055f0a1d4dbf7b34b724d1236, type: 3}
+  - {fileID: 21300000, guid: 5edff707002d1e644a21faa578544667, type: 3}
+  - {fileID: 21300000, guid: 2659e82611226aa4fa1567ad9b9c644b, type: 3}
+  unitPrefab: {fileID: 821864623961105595, guid: 4926bac877016794d8eae6f16f91b0c4, type: 3}
+  DeploymentPanel: {fileID: 0}
+  CardsPanel: {fileID: 0}
+  isClicked: 0
+  unitToDeploy: {fileID: 0}
 --- !u!1 &8601726565084492624
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,7 +691,7 @@ GameObject:
   - component: {fileID: 7106439440343115380}
   - component: {fileID: 4687220373030514426}
   m_Layer: 5
-  m_Name: Image
+  m_Name: TypeImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -700,7 +744,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2659e82611226aa4fa1567ad9b9c644b, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -775,7 +819,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: afcf5a936bbb1d949b7e31037fa38e35, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

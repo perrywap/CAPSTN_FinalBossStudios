@@ -3,11 +3,22 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+public enum UnitType
+{
+    Normal,
+    Tank,
+    Runner,
+    Flying
+}
+
 public class Enemy : MonoBehaviour
 {
     #region VARIABLES
 
     [Header("ENEMY STATS")]
+    [SerializeField]
+    private string _name;
+
     [SerializeField]
     private float _hp;
 
@@ -22,6 +33,15 @@ public class Enemy : MonoBehaviour
 
     [SerializeField]
     private int _rewardOnKill;
+
+    [SerializeField]
+    private int _manaCost;
+
+    [SerializeField]
+    private int _spawnCount;
+
+    [SerializeField]
+    private UnitType _type;
 
     private Animator _anim;
 
@@ -44,6 +64,12 @@ public class Enemy : MonoBehaviour
     #endregion
 
     #region GETTERS AND SETTERS
+    public string Name { get { return _name; } }
+    public float Hp { get { return _hp; } }
+    public int ManaCost { get { return _manaCost; } }
+    public int SpawnCount { get { return _spawnCount; } }
+    public UnitType Type { get { return _type; } }
+    public GameObject WaypointManger { get { return wpManager; } set { wpManager = value; } }
     public float Damage { get { return _damage; } set { _damage = value; } }
 
     #endregion

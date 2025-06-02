@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 500299260900905148}
   - component: {fileID: 4753466792344543274}
   m_Layer: 0
-  m_Name: Sundalo
+  m_Name: Sundalo 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 99
-  m_Sprite: {fileID: 21300000, guid: afcf5a936bbb1d949b7e31037fa38e35, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5edff707002d1e644a21faa578544667, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

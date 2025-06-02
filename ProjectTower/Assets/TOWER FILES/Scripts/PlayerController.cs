@@ -13,12 +13,17 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Opening selection panel");
             OpenSelectionPanel();
-    
         }
     }
 
     public void OpenSelectionPanel()
     {
         SelectionPanel.SetActive(!SelectionPanel.active);
+    }
+
+    public void OnSpawnBtnClicked()
+    {
+        Spawner.Instance.Spawn();
+        OpenSelectionPanel();
     }
 }
