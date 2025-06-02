@@ -22,9 +22,9 @@ public class Spawner : MonoBehaviour
     {
         for(int i = 0; i < PersistentData.Instance.unitsToDeploy.Count; i++)
         {
-            for(int j = 0; j < PersistentData.Instance.unitsToDeploy[i].GetComponent<Enemy>().SpawnCount; j++)
+            for(int j = 0; j < PersistentData.Instance.unitsToDeploy[i].GetComponent<Unit>().SpawnCount; j++)
             {
-                PersistentData.Instance.unitsToDeploy[i].GetComponent<Enemy>().WaypointManger = waypointManager;
+                PersistentData.Instance.unitsToDeploy[i].GetComponent<Unit>().WaypointManger = waypointManager;
                 Instantiate(PersistentData.Instance.unitsToDeploy[i]);
                 yield return new WaitForSecondsRealtime(.5f);
             }

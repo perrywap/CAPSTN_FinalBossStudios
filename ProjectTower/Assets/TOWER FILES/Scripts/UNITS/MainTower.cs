@@ -43,7 +43,7 @@ public class MainTower : MonoBehaviour
     #region ONTRIGGER EVENTS
     private void OnTriggerEnter(Collider other)
     {
-        Enemy enemy = other.GetComponent<Enemy>();
+        Unit enemy = other.GetComponent<Unit>();
 
         if (enemy != null)
         {

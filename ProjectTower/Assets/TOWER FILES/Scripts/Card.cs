@@ -33,21 +33,21 @@ public class Card : MonoBehaviour
     {
         isClicked = false;
 
-        unitName.text = unitPrefab.GetComponent<Enemy>().Name.ToString();
+        unitName.text = unitPrefab.GetComponent<Unit>().Name.ToString();
         unitSprite.sprite = unitPrefab.GetComponent<SpriteRenderer>().sprite;
-        unitHp.text = unitPrefab.GetComponent<Enemy>().Hp.ToString();
-        unitManaCost.text = unitPrefab.GetComponent<Enemy>().ManaCost.ToString();
+        unitHp.text = unitPrefab.GetComponent<Unit>().Hp.ToString();
+        unitManaCost.text = unitPrefab.GetComponent<Unit>().ManaCost.ToString();
 
-        if (unitPrefab.GetComponent<Enemy>().Type == UnitType.Normal)
+        if (unitPrefab.GetComponent<Unit>().Type == UnitType.Normal)
             unitType.sprite = TypeIcons[0];
 
-        if (unitPrefab.GetComponent<Enemy>().Type == UnitType.Tank)
+        if (unitPrefab.GetComponent<Unit>().Type == UnitType.Tank)
             unitType.sprite = TypeIcons[1];
         
-        if (unitPrefab.GetComponent<Enemy>().Type == UnitType.Runner)
+        if (unitPrefab.GetComponent<Unit>().Type == UnitType.Runner)
             unitType.sprite = TypeIcons[2];
         
-        if (unitPrefab.GetComponent<Enemy>().Type == UnitType.Flying)
+        if (unitPrefab.GetComponent<Unit>().Type == UnitType.Flying)
             unitType.sprite = TypeIcons[3];
 
         cardPanelPos = GameObject.FindGameObjectWithTag("CardPanel").transform;
@@ -65,7 +65,7 @@ public class Card : MonoBehaviour
             this.transform.SetParent(deployPanelPos.transform);
             this.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
             PersistentData.Instance.unitsToDeploy.Add(unitPrefab);
-            GameManager.Instance.manaCount -= unitPrefab.GetComponent<Enemy>().ManaCost;
+            GameManager.Instance.manaCount -= unitPrefab.GetComponent<Unit>().ManaCost;
         }
 
         else if (isClicked)
@@ -74,7 +74,7 @@ public class Card : MonoBehaviour
             this.transform.SetParent(cardPanelPos.transform);
             this.transform.localScale = Vector3.one;
             PersistentData.Instance.unitsToDeploy.Remove(unitPrefab);
-            GameManager.Instance.manaCount += unitPrefab.GetComponent<Enemy>().ManaCost;
+            GameManager.Instance.manaCount += unitPrefab.GetComponent<Unit>().ManaCost;
         }
     }
 }

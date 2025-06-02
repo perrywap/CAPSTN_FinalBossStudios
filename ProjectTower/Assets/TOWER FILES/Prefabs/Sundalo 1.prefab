@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 99
-  m_Sprite: {fileID: 21300000, guid: 5edff707002d1e644a21faa578544667, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7307b075845602d4faed0bdbf28ad6da, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -135,7 +135,5 @@ MonoBehaviour:
   _spawnCount: 2
   _type: 0
   wpManager: {fileID: 0}
-  accuracy: 1
-  rotationSpeed: 3
-  waypoints: []
-  currentWaypointIndex: 0
+  points: []
+  pointIndex: 0

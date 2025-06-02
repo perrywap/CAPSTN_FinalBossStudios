@@ -18,7 +18,7 @@ public class TowerBase : MonoBehaviour
     private int _buildCost;
 
     [SerializeField]
-    private List<Enemy> _enemiesInRange;
+    private List<Unit> _enemiesInRange;
 
     #endregion
 
@@ -29,7 +29,7 @@ public class TowerBase : MonoBehaviour
     #region ONTRIGGEREVENTS
     private void OnTriggerEnter(Collider other)
     {
-        Enemy enemy = other.GetComponent<Enemy>();
+        Unit enemy = other.GetComponent<Unit>();
 
         if(enemy != null)
         {
@@ -39,7 +39,7 @@ public class TowerBase : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Enemy enemy = other.GetComponent<Enemy>();
+        Unit enemy = other.GetComponent<Unit>();
 
         if (enemy != null)
         {
