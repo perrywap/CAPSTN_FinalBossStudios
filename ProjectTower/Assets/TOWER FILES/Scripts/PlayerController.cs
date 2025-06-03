@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject SelectionPanel;
+    [SerializeField] private GameObject selectionPanel;
 
     private void Update()
     {
@@ -18,12 +17,13 @@ public class PlayerController : MonoBehaviour
 
     public void OpenSelectionPanel()
     {
-        SelectionPanel.SetActive(!SelectionPanel.active);
+        selectionPanel.SetActive(!selectionPanel.activeSelf);
     }
 
     public void OnSpawnBtnClicked()
     {
         Spawner.Instance.Spawn();
+        
         OpenSelectionPanel();
     }
 }

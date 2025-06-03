@@ -28,6 +28,7 @@ public class Card : MonoBehaviour
     public Image unitToDeploy;
 
     public GameObject UnitPrefab {  get { return unitPrefab; } set { unitPrefab = value; } }
+    public bool IsClicked { get { return isClicked; } set { isClicked = value; } }
 
     private void Start()
     {
@@ -60,21 +61,31 @@ public class Card : MonoBehaviour
         {
             if (GameManager.Instance.manaCount <= 0)
                 return;
-
-            isClicked = true;
-            this.transform.SetParent(deployPanelPos.transform);
-            this.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-            PersistentData.Instance.unitsToDeploy.Add(unitPrefab);
+                       
+            AddToDeployPanel();
             GameManager.Instance.manaCount -= unitPrefab.GetComponent<Unit>().ManaCost;
         }
 
         else if (isClicked)
         {
-            isClicked = false;
-            this.transform.SetParent(cardPanelPos.transform);
-            this.transform.localScale = Vector3.one;
-            PersistentData.Instance.unitsToDeploy.Remove(unitPrefab);
+            AddToCardPanel();
             GameManager.Instance.manaCount += unitPrefab.GetComponent<Unit>().ManaCost;
         }
+    }
+
+    public void AddToDeployPanel()
+    {
+        isClicked = true;
+        this.transform.SetParent(deployPanelPos.transform);
+        this.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        PersistentData.Instance.unitsToDeploy.Add(unitPrefab);
+    }
+
+    public void AddToCardPanel()
+    {
+        isClicked = false;
+        this.transform.SetParent(cardPanelPos.transform);
+        this.transform.localScale = Vector3.one;
+        PersistentData.Instance.unitsToDeploy.Remove(unitPrefab);
     }
 }

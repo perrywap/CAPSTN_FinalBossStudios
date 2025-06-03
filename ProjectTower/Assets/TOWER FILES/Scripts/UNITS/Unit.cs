@@ -34,25 +34,15 @@ public class Unit : MonoBehaviour
 
     [SerializeField] private UnitType _type;
 
-    //[SerializeField] private Animator _anim;
-
-    [Header("PATHFIND SETTINGS")]
-    [SerializeField] private GameObject wpManager;
-
-    [SerializeField] private Transform[] points;
-
-    [SerializeField] private int pointIndex;
-
-
     #endregion
 
     #region GETTERS AND SETTERS
     public string Name { get { return _name; } }
     public float Hp { get { return _hp; } }
+    public float Speed { get { return _speed; } }
     public int ManaCost { get { return _manaCost; } }
     public int SpawnCount { get { return _spawnCount; } }
     public UnitType Type { get { return _type; } }
-    public GameObject WaypointManger { get { return wpManager; } set { wpManager = value; } }
     public float Damage { get { return _damage; } set { _damage = value; } }
 
     #endregion
@@ -61,38 +51,13 @@ public class Unit : MonoBehaviour
     private void Start()
     {
         //_anim = GetComponent<Animator>();
-
-        points = wpManager.GetComponent<Waypoint>().waypoints;
-
-        transform.position = points[pointIndex].transform.position;
     }
 
-    private void Update()
-    {
-        Move();
-    }
     #endregion
 
     #region METHODS
-    private void Move()
-    {
-        
-        if (pointIndex <= points.Length - 1)
-        {
-            
-            transform.position = Vector2.MoveTowards(transform.position, points[pointIndex].transform.position, _speed * Time.deltaTime);
 
-            if (transform.position == points[pointIndex].transform.position)
-            {
-                pointIndex++;
-            }
-
-            if (pointIndex == points.Length)
-                OnPathComplete();
-        }
-    }
-
-    private void OnPathComplete()
+    public void OnPathComplete()
     {
         // Add logic here (reduce player life, destroy self)
         Debug.Log($"{gameObject.name} reached the end!");

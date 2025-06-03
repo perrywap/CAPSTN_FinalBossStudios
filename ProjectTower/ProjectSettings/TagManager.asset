@@ -7,6 +7,8 @@ TagManager:
   - CardPanel
   - DeployPanel
   - WaypointManager
+  - MainTower
+  - SpawnPosition
   layers:
   - Default
   - TransparentFX
