@@ -41,7 +41,10 @@ public class TowerUnit : MonoBehaviour
 
     public virtual void Attack()
     {
-        if (canAttack) {
+        if (canAttack)
+        {
+        
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
