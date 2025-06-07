@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 500299260900905148}
   - component: {fileID: 4753466792344543274}
   - component: {fileID: -797005594393118394}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sundalo (WP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 881df5562695aa141beb532bdaaae156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unit: {fileID: 0}
   wpManager: {fileID: 0}
   points: []
   pointIndex: 0

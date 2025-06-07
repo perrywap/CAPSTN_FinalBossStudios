@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4753466792344543274}
   - component: {fileID: 5460034523488012277}
   - component: {fileID: 515082896030207831}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sundalo (PF)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  agent: {fileID: 515082896030207831}
 --- !u!195 &515082896030207831
 NavMeshAgent:
   m_ObjectHideFlags: 0
