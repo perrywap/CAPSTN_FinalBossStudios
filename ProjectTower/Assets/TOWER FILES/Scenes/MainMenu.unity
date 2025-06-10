@@ -287,7 +287,7 @@ MonoBehaviour:
   _panel: {fileID: 6504243301421654021}
   sceneButtons:
   - button: {fileID: 189586044}
-    sceneName: SampleScene
+    sceneName: Persistent
   exitButton: {fileID: 638414925}
 --- !u!4 &275907429
 Transform:
