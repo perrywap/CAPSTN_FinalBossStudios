@@ -1,16 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance { get; private set; }
+    //[Header("REFERENCES")]
+    [SerializeField] private GameObject summonPanel;
+    [SerializeField] private bool isGameOver;
 
-    public int manaCount;
 
-    private void Awake()
+    [SerializeField] private int cardOnHand;
+
+    private void Start()
     {
-        Instance = this;
+        isGameOver = false;
+        
+        
     }
 
     private void Update()
