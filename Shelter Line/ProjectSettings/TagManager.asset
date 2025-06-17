@@ -41,3 +41,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: HpBars
+    uniqueID: 3359793839
+    locked: 0

@@ -23,6 +23,11 @@ public class EnemyPathFollower : MonoBehaviour
 
     void Update()
     {
+        Move();
+    }
+
+    private void Move()
+    {
         if (currentWaypointIndex >= waypoints.Length)
             return;
 
