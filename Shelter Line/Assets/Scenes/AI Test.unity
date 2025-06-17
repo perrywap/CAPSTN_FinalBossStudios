@@ -122,6 +122,79 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &340955402
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1936518019754143226, guid: 27b3d80121d598b4eb77cb5944bedf4b,
+        type: 3}
+      propertyPath: m_Name
+      value: Runner Enemy Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763599066619696622, guid: 27b3d80121d598b4eb77cb5944bedf4b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12.645783
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763599066619696622, guid: 27b3d80121d598b4eb77cb5944bedf4b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.496
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763599066619696622, guid: 27b3d80121d598b4eb77cb5944bedf4b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.396
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763599066619696622, guid: 27b3d80121d598b4eb77cb5944bedf4b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763599066619696622, guid: 27b3d80121d598b4eb77cb5944bedf4b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763599066619696622, guid: 27b3d80121d598b4eb77cb5944bedf4b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763599066619696622, guid: 27b3d80121d598b4eb77cb5944bedf4b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763599066619696622, guid: 27b3d80121d598b4eb77cb5944bedf4b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763599066619696622, guid: 27b3d80121d598b4eb77cb5944bedf4b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763599066619696622, guid: 27b3d80121d598b4eb77cb5944bedf4b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8846010632477821106, guid: 27b3d80121d598b4eb77cb5944bedf4b,
+        type: 3}
+      propertyPath: wpManager
+      value: 
+      objectReference: {fileID: 1922555633}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 27b3d80121d598b4eb77cb5944bedf4b, type: 3}
 --- !u!1 &840733401
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,6 +301,79 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1040484860
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2030676976701964110, guid: 3676d07c9231c0a47bc6f6f4e638ce62,
+        type: 3}
+      propertyPath: m_Name
+      value: Tank Enemy Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7875763464510048090, guid: 3676d07c9231c0a47bc6f6f4e638ce62,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 14.192
+      objectReference: {fileID: 0}
+    - target: {fileID: 7875763464510048090, guid: 3676d07c9231c0a47bc6f6f4e638ce62,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.459
+      objectReference: {fileID: 0}
+    - target: {fileID: 7875763464510048090, guid: 3676d07c9231c0a47bc6f6f4e638ce62,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.188
+      objectReference: {fileID: 0}
+    - target: {fileID: 7875763464510048090, guid: 3676d07c9231c0a47bc6f6f4e638ce62,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7875763464510048090, guid: 3676d07c9231c0a47bc6f6f4e638ce62,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7875763464510048090, guid: 3676d07c9231c0a47bc6f6f4e638ce62,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7875763464510048090, guid: 3676d07c9231c0a47bc6f6f4e638ce62,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7875763464510048090, guid: 3676d07c9231c0a47bc6f6f4e638ce62,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7875763464510048090, guid: 3676d07c9231c0a47bc6f6f4e638ce62,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7875763464510048090, guid: 3676d07c9231c0a47bc6f6f4e638ce62,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949456057116105222, guid: 3676d07c9231c0a47bc6f6f4e638ce62,
+        type: 3}
+      propertyPath: wpManager
+      value: 
+      objectReference: {fileID: 1922555633}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3676d07c9231c0a47bc6f6f4e638ce62, type: 3}
 --- !u!1 &1240839946
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,6 +784,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Test Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5060370965185283586, guid: dcaba0cba4fa3104ea42e8780ece9100,
+        type: 3}
+      propertyPath: _hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5060370965185283586, guid: dcaba0cba4fa3104ea42e8780ece9100,
+        type: 3}
+      propertyPath: wpManager
+      value: 
+      objectReference: {fileID: 1922555633}
     - target: {fileID: 6288295489927469918, guid: dcaba0cba4fa3104ea42e8780ece9100,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -708,3 +864,5 @@ SceneRoots:
   - {fileID: 840733405}
   - {fileID: 5303199181875711919}
   - {fileID: 946257016499772286}
+  - {fileID: 1040484860}
+  - {fileID: 340955402}
