@@ -5,7 +5,7 @@ public class MortarTower : Tower
     [Header("Projectile Settings")]
     [SerializeField] private GameObject mortarPrefab;
     [SerializeField] private Transform firePoint;
-    [SerializeField] private float predictionFactor = 0.5f; // tweak this based on projectile speed
+    [SerializeField] private float predictionFactor = 0.5f;
 
     protected override void Attack(Unit target)
     {

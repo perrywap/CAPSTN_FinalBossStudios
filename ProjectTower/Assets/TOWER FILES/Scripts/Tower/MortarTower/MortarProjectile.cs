@@ -10,7 +10,7 @@ public class MortarProjectile : Projectile
 
     public void SetTarget(Vector3 position, float dmg)
     {
-        base.SetTarget(null, dmg); // no specific unit
+        base.SetTarget(null, dmg);
         startPosition = transform.position;
         targetPosition = position;
     }
@@ -27,7 +27,7 @@ public class MortarProjectile : Projectile
         }
 
         Vector3 currentPos = Vector3.Lerp(startPosition, targetPosition, t);
-        float height = arcHeight * Mathf.Sin(Mathf.PI * t); // creates the arc
+        float height = arcHeight * Mathf.Sin(Mathf.PI * t);
         currentPos.y += height;
 
         transform.position = currentPos;
