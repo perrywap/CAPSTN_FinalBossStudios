@@ -18,7 +18,7 @@ public class UiManager : MonoBehaviour
 
     private void Update()
     {
-        //manaBar.fillAmount = GameManager.Instance.manaCount / 10;
-        //manaText.text = GameManager.Instance.manaCount.ToString();
+        manaBar.fillAmount = GameManager.Instance.manaCount / 10;
+        manaText.text = GameManager.Instance.manaCount.ToString();
     }
 }

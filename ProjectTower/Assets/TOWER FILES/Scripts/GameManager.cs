@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [Header("REFERENCES")]
-    [SerializeField] private GameObject summonPanel;
+    public static GameManager Instance { get; private set; }
+
+    public int manaCount;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    private void Update()
+    {
+        
+    }
 }

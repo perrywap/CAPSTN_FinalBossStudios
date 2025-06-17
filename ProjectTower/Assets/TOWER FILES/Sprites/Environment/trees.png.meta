@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3334a8157e8f1804d982cb3440e7ca5d
+guid: 9d1b79446fe2572479eb7a423761c59d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -39,7 +39,7 @@ TextureImporter:
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -102,7 +102,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 115
+        width: 118
         height: 157
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -111,8 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89a45f1d072655f48a766a774e9920a5
-      internalID: -1009445532
+      spriteID: 33876b79779d9a849973bf7132064f5f
+      internalID: -1540127610
       vertices: []
       indices: 
       edges: []
@@ -122,7 +122,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 136
-        y: 0
+        y: 2
         width: 85
         height: 134
       alignment: 0
@@ -132,8 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5495650c21a8d7c4fa280771aa1c9fac
-      internalID: 1861580370
+      spriteID: a84c320c565b5ec4cb3bfd157a1043a1
+      internalID: 290928252
       vertices: []
       indices: 
       edges: []
@@ -143,9 +143,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 243
-        y: 0
+        y: 5
         width: 73
-        height: 122
+        height: 117
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79bb9f141ff78cd4bbc71392aad11415
-      internalID: -1961738305
+      spriteID: 105d597f57473354f9b87e5686ac53c2
+      internalID: 551543219
       vertices: []
       indices: 
       edges: []
@@ -170,9 +170,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      trees_0: -1009445532
-      trees_1: 1861580370
-      trees_2: -1961738305
+      trees_0: -1540127610
+      trees_1: 290928252
+      trees_2: 551543219
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
