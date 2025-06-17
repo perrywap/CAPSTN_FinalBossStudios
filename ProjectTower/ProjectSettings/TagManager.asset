@@ -9,6 +9,7 @@ TagManager:
   - WaypointManager
   - MainTower
   - SpawnPosition
+  - Tower
   layers:
   - Default
   - TransparentFX

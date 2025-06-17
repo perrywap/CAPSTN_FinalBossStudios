@@ -469,7 +469,7 @@ GameObject:
   - component: {fileID: 290548615}
   m_Layer: 0
   m_Name: Tower_SingleHit
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -590,17 +590,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 364345746}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.8333633, y: 4.546116, z: 4.546116}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1806792925}
-  m_Father: {fileID: 496813905}
+  m_Father: {fileID: 579333306}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -88, y: 108}
+  m_AnchoredPosition: {x: 367.5, y: 540.61035}
   m_SizeDelta: {x: 20, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &364345748
@@ -1038,7 +1038,6 @@ RectTransform:
   m_Children:
   - {fileID: 1731762981}
   - {fileID: 2027070106}
-  - {fileID: 364345747}
   - {fileID: 7721041}
   m_Father: {fileID: 1467231665}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1217,6 +1216,7 @@ RectTransform:
   m_Children:
   - {fileID: 1198254567}
   - {fileID: 1052594767}
+  - {fileID: 364345747}
   m_Father: {fileID: 1731762981}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
