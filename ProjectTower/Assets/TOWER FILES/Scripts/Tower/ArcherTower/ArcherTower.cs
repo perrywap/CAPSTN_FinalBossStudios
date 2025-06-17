@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ArcherTower : Tower
 {
-    [Header("Projectile Settings")]
+    [Header("Archer Settings")]
     [SerializeField] private GameObject arrowPrefab;
     [SerializeField] private Transform firePoint;
 
