@@ -39,7 +39,7 @@ public class Unit : MonoBehaviour
     #region GETTERS AND SETTERS
     public string Name { get { return _name; } }
     public float Hp { get { return _hp; } }
-    public float Speed { get { return _speed; } }
+    public float Speed { get { return _speed; } set { _speed = value; } }
     public int ManaCost { get { return _manaCost; } }
     public int SpawnCount { get { return _spawnCount; } }
     public UnitType Type { get { return _type; } }
