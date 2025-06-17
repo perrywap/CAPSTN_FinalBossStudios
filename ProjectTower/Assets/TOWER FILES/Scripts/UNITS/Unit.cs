@@ -11,46 +11,46 @@ public enum UnitType
     Flying
 }
 
+public enum UnitState
+{
+    Idle,
+    Walking,
+    Attacking
+}
+
 public class Unit : MonoBehaviour
 {
     #region VARIABLES
 
-    [Header("ENEMY STATS")]
-    [SerializeField] private string _name;
-
+    [Header("SUMMON STATS")]
     [SerializeField] private float _hp;
-
     [SerializeField] private float _armor;
-
     [SerializeField] private float _speed;
-
     [SerializeField] private float _damage;
-
-    [SerializeField] private int _rewardOnKill;
-
-    [SerializeField] private int _manaCost;
-
-    [SerializeField] private int _spawnCount;
-
     [SerializeField] private UnitType _type;
 
+    [Header("SPAWN SETTINGS")]
+    [SerializeField] private string unitName;
+    [SerializeField] private int manaCost;
+    [SerializeField] private int spawnCount;
+
+    private UnitState state;
     #endregion
 
     #region GETTERS AND SETTERS
-    public string Name { get { return _name; } }
     public float Hp { get { return _hp; } }
     public float Speed { get { return _speed; } }
-    public int ManaCost { get { return _manaCost; } }
-    public int SpawnCount { get { return _spawnCount; } }
     public UnitType Type { get { return _type; } }
     public float Damage { get { return _damage; } set { _damage = value; } }
-
+    public string UnitName { get { return unitName; } }
+    public int ManaCost { get { return manaCost; } }
+    public int SpawnCount { get { return spawnCount; } }
     #endregion
 
     #region UNITY METHODS
     private void Start()
     {
-        //_anim = GetComponent<Animator>();
+        
     }
 
     #endregion
@@ -79,7 +79,6 @@ public class Unit : MonoBehaviour
         if (_hp > 0)
             return;
         
-        //_anim.SetBool("isDead", true);
         Destroy(gameObject);
     }
     #endregion

@@ -2,38 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Spawner : MonoBehaviour
+public class Spawner : MonoBehaviour, IDropHandler
 {
-    public static Spawner Instance { get; private set; }
-
-    [SerializeField] private Transform spawnPosition;
     [SerializeField] private float spawnRate;
-    [SerializeField] private GameObject deployPanel;
 
-    private void Awake()
+    public void OnDrop(PointerEventData eventData)
     {
-        Instance = this;
+        if (eventData.pointerDrag != null)
+        {
+            GameObject unit = eventData.pointerDrag.GetComponent<Card>().SummonPrefab;
+            int spawnCount = eventData.pointerDrag.GetComponent<Card>().SummonPrefab.GetComponent<Unit>().SpawnCount;
+            StartCoroutine(StartSpawner(unit, spawnCount));
+            Destroy(eventData.pointerDrag);
+        }
     }
 
-    public void Spawn()
+    public IEnumerator StartSpawner(GameObject unitToSpawn, int spawnCount)
     {
-        StartCoroutine(StartSpawner());
-    }
+        for (int i = 0; i < spawnCount; i++)
+        {
+            Instantiate(unitToSpawn);
+            yield return new WaitForSecondsRealtime(spawnRate);
+        }
 
-    public IEnumerator StartSpawner()
-    {
-        for(int i = 0; i < PersistentData.Instance.unitsToDeploy.Count; i++)
-        {
-            for(int j = 0; j < PersistentData.Instance.unitsToDeploy[i].GetComponent<Unit>().SpawnCount; j++)
-            {
-                Instantiate(PersistentData.Instance.unitsToDeploy[i], spawnPosition);
-                yield return new WaitForSecondsRealtime(spawnRate);
-            }            
-        }
-        foreach (Card card in deployPanel.GetComponentsInChildren<Card>())
-        {
-            card.AddToCardPanel();
-        }
     }
 }
