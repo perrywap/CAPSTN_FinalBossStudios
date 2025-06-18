@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 6810280430293912610}
   - component: {fileID: -5920627560646956904}
   m_Layer: 6
-  m_Name: unit_swordman
+  m_Name: unit_Swordman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: 
-  _hp: 10
+  _hp: 20
   _speed: 2
   _damage: 3
   _attackRange: 1.5

@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: -3396442326576813059}
   - component: {fileID: 7199970054582346367}
   m_Layer: 6
-  m_Name: unit_spearman
+  m_Name: unit_Spearman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: 
-  _hp: 10
+  _hp: 20
   _speed: 2
   _damage: 3
   _attackRange: 1.5
