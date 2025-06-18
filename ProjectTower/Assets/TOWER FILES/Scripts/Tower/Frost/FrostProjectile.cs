@@ -55,18 +55,18 @@ public class FrostProjectile : Projectile
         Destroy(gameObject, slowDuration + 0.1f);
     }
 
-    private IEnumerator ApplyTemporarySlow(Unit enemy)
+    private IEnumerator ApplyTemporarySlow(Unit unit)
     {
-        if (enemy == null) yield break;
+        if (unit == null) yield break;
 
-        float actualSlow = Mathf.Min(slowAmount, enemy.Speed);
-        enemy.Speed -= actualSlow;
+        float actualSlow = Mathf.Min(slowAmount, unit.Speed);
+        unit.Speed -= actualSlow;
 
         yield return new WaitForSeconds(slowDuration);
 
-        if (enemy != null)
+        if (unit != null)
         {
-            enemy.Speed += actualSlow;
+            unit.Speed += actualSlow;
         }
     }
 

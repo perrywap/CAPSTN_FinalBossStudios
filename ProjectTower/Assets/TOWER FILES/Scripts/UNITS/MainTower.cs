@@ -10,7 +10,7 @@ public class MainTower : MonoBehaviour
     private float _hp, _maxHp;
 
     [SerializeField]
-    private Image _hpBar;
+    //private Image _hpBar;
 
     #endregion
 
@@ -27,29 +27,31 @@ public class MainTower : MonoBehaviour
     {
         _hp -= damage;
 
-        if (_hp < 0)
+        if (_hp <= 0)
         {
             _hp = 0;
+            GameManager.Instance.winPanel.SetActive(true);
+            GameManager.Instance.isGameFinished = true; 
         }
 
-        if (_hpBar != null)
-        {
-            _hpBar.fillAmount = _hp / _maxHp;
-        }
+        //if (_hp != null)
+        //{
+        //    //_hpBar.fillAmount = _hp / _maxHp;
+        //}
     }
 
     #endregion
 
     #region ONTRIGGER EVENTS
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Unit enemy = other.GetComponent<Unit>();
+        Unit unit = other.GetComponent<Unit>();
 
-        if (enemy != null)
+        if (unit != null)
         {
-            TakeDamage(enemy.Damage);
+            Debug.Log("MAIN TOWER DAMAGED");
+            TakeDamage(unit.Damage);
         }
     }
-
     #endregion
 }
