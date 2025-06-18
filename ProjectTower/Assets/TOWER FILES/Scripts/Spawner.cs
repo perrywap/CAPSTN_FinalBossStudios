@@ -12,6 +12,7 @@ public class Spawner : MonoBehaviour, IDropHandler
     {
         if (eventData.pointerDrag != null)
         {
+            
             GameObject unit = eventData.pointerDrag.GetComponent<Card>().SummonPrefab;
             int spawnCount = eventData.pointerDrag.GetComponent<Card>().SummonPrefab.GetComponent<Unit>().SpawnCount;
             StartCoroutine(StartSpawner(unit, spawnCount));
@@ -23,6 +24,7 @@ public class Spawner : MonoBehaviour, IDropHandler
     {
         for (int i = 0; i < spawnCount; i++)
         {
+            
             Instantiate(unitToSpawn);
             yield return new WaitForSecondsRealtime(spawnRate);
         }

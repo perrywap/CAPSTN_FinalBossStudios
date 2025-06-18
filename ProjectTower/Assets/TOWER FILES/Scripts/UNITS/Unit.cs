@@ -26,7 +26,7 @@ public class Unit : MonoBehaviour
     [SerializeField] private int _spawnCount;
     [SerializeField] private UnitType _type;
 
-    public int AttackDamage = 10;
+    //public int AttackDamage = 10;
 
     #endregion
 
