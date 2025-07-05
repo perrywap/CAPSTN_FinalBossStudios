@@ -2,14 +2,34 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    [Header("General Projectile Stats")]
-    [SerializeField] protected float speed = 5f;
-    protected float damage;
-    protected bool initialized = false;
+    [SerializeField] private float speed = 6f;
 
-    public virtual void SetTarget(Unit target, float dmg)
+    private Unit target;
+    private float damage;
+
+    public void SetTarget(Unit newTarget, float dmg)
     {
+        target = newTarget;
         damage = dmg;
-        initialized = true;
+    }
+
+    private void Update()
+    {
+        if (target == null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Vector3 direction = (target.transform.position - transform.position).normalized;
+        transform.position += direction * speed * Time.deltaTime;
+
+        float distance = Vector3.Distance(transform.position, target.transform.position);
+        if (distance < 0.2f)
+        {
+            target.TakeDamage(damage);
+            target.Die();
+            Destroy(gameObject);
+        }
     }
 }

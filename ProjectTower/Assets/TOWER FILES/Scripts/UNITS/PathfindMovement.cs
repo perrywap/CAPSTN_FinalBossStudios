@@ -15,7 +15,7 @@ public class PathfindMovement : MonoBehaviour
     private Unit unit;
     private NavMeshAgent agent;
 
-    public bool isAttackingTower = false;
+    private bool isAttackingTower = false;
 
     private float AttackRange => unit.AttackRange; 
 
@@ -104,13 +104,13 @@ public class PathfindMovement : MonoBehaviour
 
     private void AttackTower(GameObject tower)
     {
-        Tower towerUnit = tower.GetComponent<Tower>();
+        TowerUnit towerUnit = tower.GetComponent<TowerUnit>();
         if (towerUnit != null)
         {
-            towerUnit.TakeDamage(unit.Damage);
-            Debug.Log($"{gameObject.name} attacked {tower.name} for {unit.Damage} damage. Tower HP: {towerUnit.Hp}");
+            towerUnit.TakeDamage(unit.AttackDamage);
+            Debug.Log($"{gameObject.name} attacked {tower.name} for {unit.AttackDamage} damage. Tower HP: {towerUnit.CurrentHealth}");
 
-            if (towerUnit.Hp <= 0)
+            if (towerUnit.CurrentHealth <= 0)
             {
                 Debug.Log($"{tower.name} has been destroyed!");
                 Destroy(tower);
@@ -121,11 +121,5 @@ public class PathfindMovement : MonoBehaviour
         {
             targetTower = null;
         }
-    }
-
-    protected virtual void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, AttackRange);
     }
 }

@@ -22,7 +22,6 @@ public class CardPanel : MonoBehaviour
         {
             cardPrefab.GetComponent<Card>().SummonPrefab = PersistentData.Instance.unitsOwned[i];
             GameObject newCard = Instantiate(cardPrefab);
-            GameManager.Instance.cardsOnHand.Add(newCard);
             newCard.transform.SetParent(this.gameObject.transform);
         }
     }
