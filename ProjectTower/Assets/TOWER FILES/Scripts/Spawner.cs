@@ -12,10 +12,21 @@ public class Spawner : MonoBehaviour, IDropHandler
     {
         if (eventData.pointerDrag != null)
         {
-            GameObject unit = eventData.pointerDrag.GetComponent<Card>().SummonPrefab;
-            int spawnCount = eventData.pointerDrag.GetComponent<Card>().SummonPrefab.GetComponent<Unit>().SpawnCount;
-            StartCoroutine(StartSpawner(unit, spawnCount));
-            Destroy(eventData.pointerDrag);
+            if (eventData.pointerDrag.GetComponent<Card>().SummonPrefab.
+                GetComponent<Unit>().ManaCost > GameManager.Instance.CurrentMana)
+            {
+                return;
+            }
+            else
+            {
+                GameManager.Instance.cardsOnHand.Remove(eventData.pointerDrag.gameObject);
+                GameObject unit = eventData.pointerDrag.GetComponent<Card>().SummonPrefab;
+                GameManager.Instance.UseMana(unit.GetComponent<Unit>().ManaCost);
+
+                int spawnCount = eventData.pointerDrag.GetComponent<Card>().SummonPrefab.GetComponent<Unit>().SpawnCount;
+                StartCoroutine(StartSpawner(unit, spawnCount));
+                Destroy(eventData.pointerDrag);
+            }
         }
     }
 
@@ -23,7 +34,9 @@ public class Spawner : MonoBehaviour, IDropHandler
     {
         for (int i = 0; i < spawnCount; i++)
         {
-            Instantiate(unitToSpawn);
+            GameObject unit = Instantiate(unitToSpawn);
+            GameManager.Instance.unitsOnField.Add(unit);
+
             yield return new WaitForSecondsRealtime(spawnRate);
         }
 

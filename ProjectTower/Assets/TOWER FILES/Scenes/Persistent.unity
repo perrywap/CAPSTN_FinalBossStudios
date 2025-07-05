@@ -305,8 +305,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsOwned:
   - {fileID: 821864623961105595, guid: 4926bac877016794d8eae6f16f91b0c4, type: 3}
-  - {fileID: 8533873813603442839, guid: bfd1b02b3b8d16f498133a546063e5ca, type: 3}
-  - {fileID: 6686298208143354378, guid: ee6d0866e7e8aa246b1480b2a918fee2, type: 3}
+  - {fileID: 6079556535259424904, guid: 64ffb16c5ef978647ba768f30ded11ce, type: 3}
+  - {fileID: 4187163543062640282, guid: cd7b002ca4cb07047ab53ce9701ee821, type: 3}
   scene: SampleScene
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

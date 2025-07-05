@@ -15,7 +15,7 @@ public class TowerUnit : MonoBehaviour
     [SerializeField] private float attackRange = 3f;
 
     [SerializeField] private bool canAttack = true;
-    [SerializeField] private bool isAttacking = false;
+    //[SerializeField] private bool isAttacking = false;
 
     [Header("Combat")]
     [SerializeField] private GameObject bulletPrefab;
