@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 6810280430293912610}
   - component: {fileID: -5920627560646956904}
   m_Layer: 6
-  m_Name: unit_swordman
+  m_Name: unit_Swordman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -141,6 +141,7 @@ MonoBehaviour:
   _spawnCount: 1
   _type: 0
   state: 0
+  unitData: {fileID: 11400000, guid: b0182c79e89a81f40841b2537f40ed00, type: 2}
 --- !u!114 &1541327886741889180
 MonoBehaviour:
   m_ObjectHideFlags: 0

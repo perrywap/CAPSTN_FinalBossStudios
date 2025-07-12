@@ -12,6 +12,7 @@ public class PersistentData : MonoBehaviour
 
     [Header("UNITS")]
     public List<GameObject> unitsOwned = new List<GameObject>();
+    public List<UnitData> unitDatas = new List<UnitData>();
 
     [Header("Scene Load")]
     [SerializeField] private string scene;
