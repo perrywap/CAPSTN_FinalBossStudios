@@ -16,7 +16,7 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     [SerializeField] private Image portrait;
     [SerializeField] private Image TypeIcon;
     [SerializeField] private Sprite[] TypeIcons;
-    [SerializeField] private GameObject summonPrefab;
+    [SerializeField] private GameObject unitPrefab;
 
     [SerializeField] private int popValue;
 
@@ -24,19 +24,19 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     private Vector3 originalPos;
     private CanvasGroup canvasGroup;
 
-    public GameObject SummonPrefab {  get { return summonPrefab; } set { summonPrefab = value; } }
+    public GameObject UnitPrefab {  get { return unitPrefab; } set { unitPrefab = value; } }
 
     private void Start()
     {
         canvasGroup = GetComponent<CanvasGroup>();
         originalPos = transform.position;
 
-        if(summonPrefab != null )
+        if(unitPrefab != null )
         {
-            //nameText.text = summonPrefab.GetComponent<Unit>().UnitName;
-            manaCostText.text = summonPrefab.GetComponent<Unit>().ManaCost.ToString();
-            healthText.text = summonPrefab.GetComponent<Unit>().Hp.ToString();
-            portrait.sprite = summonPrefab.GetComponent<SpriteRenderer>().sprite;
+            //nameText.text = unitPrefab.GetComponent<Unit>().Data.Name;
+            manaCostText.text = unitPrefab.GetComponent<Unit>().Data.ManaCost.ToString();
+            healthText.text = unitPrefab.GetComponent<Unit>().Data.Hp.ToString();
+            portrait.sprite = unitPrefab.GetComponent<SpriteRenderer>().sprite;
         }
     }
 
