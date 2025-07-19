@@ -9,9 +9,6 @@ public class Tower : MonoBehaviour
     [SerializeField] protected float damage = 1f;
     [SerializeField] protected float fireRate = 1f;
 
-    [Header("Broken Tower")]
-    [SerializeField] private GameObject brokenTowerPrefab;
-
     protected float fireCooldown = 0f;
     public List<Unit> targetsInRange = new List<Unit>();
 
@@ -87,11 +84,6 @@ public class Tower : MonoBehaviour
 
     private void Die()
     {
-        if (brokenTowerPrefab != null)
-        {
-            Instantiate(brokenTowerPrefab, transform.position, transform.rotation);
-        }
-
         Destroy(this.gameObject);
     }
 
@@ -99,7 +91,7 @@ public class Tower : MonoBehaviour
     {
 
     }
-
+    
     protected virtual void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

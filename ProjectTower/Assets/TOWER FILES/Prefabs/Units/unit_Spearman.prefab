@@ -113,7 +113,7 @@ Transform:
   m_GameObject: {fileID: 6079556535259424904}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.2125728, y: -0.6111023, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -199,7 +199,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!114 &3648224584948013725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,12 +213,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: 
-  _hp: 100
+  _hp: 10
   _speed: 2
-  _damage: 20
+  _damage: 3
   _attackRange: 1.5
-  _manaCost: 3
-  _spawnCount: 1
+  _manaCost: 5
+  _spawnCount: 2
   _type: 0
   state: 0
   unitData: {fileID: 11400000, guid: 770aed65ef16b5f4187f1b71caa90a1c, type: 2}
