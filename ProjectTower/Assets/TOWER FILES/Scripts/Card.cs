@@ -1,91 +1,78 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Card : MonoBehaviour
+
+public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerUpHandler, IPointerDownHandler, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
-    [SerializeField] private Text unitName;
-
-    [SerializeField] private Text unitManaCost;
-
-    [SerializeField] private Text unitHp;
-
-    [SerializeField] private Image unitSprite;
-
-    [SerializeField] private Image unitType;
-
+    [Header("CARD UI REFERENCES")]
+    [SerializeField] private Text nameText;
+    [SerializeField] private Text manaCostText;
+    [SerializeField] private Text healthText;
+    [SerializeField] private Image portrait;
+    [SerializeField] private Image TypeIcon;
     [SerializeField] private Sprite[] TypeIcons;
+    [SerializeField] private GameObject summonPrefab;
 
-    [SerializeField] private GameObject unitPrefab;
+    [SerializeField] private int popValue;
 
-    [SerializeField] private Transform deployPanelPos;
+    private float yPos;
+    private Vector3 originalPos;
+    private CanvasGroup canvasGroup;
 
-    [SerializeField] private Transform cardPanelPos;
-
-    [SerializeField] private bool isClicked;
-
-    public Image unitToDeploy;
-
-    public GameObject UnitPrefab {  get { return unitPrefab; } set { unitPrefab = value; } }
-    public bool IsClicked { get { return isClicked; } set { isClicked = value; } }
+    public GameObject SummonPrefab {  get { return summonPrefab; } set { summonPrefab = value; } }
 
     private void Start()
     {
-        isClicked = false;
+        canvasGroup = GetComponent<CanvasGroup>();
+        originalPos = transform.position;
 
-        unitName.text = unitPrefab.GetComponent<Unit>().Name.ToString();
-        unitSprite.sprite = unitPrefab.GetComponent<SpriteRenderer>().sprite;
-        unitHp.text = unitPrefab.GetComponent<Unit>().Hp.ToString();
-        unitManaCost.text = unitPrefab.GetComponent<Unit>().ManaCost.ToString();
-
-        if (unitPrefab.GetComponent<Unit>().Type == UnitType.Normal)
-            unitType.sprite = TypeIcons[0];
-
-        if (unitPrefab.GetComponent<Unit>().Type == UnitType.Tank)
-            unitType.sprite = TypeIcons[1];
-        
-        if (unitPrefab.GetComponent<Unit>().Type == UnitType.Runner)
-            unitType.sprite = TypeIcons[2];
-        
-        if (unitPrefab.GetComponent<Unit>().Type == UnitType.Flying)
-            unitType.sprite = TypeIcons[3];
-
-        cardPanelPos = GameObject.FindGameObjectWithTag("CardPanel").transform;
-        deployPanelPos = GameObject.FindGameObjectWithTag("DeployPanel").transform;
-    }
-
-    public void OnCardClicked()
-    {
-        if (!isClicked)
+        if(summonPrefab != null )
         {
-            if (GameManager.Instance.manaCount <= 0)
-                return;
-                       
-            AddToDeployPanel();
-            GameManager.Instance.manaCount -= unitPrefab.GetComponent<Unit>().ManaCost;
-        }
-
-        else if (isClicked)
-        {
-            AddToCardPanel();
-            GameManager.Instance.manaCount += unitPrefab.GetComponent<Unit>().ManaCost;
+            //nameText.text = summonPrefab.GetComponent<Unit>().UnitName;
+            manaCostText.text = summonPrefab.GetComponent<Unit>().ManaCost.ToString();
+            healthText.text = summonPrefab.GetComponent<Unit>().Hp.ToString();
+            portrait.sprite = summonPrefab.GetComponent<SpriteRenderer>().sprite;
         }
     }
 
-    public void AddToDeployPanel()
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        isClicked = true;
-        this.transform.SetParent(deployPanelPos.transform);
-        this.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-        PersistentData.Instance.unitsToDeploy.Add(unitPrefab);
+        yPos = transform.position.y;
+        transform.position = new Vector3(transform.position.x, transform.position.y + popValue, transform.position.z);
     }
 
-    public void AddToCardPanel()
+    public void OnPointerExit(PointerEventData eventData)
     {
-        isClicked = false;
-        this.transform.SetParent(cardPanelPos.transform);
-        this.transform.localScale = Vector3.one;
-        PersistentData.Instance.unitsToDeploy.Remove(unitPrefab);
+        transform.position = new Vector3(transform.position.x, yPos, transform.position.z);
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        originalPos = new Vector3(transform.position.x, yPos, transform.position.z);
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        transform.position = Input.mousePosition;
+    }
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        canvasGroup.blocksRaycasts = false;
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        canvasGroup.blocksRaycasts = true;
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        transform.position = originalPos;
     }
 }

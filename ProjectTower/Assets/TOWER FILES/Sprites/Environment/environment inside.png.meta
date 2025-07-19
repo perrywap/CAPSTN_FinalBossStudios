@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 82939ff0c80686d42a955581b09ac945
+guid: e2ff1c710dbb87e49989ab074227a627
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -45,10 +45,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 80
+  spritePixelsToUnits: 79
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -111,8 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fcc4b115f204b0d4baee5b2ec7025933
-      internalID: 1118159191
+      spriteID: dd2b566eb33aabc429f35bae419f60ce
+      internalID: 461092476
       vertices: []
       indices: 
       edges: []
@@ -132,8 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: faa792f6f81bf134690f72348fcbccfd
-      internalID: 610996634
+      spriteID: 3833cf917eb93584180f3af49aff6351
+      internalID: -1228049052
       vertices: []
       indices: 
       edges: []
@@ -153,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fbb5b263262cac4c95f5cea56585de7
-      internalID: 644961719
+      spriteID: 5cc53a1f07bbcb549a6b8e514dad553a
+      internalID: -761238832
       vertices: []
       indices: 
       edges: []
@@ -174,8 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80f625018db2af0408bd4f1833c75531
-      internalID: 2039954563
+      spriteID: 1107d1604b34cd044a4610a0a06f0061
+      internalID: 1131352503
       vertices: []
       indices: 
       edges: []
@@ -195,8 +195,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 740e9a851f39ff04bba21d88441cf790
-      internalID: -1653981631
+      spriteID: 5aeddfbbfa8d7dd46ab556fabf3b5906
+      internalID: -1823429141
       vertices: []
       indices: 
       edges: []
@@ -216,8 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52124ae76cc808848bf289f5c3617d35
-      internalID: 1465262299
+      spriteID: 4d4f5582e7c1ab046a5878592d9f21ed
+      internalID: -1333682154
       vertices: []
       indices: 
       edges: []
@@ -237,8 +237,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 342b48883ca5e294982e3651aebd4073
-      internalID: 1945706451
+      spriteID: 3d9eeeb6509544d46b53ba1ffd8ed0d8
+      internalID: 1152808147
       vertices: []
       indices: 
       edges: []
@@ -258,8 +258,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d50f59625fc63e4d946c5e844065f1a
-      internalID: -1994388897
+      spriteID: d5958ed0d8ec60d4b8a8ce3ca2d8775e
+      internalID: -1891822007
       vertices: []
       indices: 
       edges: []
@@ -275,14 +275,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      environment inside_0: 1118159191
-      environment inside_1: 610996634
-      environment inside_2: 644961719
-      environment inside_3: 2039954563
-      environment inside_4: -1653981631
-      environment inside_5: 1465262299
-      environment inside_6: 1945706451
-      environment inside_7: -1994388897
+      environment inside_0: 461092476
+      environment inside_1: -1228049052
+      environment inside_2: -761238832
+      environment inside_3: 1131352503
+      environment inside_4: -1823429141
+      environment inside_5: -1333682154
+      environment inside_6: 1152808147
+      environment inside_7: -1891822007
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

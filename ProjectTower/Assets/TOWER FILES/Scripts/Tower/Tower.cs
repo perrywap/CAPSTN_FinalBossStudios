@@ -4,12 +4,18 @@ using UnityEngine;
 public class Tower : MonoBehaviour
 {
     [Header("Tower Stats")]
+    [SerializeField] private float hp;
     [SerializeField] protected float range = 3f;
     [SerializeField] protected float damage = 1f;
     [SerializeField] protected float fireRate = 1f;
 
+    [Header("Broken Tower")]
+    [SerializeField] private GameObject brokenTowerPrefab;
+
     protected float fireCooldown = 0f;
-    protected List<Unit> targetsInRange = new List<Unit>();
+    public List<Unit> targetsInRange = new List<Unit>();
+
+    public float Hp { get { return hp; } }
 
     protected virtual void Update()
     {
@@ -66,6 +72,27 @@ public class Tower : MonoBehaviour
         }
 
         return closest;
+    }
+
+    public void TakeDamage(float damage)
+    {
+        hp -= damage;
+
+        if (hp <= 0f)
+        {
+            hp = 0f;
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        if (brokenTowerPrefab != null)
+        {
+            Instantiate(brokenTowerPrefab, transform.position, transform.rotation);
+        }
+
+        Destroy(this.gameObject);
     }
 
     protected virtual void Attack(Unit target)

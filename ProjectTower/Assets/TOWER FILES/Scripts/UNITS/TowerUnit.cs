@@ -6,64 +6,88 @@ public class TowerUnit : MonoBehaviour
 {
     #region VARIABLES
 
-    [SerializeField] private float damagePerHit;
-    
-    [SerializeField] private float fireRate;
-    
-    [SerializeField] private float attackRange;
-    
-    [SerializeField] private bool canAttack;
+    [Header("Tower Stats")]
+    [SerializeField] private float maxHealth = 100f;
+    [SerializeField] private float currentHealth;
 
-    [SerializeField] private bool isAttacking;
+    [SerializeField] private float attackDamage = 20f;
+    [SerializeField] private float fireRate = 1f;
+    [SerializeField] private float attackRange = 3f;
 
+    [SerializeField] private bool canAttack = true;
+    //[SerializeField] private bool isAttacking = false;
+
+    [Header("Combat")]
     [SerializeField] private GameObject bulletPrefab;
-
     [SerializeField] private Transform currentTarget;
-
     [SerializeField] private List<GameObject> targets = new List<GameObject>();
 
+    private float fireCooldown;
+
     #endregion
-    // Start is called before the first frame update
-    void Start()
+
+    private void Start()
     {
-        canAttack = true;
-        isAttacking = false;
+        currentHealth = maxHealth;
+        fireCooldown = fireRate;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if(targets.Count != 0)
+        if (targets.Count > 0 && canAttack)
         {
-            
+            currentTarget = targets[0].transform;
+
+            fireCooldown -= Time.deltaTime;
+            if (fireCooldown <= 0f)
+            {
+                Attack();
+                fireCooldown = fireRate;
+            }
         }
     }
 
     public virtual void Attack()
     {
-        if (canAttack)
+        if (currentTarget == null) return;
+
+        Unit unit = currentTarget.GetComponent<Unit>();
+        if (unit != null)
         {
-        
+            unit.TakeDamage(attackDamage); 
         }
+
+    }
+
+    public void TakeDamage(float amount)
+    {
+        currentHealth -= amount;
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameObject unit = collision.GetComponent<GameObject>();
-
-        if (unit != null)
+        if (collision.CompareTag("Unit")) 
         {
-            targets.Add(unit);
+            targets.Add(collision.gameObject);
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        GameObject unit = collision.GetComponent<GameObject>();
-
-        if (unit != null)
+        if (collision.CompareTag("Unit"))
         {
-            targets.Remove(unit);
+            targets.Remove(collision.gameObject);
         }
     }
+
+    public float CurrentHealth => currentHealth;
 }

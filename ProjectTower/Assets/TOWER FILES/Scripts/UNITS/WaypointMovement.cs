@@ -30,6 +30,9 @@ public class WaypointMovement : MonoBehaviour
 
     private void Move()
     {
+        if (unit.State != UnitState.WALKING)
+            return;
+
         if (pointIndex <= points.Length - 1)
         {
 

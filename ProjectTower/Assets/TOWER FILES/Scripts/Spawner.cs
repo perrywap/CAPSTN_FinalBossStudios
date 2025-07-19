@@ -2,38 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Spawner : MonoBehaviour
+public class Spawner : MonoBehaviour, IDropHandler
 {
-    public static Spawner Instance { get; private set; }
-
-    [SerializeField] private Transform spawnPosition;
     [SerializeField] private float spawnRate;
-    [SerializeField] private GameObject deployPanel;
 
-    private void Awake()
+    public void OnDrop(PointerEventData eventData)
     {
-        Instance = this;
-    }
-
-    public void Spawn()
-    {
-        StartCoroutine(StartSpawner());
-    }
-
-    public IEnumerator StartSpawner()
-    {
-        for(int i = 0; i < PersistentData.Instance.unitsToDeploy.Count; i++)
+        if (eventData.pointerDrag != null)
         {
-            for(int j = 0; j < PersistentData.Instance.unitsToDeploy[i].GetComponent<Unit>().SpawnCount; j++)
+            if (eventData.pointerDrag.GetComponent<Card>().SummonPrefab.
+                GetComponent<Unit>().ManaCost > GameManager.Instance.CurrentMana)
             {
-                Instantiate(PersistentData.Instance.unitsToDeploy[i], spawnPosition);
-                yield return new WaitForSecondsRealtime(spawnRate);
-            }            
+                return;
+            }
+            else
+            {
+                GameManager.Instance.cardsOnHand.Remove(eventData.pointerDrag.gameObject);
+                GameObject unit = eventData.pointerDrag.GetComponent<Card>().SummonPrefab;
+                GameManager.Instance.UseMana(unit.GetComponent<Unit>().ManaCost);
+
+                int spawnCount = eventData.pointerDrag.GetComponent<Card>().SummonPrefab.GetComponent<Unit>().SpawnCount;
+                StartCoroutine(StartSpawner(unit, spawnCount));
+                Destroy(eventData.pointerDrag);
+            }
         }
-        foreach (Card card in deployPanel.GetComponentsInChildren<Card>())
+    }
+
+    public IEnumerator StartSpawner(GameObject unitToSpawn, int spawnCount)
+    {
+        for (int i = 0; i < spawnCount; i++)
         {
-            card.AddToCardPanel();
+            GameObject unit = Instantiate(unitToSpawn);
+            GameManager.Instance.unitsOnField.Add(unit);
+
+            yield return new WaitForSecondsRealtime(spawnRate);
         }
+
     }
 }
