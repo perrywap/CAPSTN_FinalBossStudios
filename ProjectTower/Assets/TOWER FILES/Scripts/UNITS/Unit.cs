@@ -26,7 +26,7 @@ public class Unit : MonoBehaviour
     [SerializeField] private float _hp;
     [SerializeField] private float _speed;
     [SerializeField] private float _damage;
-    [SerializeField] private float _attackRange = 1.5f; 
+    [SerializeField] private float _attackRange = 1.5f;
     [SerializeField] private int _manaCost;
     [SerializeField] private int _spawnCount;
     [SerializeField] private UnitType _type;
@@ -40,7 +40,7 @@ public class Unit : MonoBehaviour
     public string Name => _name;
     public float Hp => _hp;
     public float Speed { get { return _speed; } set { _speed = value; } }
-    public float AttackRange => _attackRange; 
+    public float AttackRange => _attackRange;
     public int ManaCost => _manaCost;
     public int SpawnCount => _spawnCount;
     public UnitType Type => _type;
@@ -53,13 +53,13 @@ public class Unit : MonoBehaviour
 
     private void Start()
     {
-        combat = GetComponent<UnitCombat>();    
+        combat = GetComponent<UnitCombat>();
     }
 
     #endregion
 
     #region METHODS
-    
+
     public void OnPathComplete()
     {
         Debug.Log($"{gameObject.name} reached the end!");

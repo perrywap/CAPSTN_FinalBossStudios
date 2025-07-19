@@ -11,8 +11,8 @@ public class CustomTrigger : MonoBehaviour
     {
         Tower tower = collision.gameObject.GetComponent<Tower>();
 
-        if(tower != null)
-        EnteredTrigger?.Invoke(tower);
+        if (tower != null)
+            EnteredTrigger?.Invoke(tower);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
