@@ -119,7 +119,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &4753466792344543274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,12 +133,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: 
-  _hp: 10
+  _hp: 75
   _speed: 2
-  _damage: 3
+  _damage: 25
   _attackRange: 1.5
-  _manaCost: 5
-  _spawnCount: 2
+  _manaCost: 3
+  _spawnCount: 1
   _type: 0
   state: 0
   unitData: {fileID: 11400000, guid: 83be6d349e33ab74fbd0d67cb0ed45ef, type: 2}

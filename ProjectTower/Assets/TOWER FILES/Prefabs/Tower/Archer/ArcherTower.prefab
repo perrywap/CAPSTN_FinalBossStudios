@@ -97,7 +97,7 @@ GameObject:
   m_Layer: 0
   m_Name: FirePoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -110,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 1964392076672358842}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.221, y: -0.194, z: 0}
+  m_LocalPosition: {x: -0.263, y: -0.193, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -126,6 +126,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8317613416736520217}
   - component: {fileID: 7819751806531541517}
+  - component: {fileID: 2192842998541877144}
   m_Layer: 0
   m_Name: Archer
   m_TagString: Untagged
@@ -142,7 +143,7 @@ Transform:
   m_GameObject: {fileID: 3676205675891920063}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.514, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -201,6 +202,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2192842998541877144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3676205675891920063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6b696091c440e46a6ec2727dddc119, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idleFrames:
+  - {fileID: 1878542122, guid: c691a08387095fc4791e2a39d6469b1d, type: 3}
+  - {fileID: 1582622416, guid: c691a08387095fc4791e2a39d6469b1d, type: 3}
+  - {fileID: 1355629749, guid: c691a08387095fc4791e2a39d6469b1d, type: 3}
+  - {fileID: 808951954, guid: c691a08387095fc4791e2a39d6469b1d, type: 3}
+  - {fileID: -1210456929, guid: c691a08387095fc4791e2a39d6469b1d, type: 3}
+  frameRate: 0.2
 --- !u!1 &5361463763859701013
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,7 +249,7 @@ Transform:
   m_GameObject: {fileID: 5361463763859701013}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.5087383, y: -1.6, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -271,7 +291,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 3.5
 --- !u!114 &3592745977207091004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,13 +304,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 596b099e6dc6ee24faf86c9e32a18724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 5
-  range: 5
-  damage: 3
-  fireRate: 1
+  hp: 100
+  range: 3.5
+  damage: 15
+  fireRate: 0.8
+  brokenTowerPrefab: {fileID: 2423017884844294463, guid: 589095c82cd030a48bfbcdf2b13a158f, type: 3}
   targetsInRange: []
   arrowPrefab: {fileID: 3615307263840977691, guid: d6476106262107b4f96e4b0ebcb97471, type: 3}
   firePoint: {fileID: 5993489777030927032}
+  idleAnimator: {fileID: 2192842998541877144}
+  bowObject: {fileID: 166428834121082652}
 --- !u!61 &9177401939257445818
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -360,14 +383,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6318274750743176500}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.18831144, w: 0.98210937}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.043, y: -0.188, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7675389277990826814}
   m_Father: {fileID: 8317613416736520217}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -21.709}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8657449650392939809
 GameObject:
   m_ObjectHideFlags: 0
