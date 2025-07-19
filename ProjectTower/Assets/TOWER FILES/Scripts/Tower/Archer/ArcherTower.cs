@@ -8,7 +8,7 @@ public class ArcherTower : Tower
 
     [Header("Visual References")]
     [SerializeField] private ArcherIdleAnimator idleAnimator;
-    [SerializeField] private GameObject bowObject; // reference to > Bow
+    [SerializeField] private GameObject bowObject;
 
     protected override void Update()
     {

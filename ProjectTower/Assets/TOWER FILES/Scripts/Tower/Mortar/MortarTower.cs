@@ -50,12 +50,12 @@ public class MortarTower : Tower
 
                 if (Quaternion.Angle(turretPivot.rotation, currentTargetRotation) == 0f && fireCooldown <= 0f)
                 {
-                    animator?.PlayAttack(); // start the attack animation loop
+                    animator?.PlayAttack();
                 }
             }
             else
             {
-                RotateToIdle(); // rotation only, no idle animation
+                RotateToIdle();
             }
         }
     }

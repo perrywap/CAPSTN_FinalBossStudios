@@ -55,7 +55,7 @@ public class UnitCombat : MonoBehaviour
     {
         while (target != null)
         {
-            yield return new WaitForSecondsRealtime(attackSpeed); // wait BEFORE attacking
+            yield return new WaitForSecondsRealtime(attackSpeed);
 
             if (isKnockedback)
                 yield break;
