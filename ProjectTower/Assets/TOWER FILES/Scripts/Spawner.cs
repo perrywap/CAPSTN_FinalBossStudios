@@ -12,7 +12,7 @@ public class Spawner : MonoBehaviour, IDropHandler
     {
         if (eventData.pointerDrag != null)
         {
-            if (eventData.pointerDrag.GetComponent<Card>().SummonPrefab.
+            if (eventData.pointerDrag.GetComponent<Card>().UnitPrefab.
                 GetComponent<Unit>().ManaCost > GameManager.Instance.CurrentMana)
             {
                 return;
@@ -20,10 +20,10 @@ public class Spawner : MonoBehaviour, IDropHandler
             else
             {
                 GameManager.Instance.cardsOnHand.Remove(eventData.pointerDrag.gameObject);
-                GameObject unit = eventData.pointerDrag.GetComponent<Card>().SummonPrefab;
-                GameManager.Instance.UseMana(unit.GetComponent<Unit>().ManaCost);
+                GameObject unit = eventData.pointerDrag.GetComponent<Card>().UnitPrefab;
+                GameManager.Instance.UseMana(unit.GetComponent<Unit>().Data.ManaCost);
 
-                int spawnCount = eventData.pointerDrag.GetComponent<Card>().SummonPrefab.GetComponent<Unit>().SpawnCount;
+                int spawnCount = eventData.pointerDrag.GetComponent<Card>().UnitPrefab.GetComponent<Unit>().Data.SpawnCount;
                 StartCoroutine(StartSpawner(unit, spawnCount));
                 Destroy(eventData.pointerDrag);
             }
