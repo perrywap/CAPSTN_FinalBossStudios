@@ -50,11 +50,11 @@ public class GameManager : MonoBehaviour
         cardsOnHandCount = cardsOnHand.Count;
         unitsOnFieldCount = unitsOnField.Count;
 
-        //if (cardsOnHand.Count == 0 && unitsOnField.Count == 0)
-        //{
-        //    losePanel.SetActive(true);
-        //    isGameFinished = true;
-        //}
+        if (cardsOnHand.Count == 0 && unitsOnField.Count == 0)
+        {
+            losePanel.SetActive(true);
+            isGameFinished = true;
+        }
     }
 
     #region MANA MANAGEMENT

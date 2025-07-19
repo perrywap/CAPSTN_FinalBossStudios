@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class MortarProjectile : Projectile
@@ -46,46 +45,12 @@ public class MortarProjectile : Projectile
             if (enemy != null)
             {
                 enemy.TakeDamage(damage);
-                ApplyKnockback(enemy);
             }
         }
 
         GetComponent<SpriteRenderer>().enabled = false;
         enabled = false;
         Destroy(gameObject);
-    }
-
-    private void ApplyKnockback(Unit unit)
-    {
-        float knockbackStrength = 2f;
-        float knockbackDuration = 0.25f;
-
-        bool unitWasOnLeft = unit.transform.position.x < startPos.x;
-        Vector2 knockbackDir = unitWasOnLeft ? Vector2.left : Vector2.right;
-
-        UnitCombat combat = unit.GetComponent<UnitCombat>();
-        if (combat != null)
-        {
-            combat.StartKnockback();
-        }
-
-        unit.StartCoroutine(Knockback(unit.transform, knockbackDir, knockbackStrength, knockbackDuration, combat));
-    }
-
-    private IEnumerator Knockback(Transform targetTransform, Vector2 direction, float strength, float duration, UnitCombat combat)
-    {
-        float timer = 0f;
-        while (timer < duration)
-        {
-            targetTransform.position += (Vector3)(direction * strength * Time.deltaTime);
-            timer += Time.deltaTime;
-            yield return null;
-        }
-
-        if (combat != null)
-        {
-            combat.TryResumeCombatAfterKnockback();
-        }
     }
 
     private void OnDrawGizmosSelected()

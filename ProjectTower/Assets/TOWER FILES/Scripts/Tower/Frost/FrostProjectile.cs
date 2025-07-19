@@ -10,22 +10,7 @@ public class FrostProjectile : Projectile
     [SerializeField] private float slowAmount = 1f;
     [SerializeField] private float slowDuration = 3f;
 
-    [Header("Animation Settings")]
-    [SerializeField] private Sprite[] animationFrames;
-    [SerializeField] private float animationSpeed = 0.1f;
-
-    private SpriteRenderer spriteRenderer;
     private Unit target;
-
-    private void Start()
-    {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-
-        if (animationFrames.Length > 0)
-        {
-            StartCoroutine(PlayAnimation());
-        }
-    }
 
     public override void SetTarget(Unit newTarget, float dmg)
     {
@@ -42,13 +27,10 @@ public class FrostProjectile : Projectile
         }
 
         Vector3 direction = (target.transform.position - transform.position).normalized;
-
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, angle + 180f);
-
         transform.position += direction * speed * Time.deltaTime;
 
-        if (Vector3.Distance(transform.position, target.transform.position) < 0.2f)
+        float distance = Vector3.Distance(transform.position, target.transform.position);
+        if (distance < 0.2f)
         {
             Explode();
         }
@@ -68,7 +50,7 @@ public class FrostProjectile : Projectile
             }
         }
 
-        spriteRenderer.enabled = false;
+        GetComponent<SpriteRenderer>().enabled = false;
         enabled = false;
         Destroy(gameObject, slowDuration + 0.1f);
     }
@@ -85,22 +67,6 @@ public class FrostProjectile : Projectile
         if (unit != null)
         {
             unit.Speed += actualSlow;
-        }
-    }
-
-    private IEnumerator PlayAnimation()
-    {
-        int index = 0;
-
-        while (true)
-        {
-            if (spriteRenderer != null && animationFrames.Length > 0)
-            {
-                spriteRenderer.sprite = animationFrames[index];
-                index = (index + 1) % animationFrames.Length;
-            }
-
-            yield return new WaitForSeconds(animationSpeed);
         }
     }
 
