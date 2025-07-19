@@ -141,7 +141,6 @@ MonoBehaviour:
   _spawnCount: 1
   _type: 0
   state: 0
-  unitData: {fileID: 11400000, guid: 83be6d349e33ab74fbd0d67cb0ed45ef, type: 2}
 --- !u!114 &-2158196064136534519
 MonoBehaviour:
   m_ObjectHideFlags: 0
