@@ -13,17 +13,17 @@ public class AnimManager : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         unit = GetComponent<Unit>();
-        state = unit.State;
     }
 
     private void Update()
     {
+        state = unit.State;
+
         isWalking = (state == UnitState.WALKING) ? true : false;
         isSeeking = (state == UnitState.SEEKING) ? true : false;
         isAttacking = (state == UnitState.ATTACKING) ? true : false;
 
         animator.SetBool("isWalking", isWalking);
-        animator.SetBool("isSeeking", isSeeking);
         animator.SetBool("isAttacking", isAttacking);
     }
 }
