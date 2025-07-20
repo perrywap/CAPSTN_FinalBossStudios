@@ -26,13 +26,14 @@ public class Unit : MonoBehaviour
     [SerializeField] private float _hp;
     [SerializeField] private float _speed;
     [SerializeField] private float _damage;
-    [SerializeField] private float _attackRange = 1.5f; 
     [SerializeField] private int _manaCost;
     [SerializeField] private int _spawnCount;
     [SerializeField] private UnitType _type;
     [SerializeField] private UnitState state;
-
+    [SerializeField] private UnitData unitData;
+    private float _attackRange;
     private UnitCombat combat;
+
     #endregion
 
     #region GETTERS AND SETTERS
@@ -46,6 +47,7 @@ public class Unit : MonoBehaviour
     public UnitType Type => _type;
     public float Damage { get => _damage; set => _damage = value; }
     public UnitState State { get { return state; } set { state = value; } }
+    public UnitData Data => unitData;
 
     #endregion
 
@@ -53,7 +55,16 @@ public class Unit : MonoBehaviour
 
     private void Start()
     {
-        combat = GetComponent<UnitCombat>();    
+        combat = GetComponent<UnitCombat>();
+
+        _name = unitData.Name;
+        _hp = unitData.Hp;
+        _speed = unitData.Speed;
+        _damage = unitData.Damage;
+        _attackRange = unitData.AttackRange;
+        _manaCost = unitData.ManaCost;
+        _spawnCount = unitData.SpawnCount;
+        _type = unitData.Type;
     }
 
     #endregion
@@ -73,6 +84,8 @@ public class Unit : MonoBehaviour
         {
             _hp = 0;
         }
+
+        this.gameObject.GetComponentInChildren<HpBar>().PopHpBar();
     }
 
     public virtual void Die()

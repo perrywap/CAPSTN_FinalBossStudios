@@ -12,6 +12,9 @@ public class WaypointMovement : MonoBehaviour
 
     private Unit unit;
 
+    public Transform[] Points { get { return points; } }
+    public Unit Flyer {  get { return unit; } }
+
     private void Start()
     {
         unit = this.GetComponent<Unit>();
@@ -28,10 +31,11 @@ public class WaypointMovement : MonoBehaviour
         Move();
     }
 
-    private void Move()
+    public virtual void Move()
     {
-        if(unit.State != UnitState.WALKING)
+        if (unit.State != UnitState.WALKING)
             return;
+
 
         if (pointIndex <= points.Length - 1)
         {

@@ -7,15 +7,15 @@ public class UnitCombat : MonoBehaviour
 {
     #region VARIABLES
     [SerializeField] private float attackSpeed = 1f;
-    [SerializeField] private float lastAttackTime;
     [SerializeField] private Transform target;
-
+    [SerializeField] private CircleCollider2D detectionRangeCollider, attackRangeCollider;
 
     [Header("OnTRIGGER EVENTS")]
     [SerializeField] private CustomTrigger detectionRangeTrigger;
     [SerializeField] private CustomTrigger attackRangeTrigger;
 
     private Unit unit;
+    private Coroutine attackCoroutine;
     #endregion
 
     #region UNITY METHODS
@@ -30,11 +30,13 @@ public class UnitCombat : MonoBehaviour
 
     private void Start()
     {
-        unit = this.gameObject.GetComponent<Unit>();
+        unit = GetComponent<Unit>();
     }
 
     private void Update()
     {
+        attackRangeCollider.radius = unit.AttackRange;
+
         if (unit.State == UnitState.SEEKING)
         {
             Seek();
@@ -43,10 +45,9 @@ public class UnitCombat : MonoBehaviour
     #endregion
 
     #region METHODS
-    public virtual void Seek()
+    public void Seek()
     {
-        if (target == null)
-            return;
+        if (target == null) return;
 
         transform.position = Vector2.MoveTowards(transform.position, target.position, unit.Speed * Time.deltaTime);
     }
@@ -55,14 +56,8 @@ public class UnitCombat : MonoBehaviour
     {
         while (target != null)
         {
+            unit.GetComponent<Animator>().SetTrigger("attack");
             target.TakeDamage(unit.Damage);
-            Debug.Log($"{gameObject.name} attacked {target.name} for {unit.Damage} damage. Tower HP: {target.Hp}");
-
-            if (target.Hp <= 0)
-            {
-                Debug.Log($"{target.name} has been destroyed!");
-                target = null;
-            }
 
             yield return new WaitForSecondsRealtime(attackSpeed);
         }
@@ -70,63 +65,39 @@ public class UnitCombat : MonoBehaviour
     #endregion
 
     #region TRIGGER EVENTS
-    //public virtual void OnDetectionRangeEnter(Collider2D col)
-    //{
-    //    Tower tower = col.GetComponent<Tower>();
-
-    //    if (tower != null)
-    //    {
-
-    //        unit.State = UnitState.SEEKING;
-    //        target = tower.transform;
-    //    }
-    //}
-
-    //public virtual void OnDetectionRangeExit(Collider2D col)
-    //{
-    //    unit.State = UnitState.WALKING;
-    //}
-
-    //public virtual void OnAttackRangeEnter(Collider2D col) 
-    //{
-    //    if(target != null)
-    //    {
-    //        unit.State = UnitState.ATTACKING;
-    //        StartCoroutine(Attack(col.GetComponent<Tower>()));
-    //    }  
-    //}
-    //public virtual void OnAttackRangeExit(Collider2D col)
-    //{
-    //    unit.State = UnitState.WALKING;
-    //}
-
-    public virtual void OnDetectionRangeEnter(Tower col)
+    public void OnDetectionRangeEnter(Tower col)
     {
         if (col != null)
         {
-            unit.State = UnitState.SEEKING;
             target = col.transform;
+            unit.State = UnitState.SEEKING;
         }
     }
 
-    public virtual void OnDetectionRangeExit(Tower col)
+    public void OnDetectionRangeExit(Tower col)
     {
-        //if(col == null)
-        //    unit.State = UnitState.WALKING;
         target = null;
         unit.State = UnitState.WALKING;
     }
 
-    public virtual void OnAttackRangeEnter(Tower col)
+    public void OnAttackRangeEnter(Tower col)
     {
-        if (target != null)
-        {
+        if (col != null)
+        { 
             unit.State = UnitState.ATTACKING;
-            StartCoroutine(Attack(col.GetComponent<Tower>()));
+
+            if (attackCoroutine != null)
+                StopCoroutine(attackCoroutine);
+
+            attackCoroutine = StartCoroutine(Attack(col));
         }
     }
-    public virtual void OnAttackRangeExit(Tower col)
+
+    public void OnAttackRangeExit(Tower col)
     {
+        if (attackCoroutine != null)
+            StopCoroutine(attackCoroutine);
+
         target = null;
         unit.State = UnitState.WALKING;
     }

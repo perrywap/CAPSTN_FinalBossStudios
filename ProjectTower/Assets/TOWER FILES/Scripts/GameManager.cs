@@ -9,16 +9,14 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     [Header("MANA MANAGEMENT")]
-    [SerializeField] private Image manaImage;
-    [SerializeField] private Text manatext;
+    [SerializeField] private Image manaImage;           // UI
+    [SerializeField] private Text manatext;             // UI
     [SerializeField] private float currentMana;
     [SerializeField] private float maxMana;
-    [SerializeField] private float manaRegenAmount;
-    [SerializeField] private float manaRegenRate = 5f;
+    [SerializeField] private float regenAmount;
+    [SerializeField] private float regenRate = 5f;
 
     public float CurrentMana { get { return currentMana; } }
-
-    private float lastRegen;
 
     [Header("WIN/LOSE")]
     public GameObject winPanel;
@@ -41,6 +39,8 @@ public class GameManager : MonoBehaviour
         winPanel.SetActive(false);
         losePanel.SetActive(false);
         isGameFinished = false;
+
+        StartCoroutine(RegenerateMana());
     }
 
     private void Update()
@@ -50,21 +50,18 @@ public class GameManager : MonoBehaviour
         cardsOnHandCount = cardsOnHand.Count;
         unitsOnFieldCount = unitsOnField.Count;
 
-        if (cardsOnHand.Count == 0 && unitsOnField.Count == 0)
-        {
-            losePanel.SetActive(true);
-            isGameFinished = true;
-        }
+        //if (cardsOnHand.Count == 0 && unitsOnField.Count == 0)
+        //{
+        //    losePanel.SetActive(true);
+        //    isGameFinished = true;
+        //}
     }
 
     #region MANA MANAGEMENT
     private void ManaManager()
     {
-        if(currentMana > maxMana)
-            currentMana = maxMana;
-
-        if(currentMana < maxMana)
-            RegenMana();
+        if(currentMana >= maxMana)
+            currentMana = maxMana;            
 
         if (currentMana < 0)
             currentMana = 0;
@@ -73,25 +70,25 @@ public class GameManager : MonoBehaviour
         manaImage.fillAmount = currentMana / maxMana;
     }
 
-    private void RegenMana()
-    {
-        if(Time.time - lastRegen > manaRegenRate)
-        {
-            currentMana += manaRegenAmount;
-            lastRegen = Time.time;
-        }
-    }
-
     public void UseMana(int cost)
     {
-        Debug.Log(currentMana);
         currentMana -= cost;
         Debug.Log(currentMana);
     }
+
+    private IEnumerator RegenerateMana()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(regenRate);
+
+            if (currentMana < maxMana)
+            {
+                currentMana += regenAmount;
+            }
+        }
+    }
     #endregion
 
-    #region UNIT MANAGEMENT
-    
-    #endregion
 
 }
