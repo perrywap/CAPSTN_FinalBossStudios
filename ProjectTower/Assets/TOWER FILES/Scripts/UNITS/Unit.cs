@@ -84,6 +84,8 @@ public class Unit : MonoBehaviour
         {
             _hp = 0;
         }
+
+        this.gameObject.GetComponentInChildren<HpBar>().PopHpBar();
     }
 
     public virtual void Die()
