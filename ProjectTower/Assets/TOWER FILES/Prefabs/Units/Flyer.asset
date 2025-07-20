@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Flyer
   m_EditorClassIdentifier: 
   _name: Flying
-  _hp: 50
+  _hp: 80
   _speed: 2
   _damage: 0
   _attackRange: 2
   _manaCost: 5
   _spawnCount: 3
+  _spawnRate: 1
   _type: 3
+  unitSprite: {fileID: -438817158, guid: 13d3e3a45a553d849bb3a4e7988dcf70, type: 3}

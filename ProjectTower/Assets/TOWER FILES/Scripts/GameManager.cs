@@ -73,7 +73,6 @@ public class GameManager : MonoBehaviour
     public void UseMana(int cost)
     {
         currentMana -= cost;
-        Debug.Log(currentMana);
     }
 
     private IEnumerator RegenerateMana()

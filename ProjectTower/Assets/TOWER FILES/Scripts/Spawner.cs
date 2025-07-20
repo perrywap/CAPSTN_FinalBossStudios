@@ -37,7 +37,7 @@ public class Spawner : MonoBehaviour, IDropHandler
             GameObject unit = Instantiate(unitToSpawn);
             GameManager.Instance.unitsOnField.Add(unit);
 
-            yield return new WaitForSecondsRealtime(spawnRate);
+            yield return new WaitForSecondsRealtime(unit.GetComponent<Unit>().Data.SpawnRate);
         }
 
     }
