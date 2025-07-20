@@ -26,13 +26,12 @@ public class Unit : MonoBehaviour
     [SerializeField] private float _hp;
     [SerializeField] private float _speed;
     [SerializeField] private float _damage;
-    [SerializeField] private float _attackRange = 1.5f; 
     [SerializeField] private int _manaCost;
     [SerializeField] private int _spawnCount;
     [SerializeField] private UnitType _type;
     [SerializeField] private UnitState state;
     [SerializeField] private UnitData unitData;
-
+    private float _attackRange;
     private UnitCombat combat;
 
     #endregion
@@ -85,6 +84,8 @@ public class Unit : MonoBehaviour
         {
             _hp = 0;
         }
+
+        this.gameObject.GetComponentInChildren<HpBar>().PopHpBar();
     }
 
     public virtual void Die()
