@@ -66,7 +66,7 @@ public class MortarProjectile : Projectile
         UnitCombat combat = unit.GetComponent<UnitCombat>();
         if (combat != null)
         {
-            combat.StartKnockback();
+            //combat.StartKnockback();
         }
 
         unit.StartCoroutine(Knockback(unit.transform, knockbackDir, knockbackStrength, knockbackDuration, combat));
@@ -84,7 +84,7 @@ public class MortarProjectile : Projectile
 
         if (combat != null)
         {
-            combat.TryResumeCombatAfterKnockback();
+            //combat.TryResumeCombatAfterKnockback();
         }
     }
 
