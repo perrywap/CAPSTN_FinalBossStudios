@@ -155,8 +155,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackSpeed: 3
-  lastAttackTime: 3
   target: {fileID: 0}
+  detectionRangeCollider: {fileID: 7524550731770319411}
+  attackRangeCollider: {fileID: 2076800176085126527}
   detectionRangeTrigger: {fileID: 3169253004371985161}
   attackRangeTrigger: {fileID: 2119384582969335771}
 --- !u!114 &-797005594393118394

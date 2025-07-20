@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 8977818033520587106}
   - component: {fileID: 1541327886741889180}
   - component: {fileID: 3719942378390309074}
+  - component: {fileID: -5920627560646956904}
   - component: {fileID: 6495792617057323168}
   - component: {fileID: 6810280430293912610}
-  - component: {fileID: -5920627560646956904}
   m_Layer: 6
   m_Name: unit_Swordman
   m_TagString: Untagged
@@ -136,10 +136,9 @@ MonoBehaviour:
   _hp: 100
   _speed: 2
   _damage: 15
-  _attackRange: 1.5
   _manaCost: 3
   _spawnCount: 1
-  _type: 0
+  _type: 3
   state: 0
   unitData: {fileID: 11400000, guid: b0182c79e89a81f40841b2537f40ed00, type: 2}
 --- !u!114 &1541327886741889180
@@ -155,8 +154,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackSpeed: 3
-  lastAttackTime: 3
   target: {fileID: 0}
+  detectionRangeCollider: {fileID: 999409823158131360}
+  attackRangeCollider: {fileID: 4348295948010352759}
   detectionRangeTrigger: {fileID: 7461225195156686211}
   attackRangeTrigger: {fileID: 3726367704356885060}
 --- !u!114 &3719942378390309074
@@ -174,6 +174,24 @@ MonoBehaviour:
   wpManager: {fileID: 0}
   points: []
   pointIndex: 0
+--- !u!114 &-5920627560646956904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4187163543062640282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198960b2dcbff9d44a8b4949dbe5cfb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  unit: {fileID: 0}
+  state: 0
+  isWalking: 0
+  isSeeking: 0
+  isAttacking: 0
 --- !u!95 &6495792617057323168
 Animator:
   serializedVersion: 5
@@ -240,24 +258,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0666667, y: 1.0666667}
   m_EdgeRadius: 0
---- !u!114 &-5920627560646956904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4187163543062640282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 198960b2dcbff9d44a8b4949dbe5cfb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  unit: {fileID: 0}
-  state: 0
-  isWalking: 0
-  isSeeking: 0
-  isAttacking: 0
 --- !u!1 &6614236711194692029
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,7 +325,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.75
 --- !u!114 &3726367704356885060
 MonoBehaviour:
   m_ObjectHideFlags: 0
