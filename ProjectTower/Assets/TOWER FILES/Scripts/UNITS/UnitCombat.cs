@@ -54,14 +54,23 @@ public class UnitCombat : MonoBehaviour
 
     private IEnumerator Attack(Tower target)
     {
+        AudioController audioController = FindObjectOfType<AudioController>(); 
+        AudioClip attackSound = unit.AttackSound; 
+
         while (target != null)
         {
             unit.GetComponent<Animator>().SetTrigger("attack");
             target.TakeDamage(unit.Damage);
 
+            if (attackSound != null && audioController != null)
+            {
+                audioController.PlayAudio(null, attackSound);
+            }
+
             yield return new WaitForSecondsRealtime(attackSpeed);
         }
     }
+
     #endregion
 
     #region TRIGGER EVENTS
