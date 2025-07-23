@@ -317,7 +317,19 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2f161326e693b784cb96f00c5ae100c1, type: 2}
   - {fileID: 11400000, guid: 8a764ad9d4069384e9f3baa97fe5ed8c, type: 2}
   - {fileID: 11400000, guid: 3bf53598bcc91814faf1e02b41d8700a, type: 2}
-  upgradeCards: []
+  units:
+  - {fileID: 821864623961105595, guid: 4926bac877016794d8eae6f16f91b0c4, type: 3}
+  - {fileID: 5805697148481037550, guid: 7f3d59f5e9bf1bd4e8e65cc420bf5670, type: 3}
+  - {fileID: 1108254925203342617, guid: 1095db3343c056241906a238d6d5a268, type: 3}
+  - {fileID: 5896002291059908004, guid: e5bd7e213cc03784ebdba967921f0740, type: 3}
+  - {fileID: 6079556535259424904, guid: 64ffb16c5ef978647ba768f30ded11ce, type: 3}
+  - {fileID: 4187163543062640282, guid: cd7b002ca4cb07047ab53ce9701ee821, type: 3}
+  upgradeCards:
+  - {fileID: 6953451481424909637, guid: 28d1deb5fb2d3524bbea608a42cad810, type: 3}
+  - {fileID: 2074471264173500678, guid: 762c53e38479ae642a3fa8ab0e3b9799, type: 3}
+  - {fileID: 864140563577075669, guid: b4a58930db2ddd340bdc0e93dbc061b2, type: 3}
+  - {fileID: 2227460828160762685, guid: 5f58a649c86142b4680a20d15aea2d7a, type: 3}
+  gold: 0
   scene: SampleScene
 --- !u!1 &1698651965
 GameObject:

@@ -90,10 +90,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e5be7a60f4fd0646b03eca61aab37ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitToUpgrade: {fileID: 0}
   index: 0
-  unitImages: []
-  unitImage: {fileID: 4271134720977633491}
+  cardImage: {fileID: 4271134720977633491}
+  isPicked: 0
   amount: 0
 --- !u!114 &1495084076902184621
 MonoBehaviour:

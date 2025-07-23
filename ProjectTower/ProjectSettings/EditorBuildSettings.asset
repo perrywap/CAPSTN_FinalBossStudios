@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/TOWER FILES/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 0
+  - enabled: 1
     path: Assets/TOWER FILES/Scenes/LevelSelect.unity
     guid: e3adff77c96adf94e979e5bb692929eb
   - enabled: 1

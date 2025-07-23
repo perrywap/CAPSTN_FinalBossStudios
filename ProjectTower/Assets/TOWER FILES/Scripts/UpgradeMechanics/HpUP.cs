@@ -8,6 +8,9 @@ public class HpUP : UpgradeCard
 
     public override void OnCardClicked()
     {
+        if (isPicked)
+            return;
+
         base.OnCardClicked();
         UnitData unit = PersistentData.Instance.unitDatas[index];
 
