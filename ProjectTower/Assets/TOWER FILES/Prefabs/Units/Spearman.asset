@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Spearman
   m_EditorClassIdentifier: 
   _name: Spearman
-  _hp: 110
-  _speed: 1
-  _damage: 7
-  _attackRange: 1.5
-  _manaCost: 3
+  _hp: 11
+  _speed: 2
+  _damage: 2
+  _attackRange: 1
+  _manaCost: 1
   _spawnCount: 3
   _spawnRate: 1
   _type: 0

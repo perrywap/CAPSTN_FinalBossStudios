@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Swordsman
   m_EditorClassIdentifier: 
   _name: Swordsman
-  _hp: 150
-  _speed: 1
-  _damage: 10
+  _hp: 11
+  _speed: 2
+  _damage: 2
   _attackRange: 1
-  _manaCost: 2
+  _manaCost: 1
   _spawnCount: 3
   _spawnRate: 1
   _type: 0

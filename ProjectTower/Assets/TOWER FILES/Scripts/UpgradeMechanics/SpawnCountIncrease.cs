@@ -6,14 +6,18 @@ public class SpawnCountIncrease : UpgradeCard
 {
     [SerializeField] private int amount;
 
-    public override void OnCardClicked()
+    public override void Activate(int i)
     {
-        if (isPicked)
-            return;
-
-        base.OnCardClicked();
-        UnitData unit = PersistentData.Instance.unitDatas[index];
+        UnitData unit = PersistentData.Instance.unitDatas[i];
 
         unit.SpawnCount += amount;
     }
+
+    //public override void OnCardClicked()
+    //{
+    //    if (isPicked)
+    //        return;
+
+    //    base.OnCardClicked();
+    //}
 }

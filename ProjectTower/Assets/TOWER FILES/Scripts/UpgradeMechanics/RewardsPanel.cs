@@ -12,7 +12,7 @@ public class RewardsPanel : MonoBehaviour
     [SerializeField] private Text goldTxt;
 
     [Header("REWARD CARDS")]
-    [SerializeField] private GameObject rewardsGO;
+    [SerializeField] private GameObject rewardsPanelGO;
     [SerializeField] private List<UpgradeCard> upgradeCards = new List<UpgradeCard>();
     [SerializeField] private int numberOfRewards = 3;
 
@@ -28,13 +28,13 @@ public class RewardsPanel : MonoBehaviour
     {
         goldTxt.text = $"+{goldRewardAmount.ToString()}";
 
-        rewardsGO.SetActive(false);
+        rewardsPanelGO.SetActive(false);
         PersistentData.Instance.gold += goldRewardAmount;        
     }
 
     public void ShowRewards()
     {
-        rewardsGO.SetActive(true);
+        rewardsPanelGO.SetActive(true);
 
         cards = PersistentData.Instance.upgradeCards;
 
@@ -42,7 +42,7 @@ public class RewardsPanel : MonoBehaviour
         {
             GameObject cardGO = cards[Random.Range(0, cards.Count)];
             GameObject card = Instantiate(cardGO);
-            card.transform.SetParent(rewardsGO.transform);
+            card.transform.SetParent(rewardsPanelGO.transform);
         }
 
         upgradeCards.AddRange(GetComponentsInChildren<UpgradeCard>());
