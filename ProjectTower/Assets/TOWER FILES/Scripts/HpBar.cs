@@ -19,13 +19,11 @@ public class HpBar : MonoBehaviour
     {
         if(this.GetComponentInParent<Unit>() != null)
         {
-            Debug.Log("Got unit health");
             maxHealth = this.GetComponentInParent<Unit>().Hp;
         }
 
         if(this.GetComponentInParent<Tower>() != null)
         {
-            Debug.Log("Got unit tower");
             maxHealth = this.GetComponentInParent<Tower>().Hp;
         }
     }
@@ -36,13 +34,11 @@ public class HpBar : MonoBehaviour
         {
             if (this.GetComponentInParent<Unit>() != null)
             {
-                Debug.Log("Got unit health");
                 currentHealth = this.GetComponentInParent<Unit>().Hp;
             }
 
             if (this.GetComponentInParent<Tower>() != null)
             {
-                Debug.Log("Got unit tower");
                 currentHealth = this.GetComponentInParent<Tower>().Hp;
             }
 

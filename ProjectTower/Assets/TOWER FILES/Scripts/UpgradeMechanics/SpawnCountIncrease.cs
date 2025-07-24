@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HpUP : UpgradeCard
+public class SpawnCountIncrease : UpgradeCard
 {
-    [SerializeField] private float amount;
+    [SerializeField] private int amount;
 
     public override void Activate(int i)
     {
         UnitData unit = PersistentData.Instance.unitDatas[i];
 
-        unit.Hp += amount;
+        unit.SpawnCount += amount;
     }
 
     //public override void OnCardClicked()

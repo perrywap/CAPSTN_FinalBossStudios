@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HpUP : UpgradeCard
+public class AttackUP : UpgradeCard
 {
     [SerializeField] private float amount;
 
@@ -10,7 +10,7 @@ public class HpUP : UpgradeCard
     {
         UnitData unit = PersistentData.Instance.unitDatas[i];
 
-        unit.Hp += amount;
+        unit.Damage += amount;
     }
 
     //public override void OnCardClicked()
