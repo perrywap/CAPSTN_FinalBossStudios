@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class HpUP : UpgradeCard
 {
-    [SerializeField] private int amount;
+    [SerializeField] private float amount;
 
-    public override void OnCardClicked()
+    public override void Activate(int i)
     {
-        base.OnCardClicked();
-        UnitData unit = PersistentData.Instance.unitDatas[index];
+        UnitData unit = PersistentData.Instance.unitDatas[i];
 
         unit.Hp += amount;
     }
+
+    //public override void OnCardClicked()
+    //{
+    //    if (isPicked)
+    //        return;
+
+    //    base.OnCardClicked();
+    //}
 }
