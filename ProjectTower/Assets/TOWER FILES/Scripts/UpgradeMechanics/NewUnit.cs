@@ -25,8 +25,21 @@ public class NewUnit : UpgradeCard
 
         isPicked = true;
         RewardsPanel.Instance.RewardPicked();
-        GameObject toadd = PersistentData.Instance.units[index];
-        PersistentData.Instance.unitsOwned.Add(toadd);
+        GameObject unitToAdd = PersistentData.Instance.units[index];
+        UnitData dataToAdd = unitToAdd.GetComponent<Unit>().Data;
+        PersistentData.Instance.unitsOwned.Add(unitToAdd);
+
+        for (int i = 0; i < PersistentData.Instance.unitDatas.Count; i++)
+        {
+            if(dataToAdd.Name == PersistentData.Instance.unitDatas[i].Name)
+            {
+                break;
+            }
+            else if(dataToAdd.Name != PersistentData.Instance.unitDatas[i].Name && i == PersistentData.Instance.unitDatas.Count - 1)
+            {
+                PersistentData.Instance.unitDatas.Add(dataToAdd);
+            }
+        }
 
         HudManager.Instance.FadeOut();
     }

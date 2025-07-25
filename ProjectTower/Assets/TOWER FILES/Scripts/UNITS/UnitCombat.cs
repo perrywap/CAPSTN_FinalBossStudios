@@ -31,6 +31,7 @@ public class UnitCombat : MonoBehaviour
     private void Start()
     {
         unit = GetComponent<Unit>();
+        
     }
 
     private void Update()
@@ -80,7 +81,7 @@ public class UnitCombat : MonoBehaviour
         unit.State = UnitState.WALKING;
     }
 
-    public void OnAttackRangeEnter(Tower col)
+    public virtual void OnAttackRangeEnter(Tower col)
     {
         if (col != null)
         { 
@@ -93,7 +94,7 @@ public class UnitCombat : MonoBehaviour
         }
     }
 
-    public void OnAttackRangeExit(Tower col)
+    public virtual void OnAttackRangeExit(Tower col)
     {
         if (attackCoroutine != null)
             StopCoroutine(attackCoroutine);
