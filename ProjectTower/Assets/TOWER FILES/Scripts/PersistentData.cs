@@ -11,6 +11,7 @@ public class PersistentData : MonoBehaviour
     public static PersistentData Instance { get; private set; }
 
     [Header("UNITS")]
+    [SerializeField] private Text unitsOwnedTxt;
     public List<GameObject> unitsOwned = new List<GameObject>();
     public List<UnitData> unitDatas = new List<UnitData>();
     public List<GameObject> units = new List<GameObject>();
@@ -18,7 +19,9 @@ public class PersistentData : MonoBehaviour
 
 
     [Header("GOLD MANAGEMENT")]
+    [SerializeField] private Text goldTxt;
     public int gold = 0;
+
 
     [Header("Scene Load")]
     [SerializeField] private string scene;
@@ -32,5 +35,11 @@ public class PersistentData : MonoBehaviour
     void Start()
     {
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(scene);
+    }
+
+    private void Update()
+    {
+        unitsOwnedTxt.text = unitsOwned.Count.ToString();
+        goldTxt.text = gold.ToString();
     }
 }
