@@ -6,7 +6,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-
 public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerUpHandler, IPointerDownHandler, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
     [Header("CARD UI REFERENCES")]
@@ -20,20 +19,24 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
 
     [SerializeField] private int popValue;
 
+    [Header("SFX")]
+    [SerializeField] private AudioClip pointerDownSound;
+    [SerializeField] private AudioClip pointerExitSound;
+
     private float yPos;
     private Vector3 originalPos;
     private CanvasGroup canvasGroup;
 
-    public GameObject UnitPrefab {  get { return unitPrefab; } set { unitPrefab = value; } }
+    public GameObject UnitPrefab { get { return unitPrefab; } set { unitPrefab = value; } }
 
     private void Start()
     {
         canvasGroup = GetComponent<CanvasGroup>();
         originalPos = transform.position;
 
-        if(unitPrefab != null )
+        if (unitPrefab != null)
         {
-            //nameText.text = unitPrefab.GetComponent<Unit>().Data.Name;
+            // nameText.text = unitPrefab.GetComponent<Unit>().Data.Name;
             manaCostText.text = unitPrefab.GetComponent<Unit>().Data.ManaCost.ToString();
             healthText.text = unitPrefab.GetComponent<Unit>().Data.Hp.ToString();
             portrait.sprite = unitPrefab.GetComponent<SpriteRenderer>().sprite;
@@ -44,6 +47,12 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     {
         yPos = transform.position.y;
         transform.position = new Vector3(transform.position.x, transform.position.y + popValue, transform.position.z);
+
+        if (pointerDownSound != null)
+        {
+            var audioController = FindObjectOfType<AudioController>();
+            audioController?.PlayAudio(null, pointerDownSound);
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -69,10 +78,18 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     public void OnEndDrag(PointerEventData eventData)
     {
         canvasGroup.blocksRaycasts = true;
+
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
         transform.position = originalPos;
+
+        if (pointerExitSound != null)
+        {
+            var audioController = FindObjectOfType<AudioController>();
+            audioController?.PlayAudio(null, pointerExitSound);
+        }
+
     }
 }

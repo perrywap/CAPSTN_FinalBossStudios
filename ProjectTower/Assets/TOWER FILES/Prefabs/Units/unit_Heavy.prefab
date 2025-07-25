@@ -142,6 +142,8 @@ MonoBehaviour:
   _type: 1
   state: 0
   unitData: {fileID: 11400000, guid: 8a764ad9d4069384e9f3baa97fe5ed8c, type: 2}
+  AttackSound: {fileID: 8300000, guid: f94377ee6172a204591763a648fc585e, type: 3}
+  WalkingSound: {fileID: 0}
 --- !u!114 &2768306289314802055
 MonoBehaviour:
   m_ObjectHideFlags: 0
