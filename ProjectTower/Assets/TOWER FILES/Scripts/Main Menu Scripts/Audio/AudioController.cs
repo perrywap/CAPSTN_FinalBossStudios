@@ -8,13 +8,11 @@ public class AudioController : MonoBehaviour
     public AudioSource soundSource;
     public AudioMixer audioMixer;
 
-
     public void PlayAudio(AudioClip music, AudioClip sound)
     {
         if (sound != null)
         {
-            soundSource.clip = sound;
-            soundSource.Play();
+            soundSource.PlayOneShot(sound); 
         }
 
         if (music != null && musicSource.clip != music)
@@ -46,7 +44,7 @@ public class AudioController : MonoBehaviour
         musicSource.clip = music;
         musicSource.Play();
 
-        while (musicSource.volume < 1.0f) 
+        while (musicSource.volume < 1.0f)
         {
             musicSource.volume += 0.05f;
             yield return new WaitForSeconds(0.05f);

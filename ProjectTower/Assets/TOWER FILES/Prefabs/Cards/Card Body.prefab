@@ -488,8 +488,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b1a2915055f0a1d4dbf7b34b724d1236, type: 3}
   - {fileID: 21300000, guid: 5edff707002d1e644a21faa578544667, type: 3}
   - {fileID: 21300000, guid: 2659e82611226aa4fa1567ad9b9c644b, type: 3}
-  summonPrefab: {fileID: 0}
+  unitPrefab: {fileID: 0}
   popValue: 50
+  pointerDownSound: {fileID: 8300000, guid: c263de09d604eac49b00cd2c8ad0a46c, type: 3}
+  pointerExitSound: {fileID: 8300000, guid: c263de09d604eac49b00cd2c8ad0a46c, type: 3}
 --- !u!225 &3590618259598921115
 CanvasGroup:
   m_ObjectHideFlags: 0

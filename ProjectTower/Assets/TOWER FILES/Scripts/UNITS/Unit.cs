@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public enum UnitType
 {
     Normal,
@@ -33,6 +34,9 @@ public class Unit : MonoBehaviour
     [SerializeField] private UnitData unitData;
     private float _attackRange;
     private UnitCombat combat;
+    public AudioClip AttackSound;
+    public AudioClip WalkingSound;
+
 
     #endregion
 
