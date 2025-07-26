@@ -35,7 +35,7 @@ public class Unit : MonoBehaviour
     private float _attackRange;
     private UnitCombat combat;
     public AudioClip AttackSound;
-    public AudioClip WalkingSound;
+    
 
 
     #endregion

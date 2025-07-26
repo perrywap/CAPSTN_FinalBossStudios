@@ -217,6 +217,7 @@ MonoBehaviour:
   _type: 3
   state: 0
   unitData: {fileID: 11400000, guid: fc2461967aaa39146a7219a1f978539d, type: 2}
+  AttackSound: {fileID: 0}
 --- !u!114 &6615573946877076037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,6 +233,7 @@ MonoBehaviour:
   wpManager: {fileID: 0}
   points: []
   pointIndex: 0
+  walkingSound: {fileID: 8300000, guid: becdcc9b8832bc643923397514e946e9, type: 3}
 --- !u!114 &6106347909202363215
 MonoBehaviour:
   m_ObjectHideFlags: 0
