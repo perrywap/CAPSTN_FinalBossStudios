@@ -16,6 +16,10 @@ public class UnitCombat : MonoBehaviour
 
     private Unit unit;
     private Coroutine attackCoroutine;
+
+    // ?? New: walking sound
+    private AudioSource walkingAudioSource;
+    private bool isWalkingSoundPlaying = false;
     #endregion
 
     #region UNITY METHODS
@@ -31,7 +35,11 @@ public class UnitCombat : MonoBehaviour
     private void Start()
     {
         unit = GetComponent<Unit>();
-        
+
+        walkingAudioSource = gameObject.AddComponent<AudioSource>();
+        walkingAudioSource.loop = true;
+        walkingAudioSource.playOnAwake = false;
+        walkingAudioSource.outputAudioMixerGroup = FindObjectOfType<AudioController>()?.soundSource.outputAudioMixerGroup;
     }
 
     private void Update()
@@ -40,8 +48,10 @@ public class UnitCombat : MonoBehaviour
 
         if (unit.State == UnitState.SEEKING)
         {
+
             Seek();
         }
+
     }
     #endregion
 
@@ -55,10 +65,18 @@ public class UnitCombat : MonoBehaviour
 
     private IEnumerator Attack(Tower target)
     {
+        AudioController audioController = FindObjectOfType<AudioController>();
+        AudioClip attackSound = unit.AttackSound;
+
         while (target != null)
         {
             unit.GetComponent<Animator>().SetTrigger("attack");
             target.TakeDamage(unit.Damage);
+
+            if (attackSound != null && audioController != null)
+            {
+                audioController.PlayAudio(null, attackSound);
+            }
 
             yield return new WaitForSecondsRealtime(attackSpeed);
         }
@@ -84,7 +102,7 @@ public class UnitCombat : MonoBehaviour
     public virtual void OnAttackRangeEnter(Tower col)
     {
         if (col != null)
-        { 
+        {
             unit.State = UnitState.ATTACKING;
 
             if (attackCoroutine != null)
