@@ -41,5 +41,10 @@ public class PersistentData : MonoBehaviour
     {
         unitsOwnedTxt.text = unitsOwned.Count.ToString();
         goldTxt.text = gold.ToString();
+
+        if (Input.mouseScrollDelta.y != 0)
+        {
+            Debug.Log("Mouse Scroll Delta Y: " + Input.mouseScrollDelta.y);
+        }
     }
 }
