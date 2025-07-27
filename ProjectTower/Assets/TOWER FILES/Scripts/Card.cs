@@ -62,11 +62,13 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        CameraController.Instance.canMoveCam = false;
         originalPos = new Vector3(transform.position.x, yPos, transform.position.z);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
+        CameraController.Instance.canMoveCam = false;
         transform.position = Input.mousePosition;
     }
 
@@ -83,6 +85,8 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
 
     public void OnPointerUp(PointerEventData eventData)
     {
+        CameraController.Instance.canMoveCam = true;
+
         transform.position = originalPos;
 
         if (pointerExitSound != null)

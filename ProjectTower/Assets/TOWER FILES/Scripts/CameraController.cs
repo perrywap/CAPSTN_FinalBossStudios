@@ -2,9 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class CameraController : MonoBehaviour
+public class CameraController : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    public static CameraController Instance { get; private set; }
+
     [SerializeField] private Camera cam;
 
     [SerializeField] private float zoomStep,minCamSize, maxCamSize;
@@ -15,8 +18,12 @@ public class CameraController : MonoBehaviour
 
     private Vector3 dragOrigin;
 
+    public bool canMoveCam = true;
+
     private void Awake()
     {
+        Instance = this;
+
         mapMinX = mapRenderer.transform.position.x - mapRenderer.bounds.size.x / 2f;
         mapMaxX = mapRenderer.transform.position.x + mapRenderer.bounds.size.x / 2f;
 
@@ -36,16 +43,22 @@ public class CameraController : MonoBehaviour
 
     private void PanCamera()
     {
-        
-        if(Input.GetMouseButtonDown(0))
-            dragOrigin = cam.ScreenToWorldPoint(Input.mousePosition);
+        if(!canMoveCam)
+            return;
 
         if(Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("Should pan");
+            dragOrigin = cam.ScreenToWorldPoint(Input.mousePosition);
+        }
+            
+
+        if(Input.GetMouseButton(0))
         {
             Vector3 difference = dragOrigin - cam.ScreenToWorldPoint(Input.mousePosition);
 
             //move the camera by that distance
-            cam.transform.position += difference;
+            cam.transform.position = ClampCamera(cam.transform.position + difference);
         }
     }
 
@@ -79,4 +92,16 @@ public class CameraController : MonoBehaviour
 
         return new Vector3(newX, newY, targetPosition.z);
     }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        canMoveCam = true;
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        canMoveCam = false;
+    }
+
+    
 }

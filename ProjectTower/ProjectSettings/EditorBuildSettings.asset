@@ -134,4 +134,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/TOWER FILES/Scenes/Levels/Level1/P_Level1A.unity
     guid: 04096fefd4f697b428177cee974f8af5
+  - enabled: 1
+    path: Assets/TOWER FILES/Scenes/ForTestMerchant.unity
+    guid: 627a8f4d3fc0741458f4e6f30c363813
   m_configObjects: {}

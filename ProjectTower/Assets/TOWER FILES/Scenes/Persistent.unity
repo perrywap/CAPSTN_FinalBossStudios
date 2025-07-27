@@ -872,15 +872,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsOwnedTxt: {fileID: 263343390}
   unitsOwned:
-  - {fileID: 821864623961105595, guid: 4926bac877016794d8eae6f16f91b0c4, type: 3}
+  - {fileID: 6079556535259424904, guid: 64ffb16c5ef978647ba768f30ded11ce, type: 3}
   - {fileID: 6079556535259424904, guid: 64ffb16c5ef978647ba768f30ded11ce, type: 3}
   - {fileID: 4187163543062640282, guid: cd7b002ca4cb07047ab53ce9701ee821, type: 3}
+  - {fileID: 4187163543062640282, guid: cd7b002ca4cb07047ab53ce9701ee821, type: 3}
+  unitsNotOwned: []
   unitDatas:
-  - {fileID: 11400000, guid: 83be6d349e33ab74fbd0d67cb0ed45ef, type: 2}
   - {fileID: 11400000, guid: 770aed65ef16b5f4187f1b71caa90a1c, type: 2}
   - {fileID: 11400000, guid: b0182c79e89a81f40841b2537f40ed00, type: 2}
   units:
-  - {fileID: 821864623961105595, guid: 4926bac877016794d8eae6f16f91b0c4, type: 3}
   - {fileID: 6079556535259424904, guid: 64ffb16c5ef978647ba768f30ded11ce, type: 3}
   - {fileID: 4187163543062640282, guid: cd7b002ca4cb07047ab53ce9701ee821, type: 3}
   - {fileID: 5896002291059908004, guid: e5bd7e213cc03784ebdba967921f0740, type: 3}

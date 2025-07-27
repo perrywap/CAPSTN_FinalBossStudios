@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class NewUnit : UpgradeCard
 {
+    [SerializeField] private bool generateNotOwnedUnitsOnly;
+
+    private GameObject unitToAdd;
+
     private void Start()
     {
         if (PersistentData.Instance.units == null)
@@ -14,10 +18,19 @@ public class NewUnit : UpgradeCard
             return;
         }
 
-        index = Random.Range(0, PersistentData.Instance.units.Count);
-        cardImage.sprite = PersistentData.Instance.units[index].GetComponent<SpriteRenderer>().sprite;
+        if (generateNotOwnedUnitsOnly)
+        {
+            index = Random.Range(0, PersistentData.Instance.unitsNotOwned.Count);
+            cardImage.sprite = PersistentData.Instance.unitsNotOwned[index].GetComponent<SpriteRenderer>().sprite;
+            unitToAdd = PersistentData.Instance.unitsNotOwned[index];
+        } 
+        else
+        {
+            index = Random.Range(0, PersistentData.Instance.units.Count);
+            cardImage.sprite = PersistentData.Instance.units[index].GetComponent<SpriteRenderer>().sprite;
+            unitToAdd = PersistentData.Instance.units[index];
+        }        
     }
-
     public override void OnCardClicked()
     {
         if (isPicked)
@@ -25,21 +38,11 @@ public class NewUnit : UpgradeCard
 
         isPicked = true;
         RewardsPanel.Instance.RewardPicked();
-        GameObject unitToAdd = PersistentData.Instance.units[index];
         UnitData dataToAdd = unitToAdd.GetComponent<Unit>().Data;
         PersistentData.Instance.unitsOwned.Add(unitToAdd);
 
-        for (int i = 0; i < PersistentData.Instance.unitDatas.Count; i++)
-        {
-            if(dataToAdd.Name == PersistentData.Instance.unitDatas[i].Name)
-            {
-                break;
-            }
-            else if(dataToAdd.Name != PersistentData.Instance.unitDatas[i].Name && i == PersistentData.Instance.unitDatas.Count - 1)
-            {
-                PersistentData.Instance.unitDatas.Add(dataToAdd);
-            }
-        }
+        if (!PersistentData.Instance.unitDatas.Contains(dataToAdd))
+            PersistentData.Instance.unitDatas.Add(dataToAdd);
 
         HudManager.Instance.FadeOut();
     }

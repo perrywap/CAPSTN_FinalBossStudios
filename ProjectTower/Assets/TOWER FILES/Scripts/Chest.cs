@@ -16,9 +16,7 @@ public class Chest : MonoBehaviour
         upgrade.isClickable = false;
 
         GameObject rewardGO = Instantiate(rewardCard);
-        rewardGO.transform.SetParent(chestParent);
-        
-              
+        rewardGO.transform.SetParent(chestParent);              
 
         for (int i = 0; i <  PersistentData.Instance.unitDatas.Count; i++)
         {
