@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public enum UnitType
 {
     Normal,
@@ -33,6 +34,9 @@ public class Unit : MonoBehaviour
     [SerializeField] private UnitData unitData;
     private float _attackRange;
     private UnitCombat combat;
+    public AudioClip AttackSound;
+    public bool isDead;
+
 
     #endregion
 
@@ -65,6 +69,8 @@ public class Unit : MonoBehaviour
         _manaCost = unitData.ManaCost;
         _spawnCount = unitData.SpawnCount;
         _type = unitData.Type;
+
+        isDead = false;
     }
 
     #endregion
@@ -80,17 +86,19 @@ public class Unit : MonoBehaviour
     public virtual void TakeDamage(float damage)
     {
         _hp -= damage;
-        if (_hp < 0)
+        this.gameObject.GetComponentInChildren<HpBar>().PopHpBar();
+        if (_hp <= 0)
         {
             _hp = 0;
+            isDead = true;
         }
 
-        this.gameObject.GetComponentInChildren<HpBar>().PopHpBar();
+        
     }
 
     public virtual void Die()
     {
-        if (_hp > 0) return;
+        if (!isDead) return;
 
         GameManager.Instance.unitsOnField.Remove(this.gameObject);
         Destroy(gameObject);

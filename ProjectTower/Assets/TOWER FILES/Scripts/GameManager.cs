@@ -4,6 +4,7 @@ using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
@@ -18,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     public float CurrentMana { get { return currentMana; } }
 
-    [Header("WIN/LOSE")]
+    [Header("GAME STATE")]
     public GameObject winPanel;
     public GameObject losePanel;
     [SerializeField] private int cardsOnHandCount;
@@ -26,7 +27,6 @@ public class GameManager : MonoBehaviour
     public List<GameObject> unitsOnField = new List<GameObject>();
     public List<GameObject> cardsOnHand = new List<GameObject>();
     public bool isGameFinished;
-
 
     private void Awake()
     {
@@ -50,11 +50,11 @@ public class GameManager : MonoBehaviour
         cardsOnHandCount = cardsOnHand.Count;
         unitsOnFieldCount = unitsOnField.Count;
 
-        //if (cardsOnHand.Count == 0 && unitsOnField.Count == 0)
-        //{
-        //    losePanel.SetActive(true);
-        //    isGameFinished = true;
-        //}
+        if (cardsOnHand.Count == 0 && unitsOnField.Count == 0)
+        {
+            losePanel.SetActive(true);
+            isGameFinished = true;
+        }
     }
 
     #region MANA MANAGEMENT
@@ -73,7 +73,6 @@ public class GameManager : MonoBehaviour
     public void UseMana(int cost)
     {
         currentMana -= cost;
-        Debug.Log(currentMana);
     }
 
     private IEnumerator RegenerateMana()
