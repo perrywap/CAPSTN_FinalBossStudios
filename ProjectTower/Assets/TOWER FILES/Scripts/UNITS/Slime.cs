@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Slime : UnitCombat
@@ -10,7 +11,7 @@ public class Slime : UnitCombat
 
     private void FixedUpdate()
     {
-        if (this.gameObject.GetComponent<Unit>().Hp <= 0)
+        if (this.gameObject.GetComponent<Unit>().Hp <= 40)
         {
             this.gameObject.GetComponent<Unit>().State = UnitState.ATTACKING;
             this.gameObject.GetComponent<Animator>().SetTrigger("explode");
@@ -20,9 +21,9 @@ public class Slime : UnitCombat
     public void Explode()
     {
         isDead = true;
-        foreach (Transform t in targets)
+        foreach (Transform t in targets.ToList())
         {
-            t.GetComponent<Tower>().TakeDamage(this.gameObject.GetComponent<Unit>().Damage);
+            t.GetComponent<Tower>().TakeDamage(this.gameObject.GetComponent<Unit>().Damage);                
         }
         if (isDead)
         {
