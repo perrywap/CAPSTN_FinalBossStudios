@@ -6,6 +6,7 @@ public class MortarProjectile : Projectile
     [Header("AOE Settings")]
     [SerializeField] private float explosionRadius = 2f;
     [SerializeField] private float arcHeight = 2f;
+    [SerializeField] private GameObject explosionVFXPrefab;
 
     private Vector3 startPos;
     private Vector3 targetPos;
@@ -37,6 +38,11 @@ public class MortarProjectile : Projectile
 
     private void Explode()
     {
+        if (explosionVFXPrefab != null)
+        {
+            Instantiate(explosionVFXPrefab, transform.position, Quaternion.identity);
+        }
+
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
 
         foreach (Collider2D hit in hits)

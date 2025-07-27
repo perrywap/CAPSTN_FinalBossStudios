@@ -8,11 +8,15 @@ public class AntiAirTower : Tower
     [SerializeField] private Transform firePoint;
     [SerializeField] private Animator animator;
 
+    [Header("VFX")]
+    [SerializeField] private GameObject hitVFXPrefab;
+
     private LineRenderer lineRenderer;
     private Unit currentTarget;
     private float tickTimer = 0f;
     private float flickerIntensity = 0.1f;
     private bool canShoot = false;
+    private GameObject activeVFX;
 
     private void Awake()
     {
@@ -40,6 +44,12 @@ public class AntiAirTower : Tower
             Vector3 jitter = Random.insideUnitSphere * flickerIntensity;
             lineRenderer.SetPosition(0, firePoint.position + jitter);
             lineRenderer.SetPosition(1, currentTarget.transform.position + jitter);
+
+            if (activeVFX == null && hitVFXPrefab != null)
+            {
+                activeVFX = Instantiate(hitVFXPrefab, currentTarget.transform);
+                activeVFX.transform.localPosition = Vector3.zero;
+            }
 
             tickTimer += Time.deltaTime;
             if (tickTimer >= 1f / fireRate)
