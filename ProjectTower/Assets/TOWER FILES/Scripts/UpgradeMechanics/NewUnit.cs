@@ -31,19 +31,36 @@ public class NewUnit : UpgradeCard
             unitToAdd = PersistentData.Instance.units[index];
         }        
     }
-    public override void OnCardClicked()
-    {
-        if (isPicked)
-            return;
 
-        isPicked = true;
-        RewardsPanel.Instance.RewardPicked();
+    public override void Activate(int dataIndex)
+    {
         UnitData dataToAdd = unitToAdd.GetComponent<Unit>().Data;
         PersistentData.Instance.unitsOwned.Add(unitToAdd);
 
         if (!PersistentData.Instance.unitDatas.Contains(dataToAdd))
             PersistentData.Instance.unitDatas.Add(dataToAdd);
+    }
 
-        HudManager.Instance.FadeOut();
+    public override void OnCardClicked()
+    {
+        if (!isClickable)
+            return;
+
+        if (cardType == CardType.REWARD)
+        {
+            if (isPicked)
+                return;
+
+            isPicked = true;
+            RewardsPanel.Instance.RewardPicked();
+            Activate(index);
+            
+            HudManager.Instance.FadeOut();
+        }
+
+        if (cardType == CardType.MERCHANT)
+        {
+            BuyCard();
+        }
     }
 }

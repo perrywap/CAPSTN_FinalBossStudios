@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 5323008474564492961}
   - component: {fileID: 1593302680112124667}
   - component: {fileID: 4264122329323433752}
-  - component: {fileID: 8984202732309453996}
+  - component: {fileID: 2148231069963081724}
   - component: {fileID: 3692085617224261534}
   - component: {fileID: 2323240055322125650}
   - component: {fileID: 2730845681858385248}
@@ -153,7 +153,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8984202732309453996
+--- !u!114 &2148231069963081724
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1660122165568661375}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 045a794b0f678d14bb0e7a843857216f, type: 3}
+  m_Script: {fileID: 11500000, guid: 98bc275b4b74edf4788dedbd22370186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _name: 
@@ -175,6 +175,7 @@ MonoBehaviour:
   state: 0
   unitData: {fileID: 11400000, guid: 112f256ebc8d6614cb4af45118a5e8ba, type: 2}
   AttackSound: {fileID: 0}
+  isDead: 0
 --- !u!114 &3692085617224261534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +195,6 @@ MonoBehaviour:
   detectionRangeTrigger: {fileID: 2317310989183793553}
   attackRangeTrigger: {fileID: 5084642087128919403}
   targets: []
-  isDead: 0
 --- !u!114 &2323240055322125650
 MonoBehaviour:
   m_ObjectHideFlags: 0

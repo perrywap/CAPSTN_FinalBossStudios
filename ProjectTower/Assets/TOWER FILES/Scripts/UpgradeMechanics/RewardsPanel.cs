@@ -41,6 +41,10 @@ public class RewardsPanel : MonoBehaviour
         for (int i = 0; i < numberOfRewards; i++)
         {
             GameObject cardGO = cards[Random.Range(0, cards.Count)];
+            UpgradeCard upgrade = cardGO.GetComponent<UpgradeCard>();
+            upgrade.isClickable = true;
+            upgrade.cardType = CardType.REWARD;
+
             GameObject card = Instantiate(cardGO);
             card.transform.SetParent(rewardsPanelGO.transform);
         }

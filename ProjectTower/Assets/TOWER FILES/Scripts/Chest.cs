@@ -12,7 +12,7 @@ public class Chest : MonoBehaviour
     {
         rewardCard = PersistentData.Instance.upgradeCards[Random.Range(0, PersistentData.Instance.upgradeCards.Count)];
         UpgradeCard upgrade = rewardCard.GetComponent<UpgradeCard>();
-        upgrade.isChestCard = true;
+        upgrade.cardType = CardType.CHEST;
         upgrade.isClickable = false;
 
         GameObject rewardGO = Instantiate(rewardCard);

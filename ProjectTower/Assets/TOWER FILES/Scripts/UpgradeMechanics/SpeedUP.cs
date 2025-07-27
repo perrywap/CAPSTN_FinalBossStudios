@@ -12,12 +12,4 @@ public class SpeedUP : UpgradeCard
 
         unit.Speed += amount;
     }
-
-    //public override void OnCardClicked()
-    //{
-    //    if (isPicked)
-    //        return;
-
-    //    base.OnCardClicked();
-    //}
 }
