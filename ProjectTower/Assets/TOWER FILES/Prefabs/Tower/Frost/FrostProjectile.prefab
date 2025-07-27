@@ -97,9 +97,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b689e2400015fd949be9508e4e1d84ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 5
   explosionRadius: 1.5
-  slowAmount: 1
+  slowAmount: 0.33
   slowDuration: 3
   animationFrames:
   - {fileID: -265640784, guid: c349ded82b8fef24e998eb904ead74c6, type: 3}
@@ -108,4 +108,3 @@ MonoBehaviour:
   - {fileID: -719901591, guid: c349ded82b8fef24e998eb904ead74c6, type: 3}
   - {fileID: -318978651, guid: c349ded82b8fef24e998eb904ead74c6, type: 3}
   animationSpeed: 0.05
-  frostExplosionEffect: {fileID: 8525749943494242350, guid: 13f0702494a12ee448365711d3cd22b3, type: 3}

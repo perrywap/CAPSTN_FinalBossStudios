@@ -317,7 +317,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2f161326e693b784cb96f00c5ae100c1, type: 2}
   - {fileID: 11400000, guid: 8a764ad9d4069384e9f3baa97fe5ed8c, type: 2}
   - {fileID: 11400000, guid: 3bf53598bcc91814faf1e02b41d8700a, type: 2}
-  scene: SampleScene
+  scene: LevelSelect
 --- !u!1 &1698651965
 GameObject:
   m_ObjectHideFlags: 0
