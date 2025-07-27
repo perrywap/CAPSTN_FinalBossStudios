@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class MerchantCard : MonoBehaviour, IPointerClickHandler
+public class MerchantCard : MonoBehaviour
 {
     public Transform content;
     public int price;
@@ -24,11 +24,6 @@ public class MerchantCard : MonoBehaviour, IPointerClickHandler
 
     public virtual void OnCardClicked()
     {
-        Debug.Log("Bought card");
-    }
-
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        //this.gameObject.GetComponentInChildren<UpgradeCard>().Activate();
+        priceTxt.text = "SOLD";
     }
 }

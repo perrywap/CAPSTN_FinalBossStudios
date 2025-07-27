@@ -9,13 +9,11 @@ public class UpgradeMerchCard : MerchantCard
     {
         card = PersistentData.Instance.upgradeCards[Random.Range(0, PersistentData.Instance.upgradeCards.Count)];
         UpgradeCard upgrade = card.GetComponent<UpgradeCard>();
-        upgrade.isClickable = false;
+        upgrade.isClickable = true;
+        upgrade.price = 50;
+        upgrade.cardType = CardType.MERCHANT;
 
         GameObject cardGO = Instantiate(card, content.transform);
         cardGO.transform.SetParent(content);
-
-
-    }
-
-    
+    }    
 }

@@ -12,7 +12,7 @@ public class Merchant : MonoBehaviour
     
     private void Start()
     {
-        ShowItems();
+        //ShowItems();
     }
 
     public void ShowItems()
