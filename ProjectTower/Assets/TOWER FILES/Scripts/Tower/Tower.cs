@@ -88,6 +88,7 @@ public class Tower : MonoBehaviour
             hp = 0f;
             Die();
         }
+        this.gameObject.GetComponentInChildren<HpBar>().PopHpBar();
     }
 
     private void Die()
