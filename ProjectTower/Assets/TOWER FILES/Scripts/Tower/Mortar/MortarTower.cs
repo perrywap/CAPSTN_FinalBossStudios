@@ -84,7 +84,7 @@ public class MortarTower : Tower
 
         foreach (Unit u in targetsInRange)
         {
-            if (u == null) continue;
+            if (u == null || u.Type == UnitType.Flying) continue;
 
             float dist = Vector2.Distance(transform.position, u.transform.position);
             if (dist >= minRange && dist <= maxRange && dist < shortestDist)

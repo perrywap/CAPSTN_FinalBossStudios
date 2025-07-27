@@ -299,9 +299,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 100
   range: 3.5
-  damage: 15
-  fireRate: 0.8
+  damage: 10
+  fireRate: 0.5
   brokenTowerPrefab: {fileID: 2423017884844294463, guid: 589095c82cd030a48bfbcdf2b13a158f, type: 3}
+  brokenSpawnPoint: {fileID: 1924493272407549086}
   targetsInRange: []
   arrowPrefab: {fileID: 3615307263840977691, guid: d6476106262107b4f96e4b0ebcb97471, type: 3}
   firePoint: {fileID: 5993489777030927032}

@@ -270,6 +270,7 @@ MonoBehaviour:
   damage: 15
   fireRate: 0
   brokenTowerPrefab: {fileID: 6249866289902097045, guid: 5db2f0a2acd84f94b97ea6061c570a3c, type: 3}
+  brokenSpawnPoint: {fileID: 6760368965917772136}
   targetsInRange: []
   frostballPrefab: {fileID: 3615307263840977691, guid: d93435c1e90c1924fbbf75b9d248d4be, type: 3}
   firePoint: {fileID: 5731552841828972563}

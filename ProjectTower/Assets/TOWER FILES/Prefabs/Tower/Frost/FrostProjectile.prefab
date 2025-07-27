@@ -99,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   explosionRadius: 1.5
+  iceVFXPrefab: {fileID: 5112403345868107898, guid: 6f34ef0d986e9db4199cf75805f79753, type: 3}
   slowAmount: 0.33
   slowDuration: 3
   animationFrames:
