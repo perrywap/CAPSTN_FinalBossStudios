@@ -47,7 +47,11 @@ public class Tower : MonoBehaviour
         Unit unit = other.GetComponent<Unit>();
         if (unit != null)
         {
-            targetsInRange.Remove(unit);
+            float dist = Vector2.Distance(transform.position, unit.transform.position);
+            if (dist > range + 0.1f)
+            {
+                targetsInRange.Remove(unit);
+            }
         }
     }
 
@@ -95,7 +99,7 @@ public class Tower : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    protected virtual void Attack(Unit target)
+    public virtual void Attack(Unit target)
     {
 
     }

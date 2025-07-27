@@ -7,16 +7,16 @@ public class MortarProjectile : Projectile
     [SerializeField] private float explosionRadius = 2f;
     [SerializeField] private float arcHeight = 2f;
 
-    private Unit target;
     private Vector3 startPos;
+    private Vector3 targetPos;
     private float timeToTarget = 1f;
     private float elapsedTime = 0f;
 
     public override void SetTarget(Unit newTarget, float dmg)
     {
         base.SetTarget(newTarget, dmg);
-        target = newTarget;
         startPos = transform.position;
+        targetPos = newTarget.transform.position;
     }
 
     private void Update()
@@ -30,8 +30,7 @@ public class MortarProjectile : Projectile
             return;
         }
 
-        Vector3 endPos = target.transform.position;
-        Vector3 currentPos = Vector3.Lerp(startPos, endPos, t);
+        Vector3 currentPos = Vector3.Lerp(startPos, targetPos, t);
         currentPos.y += arcHeight * 4 * t * (1 - t);
         transform.position = currentPos;
     }
@@ -60,19 +59,12 @@ public class MortarProjectile : Projectile
         float knockbackStrength = 2f;
         float knockbackDuration = 0.25f;
 
-        bool unitWasOnLeft = unit.transform.position.x < startPos.x;
-        Vector2 knockbackDir = unitWasOnLeft ? Vector2.left : Vector2.right;
+        Vector2 knockbackDir = (unit.transform.position - transform.position).normalized;
 
-        UnitCombat combat = unit.GetComponent<UnitCombat>();
-        if (combat != null)
-        {
-            //combat.StartKnockback();
-        }
-
-        unit.StartCoroutine(Knockback(unit.transform, knockbackDir, knockbackStrength, knockbackDuration, combat));
+        unit.StartCoroutine(Knockback(unit.transform, knockbackDir, knockbackStrength, knockbackDuration));
     }
 
-    private IEnumerator Knockback(Transform targetTransform, Vector2 direction, float strength, float duration, UnitCombat combat)
+    private IEnumerator Knockback(Transform targetTransform, Vector2 direction, float strength, float duration)
     {
         float timer = 0f;
         while (timer < duration)
@@ -80,11 +72,6 @@ public class MortarProjectile : Projectile
             targetTransform.position += (Vector3)(direction * strength * Time.deltaTime);
             timer += Time.deltaTime;
             yield return null;
-        }
-
-        if (combat != null)
-        {
-            //combat.TryResumeCombatAfterKnockback();
         }
     }
 

@@ -1,0 +1,87 @@
+using UnityEngine;
+
+[RequireComponent(typeof(LineRenderer))]
+public class AntiAirTower : Tower
+{
+    [Header("Anti-Air Settings")]
+    [SerializeField] private float lightningWidth = 0.1f;
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private Animator animator;
+
+    private LineRenderer lineRenderer;
+    private Unit currentTarget;
+    private float tickTimer = 0f;
+    private float flickerIntensity = 0.1f;
+    private bool canShoot = false;
+
+    private void Awake()
+    {
+        lineRenderer = GetComponent<LineRenderer>();
+        lineRenderer.positionCount = 2;
+        lineRenderer.enabled = false;
+        lineRenderer.startWidth = lightningWidth;
+        lineRenderer.endWidth = lightningWidth;
+    }
+
+    protected override void Update()
+    {
+        fireCooldown -= Time.deltaTime;
+        RemoveNullTargets();
+
+        currentTarget = GetNearestFlyingTarget();
+
+        bool hasTarget = currentTarget != null;
+        animator.SetBool("HasTarget", hasTarget);
+
+        if (hasTarget && canShoot)
+        {
+            lineRenderer.enabled = true;
+
+            Vector3 jitter = Random.insideUnitSphere * flickerIntensity;
+            lineRenderer.SetPosition(0, firePoint.position + jitter);
+            lineRenderer.SetPosition(1, currentTarget.transform.position + jitter);
+
+            tickTimer += Time.deltaTime;
+            if (tickTimer >= 1f / fireRate)
+            {
+                currentTarget.TakeDamage(damage);
+                tickTimer = 0f;
+
+                currentTarget.Die();
+            }
+        }
+        else
+        {
+            lineRenderer.enabled = false;
+            tickTimer = 0f;
+            canShoot = false;
+        }
+    }
+
+    private Unit GetNearestFlyingTarget()
+    {
+        Unit closest = null;
+        float shortestDist = Mathf.Infinity;
+
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, range);
+        foreach (Collider2D col in hits)
+        {
+            Unit unit = col.GetComponent<Unit>();
+            if (unit == null || unit.Type != UnitType.Flying) continue;
+
+            float dist = Vector2.Distance(transform.position, unit.transform.position);
+            if (dist < shortestDist)
+            {
+                shortestDist = dist;
+                closest = unit;
+            }
+        }
+
+        return closest;
+    }
+
+    public void EnableShooting()
+    {
+        canShoot = true;
+    }
+}

@@ -9,6 +9,7 @@ public class MortarTowerAnimator : MonoBehaviour
     [SerializeField] private float attackFrameRate = 0.25f;
 
     public Action OnFireFrameReached;
+    private string currentState = "";
 
     private SpriteRenderer spriteRenderer;
     private Coroutine animationCoroutine;
@@ -20,6 +21,9 @@ public class MortarTowerAnimator : MonoBehaviour
 
     public void PlayAttack()
     {
+        if (currentState == "Attack") return;
+
+        currentState = "Attack";
         if (animationCoroutine != null) StopCoroutine(animationCoroutine);
         animationCoroutine = StartCoroutine(LoopAttackAnimation());
     }
@@ -40,4 +44,15 @@ public class MortarTowerAnimator : MonoBehaviour
             yield return new WaitForSeconds(attackFrameRate);
         }
     }
+
+    public void StopAnimation()
+    {
+        if (animationCoroutine != null)
+        {
+            StopCoroutine(animationCoroutine);
+            animationCoroutine = null;
+        }
+        currentState = "";
+    }
+
 }
