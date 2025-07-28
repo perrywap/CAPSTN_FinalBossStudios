@@ -5,6 +5,7 @@ public class FrostProjectile : Projectile
 {
     [Header("AOE Settings")]
     [SerializeField] private float explosionRadius = 1.5f;
+    [SerializeField] private GameObject iceVFXPrefab;
 
     [Header("Slow Settings")]
     [SerializeField] private float slowAmount = 1f;
@@ -56,6 +57,11 @@ public class FrostProjectile : Projectile
 
     private void Explode()
     {
+        if (iceVFXPrefab != null)
+        {
+            Instantiate(iceVFXPrefab, transform.position, Quaternion.identity);
+        }
+
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
 
         foreach (Collider2D hit in hits)

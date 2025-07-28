@@ -11,6 +11,7 @@ public class Tower : MonoBehaviour
 
     [Header("Broken Tower")]
     [SerializeField] private GameObject brokenTowerPrefab;
+    [SerializeField] private Transform brokenSpawnPoint;
 
     protected float fireCooldown = 0f;
     public List<Unit> targetsInRange = new List<Unit>();
@@ -47,7 +48,11 @@ public class Tower : MonoBehaviour
         Unit unit = other.GetComponent<Unit>();
         if (unit != null)
         {
-            targetsInRange.Remove(unit);
+            float dist = Vector2.Distance(transform.position, unit.transform.position);
+            if (dist > range + 0.1f)
+            {
+                targetsInRange.Remove(unit);
+            }
         }
     }
 
@@ -83,19 +88,22 @@ public class Tower : MonoBehaviour
             hp = 0f;
             Die();
         }
+        this.gameObject.GetComponentInChildren<HpBar>().PopHpBar();
     }
 
     private void Die()
     {
+        Vector3 spawnPosition = brokenSpawnPoint != null ? brokenSpawnPoint.position : transform.position;
+
         if (brokenTowerPrefab != null)
         {
-            Instantiate(brokenTowerPrefab, transform.position, transform.rotation);
+            Instantiate(brokenTowerPrefab, spawnPosition, Quaternion.identity);
         }
 
-        Destroy(this.gameObject);
+        Destroy(transform.root.gameObject);
     }
 
-    protected virtual void Attack(Unit target)
+    public virtual void Attack(Unit target)
     {
 
     }

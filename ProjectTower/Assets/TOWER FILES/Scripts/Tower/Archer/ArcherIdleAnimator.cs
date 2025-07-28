@@ -4,6 +4,7 @@ using UnityEngine;
 public class ArcherIdleAnimator : MonoBehaviour
 {
     [SerializeField] private Sprite[] idleFrames;
+    [SerializeField] private Sprite baseArcherSprite;
     [SerializeField] private float frameRate = 0.2f;
 
     private SpriteRenderer spriteRenderer;
@@ -28,6 +29,11 @@ public class ArcherIdleAnimator : MonoBehaviour
         {
             StopCoroutine(animationCoroutine);
             animationCoroutine = null;
+        }
+
+        if (baseArcherSprite != null)
+        {
+            spriteRenderer.sprite = baseArcherSprite;
         }
     }
 

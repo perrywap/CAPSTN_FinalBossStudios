@@ -557,7 +557,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &224665500493475984
 RectTransform:
   m_ObjectHideFlags: 0
@@ -812,7 +812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goldRewardAmount: 0
   goldTxt: {fileID: 546139743129679169}
-  rewardsGO: {fileID: 1661020458165277203}
+  rewardsPanelGO: {fileID: 1661020458165277203}
   upgradeCards: []
   numberOfRewards: 3
 --- !u!1 &4703310308094648469
@@ -1112,6 +1112,7 @@ GameObject:
   - component: {fileID: 9170311012990899059}
   - component: {fileID: 1743006919561229921}
   - component: {fileID: 7858462621889245494}
+  - component: {fileID: 4650019370885703228}
   m_Layer: 5
   m_Name: Fader
   m_TagString: Untagged
@@ -1192,6 +1193,18 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &4650019370885703228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7276866489615591508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1290d92fcfd32114a9d58a8191ddf3ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7603230901467267995
 GameObject:
   m_ObjectHideFlags: 0
@@ -1570,11 +1583,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4729636268293249822, guid: 7cf12a0f742b35945be2d1f6113b5e1b, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4729636268293249822, guid: 7cf12a0f742b35945be2d1f6113b5e1b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5579242312698813454, guid: 7cf12a0f742b35945be2d1f6113b5e1b, type: 3}
       propertyPath: m_Pivot.x
@@ -1658,15 +1671,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7603466627832456381, guid: 7cf12a0f742b35945be2d1f6113b5e1b, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7603466627832456381, guid: 7cf12a0f742b35945be2d1f6113b5e1b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7603466627832456381, guid: 7cf12a0f742b35945be2d1f6113b5e1b, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1700,7 +1713,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2027287182498663713, guid: b1fd7de5448178a42b0326b77f7a1aae, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2027287182498663713, guid: b1fd7de5448178a42b0326b77f7a1aae, type: 3}
       propertyPath: m_AnchorMin.x
@@ -1708,7 +1721,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2027287182498663713, guid: b1fd7de5448178a42b0326b77f7a1aae, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2027287182498663713, guid: b1fd7de5448178a42b0326b77f7a1aae, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1748,11 +1761,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2027287182498663713, guid: b1fd7de5448178a42b0326b77f7a1aae, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 2027287182498663713, guid: b1fd7de5448178a42b0326b77f7a1aae, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -150
       objectReference: {fileID: 0}
     - target: {fileID: 2027287182498663713, guid: b1fd7de5448178a42b0326b77f7a1aae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

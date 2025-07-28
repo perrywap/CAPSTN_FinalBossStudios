@@ -41,7 +41,7 @@ public class FireballTower : Tower
         }
     }
 
-    protected override void Attack(Unit target)
+    public override void Attack(Unit target)
     {
         if (fireballPrefab != null && firePoint != null && target != null)
         {

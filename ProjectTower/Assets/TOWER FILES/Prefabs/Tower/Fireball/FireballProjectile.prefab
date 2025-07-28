@@ -74,15 +74,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -2110908675, guid: 38d5bff29744961458d6df7056485082, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 12.24, y: 0.62}
+  m_Size: {x: 1.02, y: 0.55}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &884249720645732278
@@ -100,6 +100,7 @@ MonoBehaviour:
   speed: 3
   burnDamagePerSecond: 5
   burnDuration: 3
+  burnVFXPrefab: {fileID: 8764043878647920493, guid: b2c69f789b3fcfa4ea109c6442af163d, type: 3}
   animationFrames:
   - {fileID: -2110908675, guid: 38d5bff29744961458d6df7056485082, type: 3}
   - {fileID: -712787775, guid: 38d5bff29744961458d6df7056485082, type: 3}
