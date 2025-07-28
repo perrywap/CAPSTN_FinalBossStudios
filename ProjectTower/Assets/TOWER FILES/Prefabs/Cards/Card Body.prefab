@@ -398,6 +398,7 @@ GameObject:
   - component: {fileID: 4037928586527307132}
   - component: {fileID: 5142261654714720568}
   - component: {fileID: 3590618259598921115}
+  - component: {fileID: 3751916846989223908}
   m_Layer: 5
   m_Name: Card Body
   m_TagString: Untagged
@@ -492,6 +493,9 @@ MonoBehaviour:
   popValue: 50
   pointerDownSound: {fileID: 8300000, guid: c263de09d604eac49b00cd2c8ad0a46c, type: 3}
   pointerExitSound: {fileID: 8300000, guid: c263de09d604eac49b00cd2c8ad0a46c, type: 3}
+  burnVfx: {fileID: 2983943826818378571, guid: 1c3cf69849e61434f81c5114247aea8b, type: 3}
+  vfxSpawnPos: {fileID: 0}
+  spawned: 0
 --- !u!225 &3590618259598921115
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -504,6 +508,27 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!95 &3751916846989223908
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8211305878482184005}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 67ee11eae99d4504e878e1e9ce7fbcb5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &9032409088586825836
 GameObject:
   m_ObjectHideFlags: 0

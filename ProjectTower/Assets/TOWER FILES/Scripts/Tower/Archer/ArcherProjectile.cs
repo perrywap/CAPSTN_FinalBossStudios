@@ -25,7 +25,6 @@ public class ArcherProjectile : Projectile
         if (distance < 0.2f)
         {
             target.TakeDamage(damage);
-            target.Die();
             Destroy(gameObject);
         }
     }

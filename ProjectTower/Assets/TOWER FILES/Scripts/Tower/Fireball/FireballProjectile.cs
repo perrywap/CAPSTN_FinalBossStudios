@@ -64,7 +64,6 @@ public class FireballProjectile : Projectile
             if (enemy != null)
             {
                 enemy.TakeDamage(burnDamagePerSecond);
-                enemy.Die();
             }
         }
 

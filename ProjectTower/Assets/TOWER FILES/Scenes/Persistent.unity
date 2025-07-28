@@ -876,12 +876,10 @@ MonoBehaviour:
   - {fileID: 6079556535259424904, guid: 64ffb16c5ef978647ba768f30ded11ce, type: 3}
   - {fileID: 4187163543062640282, guid: cd7b002ca4cb07047ab53ce9701ee821, type: 3}
   - {fileID: 4187163543062640282, guid: cd7b002ca4cb07047ab53ce9701ee821, type: 3}
-  - {fileID: 1660122165568661375, guid: be632893ec189484ba749fb5c8426c3b, type: 3}
   unitsNotOwned: []
   unitDatas:
   - {fileID: 11400000, guid: 770aed65ef16b5f4187f1b71caa90a1c, type: 2}
   - {fileID: 11400000, guid: b0182c79e89a81f40841b2537f40ed00, type: 2}
-  - {fileID: 11400000, guid: 112f256ebc8d6614cb4af45118a5e8ba, type: 2}
   units:
   - {fileID: 6079556535259424904, guid: 64ffb16c5ef978647ba768f30ded11ce, type: 3}
   - {fileID: 4187163543062640282, guid: cd7b002ca4cb07047ab53ce9701ee821, type: 3}
