@@ -6,9 +6,9 @@ public class Slime : Unit
 {
     public override void Die()
     {
-        isDead = true;
+        if (!isDead)
+            return;
 
-        this.gameObject.GetComponent<Unit>().State = UnitState.ATTACKING;
         this.gameObject.GetComponent<Animator>().SetTrigger("explode");
     }
 }

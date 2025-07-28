@@ -23,9 +23,15 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     [SerializeField] private AudioClip pointerDownSound;
     [SerializeField] private AudioClip pointerExitSound;
 
+    [Header("VFX")]
+    [SerializeField] private GameObject burnVfx;
+    [SerializeField] private RectTransform vfxSpawnPos;
+
     private float yPos;
     private Vector3 originalPos;
     private CanvasGroup canvasGroup;
+
+    public bool spawned;
 
     public GameObject UnitPrefab { get { return unitPrefab; } set { unitPrefab = value; } }
 
@@ -45,6 +51,9 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        if (spawned)
+            return;
+
         yPos = transform.position.y;
         transform.position = new Vector3(transform.position.x, transform.position.y + popValue, transform.position.z);
 
@@ -57,6 +66,9 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        if (spawned)
+            return;
+
         transform.position = new Vector3(transform.position.x, yPos, transform.position.z);
     }
 
@@ -85,9 +97,11 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
 
     public void OnPointerUp(PointerEventData eventData)
     {
+        
         CameraController.Instance.canMoveCam = true;
 
-        transform.position = originalPos;
+        if (!spawned)
+            transform.position = originalPos;
 
         if (pointerExitSound != null)
         {
@@ -95,5 +109,10 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
             audioController?.PlayAudio(null, pointerExitSound);
         }
 
+    }
+
+    public void OnCardDrop()
+    {
+        Destroy(this.gameObject);
     }
 }
