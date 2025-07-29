@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     public List<GameObject> unitsOnField = new List<GameObject>();
     public List<GameObject> cardsOnHand = new List<GameObject>();
     public bool isGameFinished;
+    public bool playerWon;
 
     private void Awake()
     {
@@ -52,6 +53,9 @@ public class GameManager : MonoBehaviour
 
         if (!isGameFinished && cardsOnHandCount == 0 && unitsOnFieldCount == 0)
         {
+            if (playerWon)
+                return;
+
             StartCoroutine(DelayedLoseCheck());
         }
     }

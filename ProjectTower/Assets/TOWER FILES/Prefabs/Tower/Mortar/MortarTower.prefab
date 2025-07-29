@@ -273,7 +273,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 8
+  m_Radius: 6
 --- !u!61 &323771732426104749
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -343,7 +343,7 @@ MonoBehaviour:
   mortarPrefab: {fileID: 3615307263840977691, guid: 047c8199f9e957c46b594457ccad2ebc, type: 3}
   firePoint: {fileID: 8648848733291488598}
   minRange: 2.5
-  maxRange: 8
+  maxRange: 6
   turretPivot: {fileID: 4159219177404366687}
   rotationSpeed: 90
   maxRotationAngle: 45

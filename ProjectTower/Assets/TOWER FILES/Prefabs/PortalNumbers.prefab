@@ -166,10 +166,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 541c9c224f6be534e815d9931205ccc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portalTxt: {fileID: 0}
+  portalTxt: {fileID: 1717066785203536050}
   unitsEntered: 0
   isGameEnd: 0
-  unitsRequired: 0
+  unitsRequired: 3
 --- !u!1 &6360863415907470524
 GameObject:
   m_ObjectHideFlags: 0

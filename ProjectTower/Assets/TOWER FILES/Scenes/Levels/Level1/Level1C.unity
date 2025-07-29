@@ -287,6 +287,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9021335236836411181, guid: 0f11c02d549b65e48931acd471e976d4, type: 3}
+      propertyPath: portalTxt
+      value: 
+      objectReference: {fileID: 42919125}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -297,6 +301,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7764227894742944503, guid: 0f11c02d549b65e48931acd471e976d4, type: 3}
   m_PrefabInstance: {fileID: 42919123}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &42919125 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8828564498154362570, guid: 0f11c02d549b65e48931acd471e976d4, type: 3}
+  m_PrefabInstance: {fileID: 42919123}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &96740060
 GameObject:
   m_ObjectHideFlags: 0
@@ -1554,6 +1569,7 @@ MonoBehaviour:
   unitsOnField: []
   cardsOnHand: []
   isGameFinished: 0
+  playerWon: 0
 --- !u!1 &1037970107
 GameObject:
   m_ObjectHideFlags: 0
