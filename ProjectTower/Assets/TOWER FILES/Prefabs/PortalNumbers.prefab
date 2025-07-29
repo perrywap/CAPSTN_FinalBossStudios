@@ -169,8 +169,6 @@ MonoBehaviour:
   portalTxt: {fileID: 0}
   unitsEntered: 0
   isGameEnd: 0
-  portalTxt: {fileID: 0}
-  unitsEntered: 0
   unitsRequired: 0
 --- !u!1 &6360863415907470524
 GameObject:
@@ -237,7 +235,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '10/10
+  m_text: '0/10
 
 '
   m_isRightToLeft: 0
