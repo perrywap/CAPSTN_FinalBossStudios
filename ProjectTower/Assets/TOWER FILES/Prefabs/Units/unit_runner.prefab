@@ -246,7 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: 
   _hp: 100
-  _speed: 2
+  _speed: 2.5
   _damage: 20
   _manaCost: 2
   _spawnCount: 1
