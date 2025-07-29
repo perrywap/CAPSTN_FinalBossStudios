@@ -313,6 +313,7 @@ MonoBehaviour:
   bowObject: {fileID: 166428834121082652}
   archerSpriteObject: {fileID: 3676205675891920063}
   bowPivot: {fileID: 4118594565691445941}
+  hpBarComponent: {fileID: 6712340834001241612}
   bowRotationOffset: -35
   rotationSpeed: 1
   angleThreshold: 0

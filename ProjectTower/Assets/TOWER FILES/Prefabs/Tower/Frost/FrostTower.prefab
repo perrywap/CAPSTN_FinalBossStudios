@@ -240,7 +240,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.5
+  m_Radius: 3
 --- !u!61 &6400216413105042468
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -311,6 +311,7 @@ MonoBehaviour:
   firePoint: {fileID: 5731552841828972563}
   animator: {fileID: 3729561696653271423}
   frostMageObject: {fileID: 3899337849424881023}
+  hpBarComponent: {fileID: 3111014083316211024}
 --- !u!114 &3729561696653271423
 MonoBehaviour:
   m_ObjectHideFlags: 0
