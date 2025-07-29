@@ -15,10 +15,9 @@ public class FireballTower : Tower
         {
             animator.OnGlowFrameReached += () =>
             {
-                Unit target = GetNearestTarget();
-                if (target != null)
+                if (currentTarget != null)
                 {
-                    Attack(target);
+                    Attack(currentTarget);
                     fireCooldown = 1f / fireRate;
                 }
             };
@@ -27,12 +26,21 @@ public class FireballTower : Tower
 
     protected override void Update()
     {
-        base.Update();
+        fireCooldown -= Time.deltaTime;
+        RemoveNullTargets();
 
-        Unit target = GetNearestTarget();
-
-        if (target != null)
+        if (currentTarget == null || Vector2.Distance(transform.position, currentTarget.transform.position) > range + 0.1f)
         {
+            currentTarget = GetNearestTarget();
+        }
+
+        if (currentTarget != null)
+        {
+            if (fireCooldown <= 0f)
+            {
+                fireCooldown = 1f / fireRate;
+            }
+
             animator.PlayAttack();
         }
         else

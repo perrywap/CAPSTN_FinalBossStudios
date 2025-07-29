@@ -134,9 +134,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: 
-  _hp: 100
-  _speed: 2
-  _damage: 15
+  _hp: 300
+  _speed: 1
+  _damage: 10
   _manaCost: 3
   _spawnCount: 1
   _type: 1
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1955738a3d5999b4c9f4bdffd11d3005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSpeed: 3
+  attackSpeed: 4
   target: {fileID: 0}
   detectionRangeCollider: {fileID: 8987310979609048952}
   attackRangeCollider: {fileID: 6754606618786686498}
