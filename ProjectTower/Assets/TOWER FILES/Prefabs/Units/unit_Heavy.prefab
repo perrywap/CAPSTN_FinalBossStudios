@@ -134,14 +134,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: 
-  _hp: 100
-  _speed: 2
-  _damage: 15
+  _hp: 300
+  _speed: 1
+  _damage: 10
   _manaCost: 3
   _spawnCount: 1
   _type: 1
   state: 0
   unitData: {fileID: 11400000, guid: 8a764ad9d4069384e9f3baa97fe5ed8c, type: 2}
+  AttackSound: {fileID: 8300000, guid: f94377ee6172a204591763a648fc585e, type: 3}
+  isDead: 0
 --- !u!114 &2768306289314802055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1955738a3d5999b4c9f4bdffd11d3005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSpeed: 3
+  attackSpeed: 4
   target: {fileID: 0}
   detectionRangeCollider: {fileID: 8987310979609048952}
   attackRangeCollider: {fileID: 6754606618786686498}
@@ -175,6 +177,7 @@ MonoBehaviour:
   wpManager: {fileID: 0}
   points: []
   pointIndex: 0
+  walkingSound: {fileID: 8300000, guid: f94377ee6172a204591763a648fc585e, type: 3}
 --- !u!114 &1924757662826091685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,6 +196,7 @@ MonoBehaviour:
   isWalking: 0
   isSeeking: 0
   isAttacking: 0
+  isDead: 0
 --- !u!95 &7626388316838962794
 Animator:
   serializedVersion: 5

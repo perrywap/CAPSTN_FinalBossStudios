@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum CardType
+{
+    REWARD,
+    CHEST,
+    MERCHANT
+}
+
 public class UpgradeCard : MonoBehaviour
 {
     public int index;
@@ -10,11 +17,14 @@ public class UpgradeCard : MonoBehaviour
 
     public bool isClickable;
     public bool isPicked;
-    public bool isChestCard;
+
+    public CardType cardType;
+
+    public int price;
 
     private void Start()
     {
-        if (isChestCard)
+        if (cardType == CardType.CHEST)
             return;
 
         index = Random.Range(0, PersistentData.Instance.unitDatas.Count);
@@ -26,18 +36,43 @@ public class UpgradeCard : MonoBehaviour
         
     }
 
+    public void BuyCard()
+    {
+        if (PersistentData.Instance.gold >= price)
+        {
+            Debug.Log("Bought Item");
+            PersistentData.Instance.gold -= price;
+            isClickable = false;
+            Activate(index);
+            this.gameObject.GetComponentInParent<MerchantCard>().OnCardClicked();
+        }
+        else
+        {
+            Debug.Log("NOT ENOUGH GOLD");
+        }
+    }
+
     public virtual void OnCardClicked()
     {
         if (!isClickable)
             return;
 
-        if (isPicked)
-            return;
+        if(cardType == CardType.REWARD)
+        {
+            if (isPicked)
+                return;
 
-        isPicked = true;
+            isPicked = true;
 
-        RewardsPanel.Instance.RewardPicked();
-        HudManager.Instance.FadeOut();
-        Activate(index);
+            RewardsPanel.Instance.RewardPicked();
+            HudManager.Instance.FadeOut();
+            Activate(index);
+        }
+        
+
+        if (cardType == CardType.MERCHANT)
+        {
+            BuyCard();
+        }
     }
 }

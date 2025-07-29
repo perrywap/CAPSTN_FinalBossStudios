@@ -110,8 +110,8 @@ RectTransform:
   - {fileID: 4018050230218143893}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 180, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -165,10 +165,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c883381ee31a9904b91652aec288905f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardPrefab: {fileID: 0}
   index: 0
   cardImage: {fileID: 4325352084160527176}
+  isClickable: 0
   isPicked: 0
+  isChestCard: 0
 --- !u!114 &2186884452460362169
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,6 +8,13 @@ public class ArcherProjectile : Projectile
     {
         base.SetTarget(newTarget, dmg);
         target = newTarget;
+
+        if (target != null)
+        {
+            Vector3 dir = target.transform.position - transform.position;
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0f, 0f, angle + 180);
+        }
     }
 
     private void Update()
@@ -25,7 +32,6 @@ public class ArcherProjectile : Projectile
         if (distance < 0.2f)
         {
             target.TakeDamage(damage);
-            target.Die();
             Destroy(gameObject);
         }
     }

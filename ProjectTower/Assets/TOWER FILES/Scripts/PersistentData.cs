@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.InteropServices;
 using UnityEditor.SearchService;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class PersistentData : MonoBehaviour
     [Header("UNITS")]
     [SerializeField] private Text unitsOwnedTxt;
     public List<GameObject> unitsOwned = new List<GameObject>();
+    public List<GameObject> unitsNotOwned = new List<GameObject>();
     public List<UnitData> unitDatas = new List<UnitData>();
     public List<GameObject> units = new List<GameObject>();
     public List<GameObject> upgradeCards = new List<GameObject>();
@@ -41,5 +43,28 @@ public class PersistentData : MonoBehaviour
     {
         unitsOwnedTxt.text = unitsOwned.Count.ToString();
         goldTxt.text = gold.ToString();
+
+        if (Input.mouseScrollDelta.y != 0)
+        {
+            Debug.Log("Mouse Scroll Delta Y: " + Input.mouseScrollDelta.y);
+        }
+
+        for (int i = 0; i < units.Count; i++)
+        {
+            GameObject unit = units[i];
+            if (!unitsOwned.Contains(unit) && !unitsNotOwned.Contains(unit))
+            {
+                unitsNotOwned.Add(unit);
+            }
+        }
+
+        for (int i = 0; i < unitsOwned.Count; i++)
+        {
+            GameObject newUnit = unitsOwned[i];
+            if (unitsNotOwned.Contains(newUnit))
+            {
+                unitsNotOwned.Remove(newUnit);
+            }
+        }
     }
 }

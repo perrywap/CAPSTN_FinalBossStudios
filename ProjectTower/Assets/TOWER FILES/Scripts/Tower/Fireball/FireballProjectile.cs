@@ -6,6 +6,7 @@ public class FireballProjectile : Projectile
     [Header("Burn Settings")]
     [SerializeField] private float burnDamagePerSecond = 1f;
     [SerializeField] private int burnDuration = 3;
+    [SerializeField] private GameObject burnVFXPrefab;
 
     [Header("Animation Settings")]
     [SerializeField] private Sprite[] animationFrames;
@@ -57,6 +58,13 @@ public class FireballProjectile : Projectile
 
     private IEnumerator ApplyBurn(Unit enemy)
     {
+        GameObject burnVFX = null;
+
+        if (burnVFXPrefab != null && enemy != null)
+        {
+            burnVFX = Instantiate(burnVFXPrefab, enemy.transform.position, Quaternion.identity, enemy.transform);
+        }
+
         for (int i = 0; i < burnDuration; i++)
         {
             yield return new WaitForSeconds(1f);
@@ -64,8 +72,12 @@ public class FireballProjectile : Projectile
             if (enemy != null)
             {
                 enemy.TakeDamage(burnDamagePerSecond);
-                enemy.Die();
             }
+        }
+
+        if (burnVFX != null)
+        {
+            Destroy(burnVFX);
         }
 
         Destroy(gameObject);

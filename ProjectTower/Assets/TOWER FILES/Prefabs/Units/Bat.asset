@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Bat
   m_EditorClassIdentifier: 
   _name: Bat
-  _hp: 1
-  _speed: 1
+  _hp: 100
+  _speed: 2
   _damage: 1
   _attackRange: 1
   _manaCost: 1
-  _spawnCount: 3
+  _spawnCount: 1
   _spawnRate: 1
   _type: 3
   unitSprite: {fileID: -2010327213, guid: f77de260bef2e1f419ef04206a613449, type: 3}

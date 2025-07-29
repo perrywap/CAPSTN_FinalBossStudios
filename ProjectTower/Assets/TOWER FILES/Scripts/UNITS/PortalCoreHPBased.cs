@@ -11,7 +11,7 @@ public class PortalCoreHPBased : PortalCore
 
     [SerializeField] private float hp;
     
-    public float HP { get { return hp; } set { hp = value; } }
+    public float Hp { get { return hp; } set { hp = value; } }
 
     private void TakeDamage(float damage)
     {
@@ -26,6 +26,9 @@ public class PortalCoreHPBased : PortalCore
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (isGameEnd)
+            return;
+
         Unit unit = collision.GetComponent<Unit>();
 
         if (unit != null)

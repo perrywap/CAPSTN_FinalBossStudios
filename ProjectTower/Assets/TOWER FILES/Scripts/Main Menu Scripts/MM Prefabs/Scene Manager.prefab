@@ -45,7 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _panel: {fileID: 0}
+  _audioSource: {fileID: 0}
+  _buttonClickSound: {fileID: 0}
+  _panelOpenSound: {fileID: 0}
+  _panelCloseSound: {fileID: 0}
   sceneButtons:
   - button: {fileID: 0}
-    sceneName: Persistent
+    sceneName: MainMenu
   exitButton: {fileID: 0}

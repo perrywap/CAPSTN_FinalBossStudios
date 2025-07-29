@@ -6,7 +6,7 @@ using UnityEngine;
 public class UnitCombat : MonoBehaviour
 {
     #region VARIABLES
-    [SerializeField] private float attackSpeed = 1f;
+    [SerializeField] public float attackSpeed = 1f;
     [SerializeField] private Transform target;
     [SerializeField] private CircleCollider2D detectionRangeCollider, attackRangeCollider;
 
@@ -16,6 +16,11 @@ public class UnitCombat : MonoBehaviour
 
     private Unit unit;
     private Coroutine attackCoroutine;
+    private Tower currentTargetTower;
+
+    // ?? New: walking sound
+    private AudioSource walkingAudioSource;
+    private bool isWalkingSoundPlaying = false;
     #endregion
 
     #region UNITY METHODS
@@ -31,7 +36,11 @@ public class UnitCombat : MonoBehaviour
     private void Start()
     {
         unit = GetComponent<Unit>();
-        
+
+        walkingAudioSource = gameObject.AddComponent<AudioSource>();
+        walkingAudioSource.loop = true;
+        walkingAudioSource.playOnAwake = false;
+        walkingAudioSource.outputAudioMixerGroup = FindObjectOfType<AudioController>()?.soundSource.outputAudioMixerGroup;
     }
 
     private void Update()
@@ -40,8 +49,10 @@ public class UnitCombat : MonoBehaviour
 
         if (unit.State == UnitState.SEEKING)
         {
+
             Seek();
         }
+
     }
     #endregion
 
@@ -55,12 +66,34 @@ public class UnitCombat : MonoBehaviour
 
     private IEnumerator Attack(Tower target)
     {
+        currentTargetTower = target;
+
         while (target != null)
         {
             unit.GetComponent<Animator>().SetTrigger("attack");
-            target.TakeDamage(unit.Damage);
 
             yield return new WaitForSecondsRealtime(attackSpeed);
+        }
+    }
+
+    public void DealDamage()
+    {
+        if (currentTargetTower != null)
+        {
+            Tower tower = currentTargetTower.GetComponent<Tower>();
+
+            if (tower != null && tower.IsDying)
+                return;
+
+            currentTargetTower.TakeDamage(unit.Damage);
+
+            AudioClip attackSound = unit.AttackSound;
+            AudioController audioController = FindObjectOfType<AudioController>();
+
+            if (attackSound != null && audioController != null)
+            {
+                audioController.PlayAudio(null, attackSound);
+            }
         }
     }
     #endregion
@@ -84,7 +117,7 @@ public class UnitCombat : MonoBehaviour
     public virtual void OnAttackRangeEnter(Tower col)
     {
         if (col != null)
-        { 
+        {
             unit.State = UnitState.ATTACKING;
 
             if (attackCoroutine != null)

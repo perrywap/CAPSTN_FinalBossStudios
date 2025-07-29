@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,25 +12,33 @@ public class Tower : MonoBehaviour
 
     [Header("Broken Tower")]
     [SerializeField] private GameObject brokenTowerPrefab;
+    [SerializeField] private Transform brokenSpawnPoint;
+
+    [Header("VFX")]
+    [SerializeField] private GameObject deathVFXPrefab;
 
     protected float fireCooldown = 0f;
     public List<Unit> targetsInRange = new List<Unit>();
 
+    public Unit currentTarget;
+
     public float Hp { get { return hp; } }
+    public bool IsDying { get; private set; } = false;
 
     protected virtual void Update()
     {
         fireCooldown -= Time.deltaTime;
         RemoveNullTargets();
 
-        if (targetsInRange.Count > 0 && fireCooldown <= 0f)
+        if (currentTarget == null || Vector2.Distance(transform.position, currentTarget.transform.position) > range + 0.1f)
         {
-            Unit target = GetNearestTarget();
-            if (target != null)
-            {
-                Attack(target);
-                fireCooldown = 1f / fireRate;
-            }
+            currentTarget = GetNearestTarget();
+        }
+
+        if (currentTarget != null && fireCooldown <= 0f)
+        {
+            Attack(currentTarget);
+            fireCooldown = 1f / fireRate;
         }
     }
 
@@ -47,7 +56,16 @@ public class Tower : MonoBehaviour
         Unit unit = other.GetComponent<Unit>();
         if (unit != null)
         {
-            targetsInRange.Remove(unit);
+            float dist = Vector2.Distance(transform.position, unit.transform.position);
+            if (dist > range + 0.1f)
+            {
+                targetsInRange.Remove(unit);
+
+                if (unit == currentTarget)
+                {
+                    currentTarget = null;
+                }
+            }
         }
     }
 
@@ -83,19 +101,38 @@ public class Tower : MonoBehaviour
             hp = 0f;
             Die();
         }
+        this.gameObject.GetComponentInChildren<HpBar>().PopHpBar();
     }
 
     private void Die()
     {
-        if (brokenTowerPrefab != null)
-        {
-            Instantiate(brokenTowerPrefab, transform.position, transform.rotation);
-        }
-
-        Destroy(this.gameObject);
+        IsDying = true;
+        StartCoroutine(DelayedDestroy());
     }
 
-    protected virtual void Attack(Unit target)
+    private IEnumerator DelayedDestroy()
+    {
+        Collider2D col = GetComponent<Collider2D>();
+        if (col != null) col.enabled = false;
+
+        yield return new WaitForSeconds(0.5f);
+
+        Vector3 spawnPosition = brokenSpawnPoint != null ? brokenSpawnPoint.position : transform.position;
+
+        if (deathVFXPrefab != null)
+        {
+            Instantiate(deathVFXPrefab, spawnPosition, Quaternion.identity);
+        }
+
+        if (brokenTowerPrefab != null)
+        {
+            Instantiate(brokenTowerPrefab, spawnPosition, Quaternion.identity);
+        }
+
+        Destroy(transform.root.gameObject);
+    }
+
+    public virtual void Attack(Unit target)
     {
 
     }

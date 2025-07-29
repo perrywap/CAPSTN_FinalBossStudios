@@ -137,11 +137,13 @@ MonoBehaviour:
   _hp: 100
   _speed: 2
   _damage: 15
-  _manaCost: 3
+  _manaCost: 1
   _spawnCount: 1
-  _type: 3
+  _type: 0
   state: 0
   unitData: {fileID: 11400000, guid: b0182c79e89a81f40841b2537f40ed00, type: 2}
+  AttackSound: {fileID: 8300000, guid: 33788b3baa1162b4081d7d282b641b89, type: 3}
+  isDead: 0
 --- !u!114 &1541327886741889180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,6 +177,7 @@ MonoBehaviour:
   wpManager: {fileID: 0}
   points: []
   pointIndex: 0
+  walkingSound: {fileID: 0}
 --- !u!114 &-5920627560646956904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,6 +196,7 @@ MonoBehaviour:
   isWalking: 0
   isSeeking: 0
   isAttacking: 0
+  isDead: 0
 --- !u!95 &6495792617057323168
 Animator:
   serializedVersion: 5

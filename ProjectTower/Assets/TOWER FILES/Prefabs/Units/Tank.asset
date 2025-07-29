@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Tank
   m_EditorClassIdentifier: 
   _name: Heavy
-  _hp: 11
-  _speed: 2
-  _damage: 2
-  _attackRange: 1
-  _manaCost: 1
-  _spawnCount: 3
+  _hp: 300
+  _speed: 1
+  _damage: 10
+  _attackRange: 2
+  _manaCost: 3
+  _spawnCount: 1
   _spawnRate: 1
   _type: 1
   unitSprite: {fileID: -37666889, guid: fb9cfac3d742b0d42b3d3a52bd8ac07f, type: 3}

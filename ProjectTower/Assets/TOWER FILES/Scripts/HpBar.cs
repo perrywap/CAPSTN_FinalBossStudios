@@ -26,6 +26,11 @@ public class HpBar : MonoBehaviour
         {
             maxHealth = this.GetComponentInParent<Tower>().Hp;
         }
+
+        if(this.GetComponent<PortalCoreHPBased>() != null)
+        {
+            maxHealth = this.GetComponentInParent<PortalCoreHPBased>().Hp;
+        }
     }
 
     private void Update()
@@ -40,6 +45,10 @@ public class HpBar : MonoBehaviour
             if (this.GetComponentInParent<Tower>() != null)
             {
                 currentHealth = this.GetComponentInParent<Tower>().Hp;
+            }
+            if (this.GetComponent<PortalCoreHPBased>() != null)
+            {
+                currentHealth = this.GetComponentInParent<PortalCoreHPBased>().Hp;
             }
 
             hpBar.fillAmount = currentHealth / maxHealth;
