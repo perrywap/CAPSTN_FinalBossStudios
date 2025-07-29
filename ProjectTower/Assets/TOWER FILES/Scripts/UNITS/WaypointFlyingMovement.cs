@@ -7,6 +7,9 @@ public class WaypointFlyingMovement : WaypointMovement
 {
     public override void Move()
     {
+        if (this.gameObject.GetComponent<Unit>().State == UnitState.ATTACKING)
+            return;
+
         if (this.gameObject.GetComponent<Unit>().State == UnitState.DEAD)
             return;
 

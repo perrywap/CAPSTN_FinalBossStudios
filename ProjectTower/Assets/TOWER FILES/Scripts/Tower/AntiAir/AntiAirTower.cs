@@ -12,11 +12,11 @@ public class AntiAirTower : Tower
     [SerializeField] private GameObject hitVFXPrefab;
 
     private LineRenderer lineRenderer;
-    private Unit currentTarget;
     private float tickTimer = 0f;
     private float flickerIntensity = 0.1f;
     private bool canShoot = false;
     private GameObject activeVFX;
+    private BoxCollider2D boxCollider;
 
     private void Awake()
     {
@@ -25,6 +25,8 @@ public class AntiAirTower : Tower
         lineRenderer.enabled = false;
         lineRenderer.startWidth = lightningWidth;
         lineRenderer.endWidth = lightningWidth;
+
+        boxCollider = GetComponent<BoxCollider2D>();
     }
 
     protected override void Update()
@@ -32,10 +34,25 @@ public class AntiAirTower : Tower
         fireCooldown -= Time.deltaTime;
         RemoveNullTargets();
 
-        currentTarget = GetNearestFlyingTarget();
+        if (currentTarget == null ||
+            Vector2.Distance(transform.position, currentTarget.transform.position) > range + 0.1f ||
+            currentTarget.Type != UnitType.Flying)
+        {
+            currentTarget = GetNearestFlyingTarget();
+        }
 
         bool hasTarget = currentTarget != null;
         animator.SetBool("HasTarget", hasTarget);
+
+        AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
+        if (state.IsName("Start"))
+        {
+            if (boxCollider != null) boxCollider.enabled = false;
+        }
+        else
+        {
+            if (boxCollider != null) boxCollider.enabled = true;
+        }
 
         if (hasTarget && canShoot)
         {

@@ -14,7 +14,7 @@ public class PortalCoreNumberBased : PortalCore
 
     private void Update()
     {
-        if (unitsEntered == unitsRequired)
+        if (unitsEntered >= unitsRequired)
         {
             GameEnd();
         }

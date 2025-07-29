@@ -100,12 +100,12 @@ MonoBehaviour:
   speed: 5
   explosionRadius: 1.5
   iceVFXPrefab: {fileID: 5112403345868107898, guid: 6f34ef0d986e9db4199cf75805f79753, type: 3}
-  slowAmount: 0.33
-  slowDuration: 3
+  slowAmount: 0.5
+  slowDuration: 11
   animationFrames:
   - {fileID: -265640784, guid: c349ded82b8fef24e998eb904ead74c6, type: 3}
   - {fileID: -1539485447, guid: c349ded82b8fef24e998eb904ead74c6, type: 3}
   - {fileID: 502522528, guid: c349ded82b8fef24e998eb904ead74c6, type: 3}
   - {fileID: -719901591, guid: c349ded82b8fef24e998eb904ead74c6, type: 3}
   - {fileID: -318978651, guid: c349ded82b8fef24e998eb904ead74c6, type: 3}
-  animationSpeed: 0.05
+  animationSpeed: 0.2
