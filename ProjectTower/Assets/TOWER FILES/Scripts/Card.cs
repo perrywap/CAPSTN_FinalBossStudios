@@ -12,6 +12,7 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     [SerializeField] private Text nameText;
     [SerializeField] private Text manaCostText;
     [SerializeField] private Text healthText;
+    [SerializeField] private Text damageText;
     [SerializeField] private Image portrait;
     [SerializeField] private Image TypeIcon;
     [SerializeField] private Sprite[] TypeIcons;
@@ -44,6 +45,7 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
         {
             // nameText.text = unitPrefab.GetComponent<Unit>().Data.Name;
             manaCostText.text = unitPrefab.GetComponent<Unit>().Data.ManaCost.ToString();
+            damageText.text = unitPrefab.GetComponent<Unit>().Data.Damage.ToString();
             healthText.text = unitPrefab.GetComponent<Unit>().Data.Hp.ToString();
             portrait.sprite = unitPrefab.GetComponent<SpriteRenderer>().sprite;
         }

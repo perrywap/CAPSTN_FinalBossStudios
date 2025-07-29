@@ -7,7 +7,7 @@ public class SlowField : MonoBehaviour
     [Range(0f, 1f)]
     [SerializeField] private float slowAmount;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         Unit unit = collision.gameObject.GetComponent<Unit>();
 
@@ -18,7 +18,7 @@ public class SlowField : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         Unit unit = collision.gameObject.GetComponent<Unit>();
 

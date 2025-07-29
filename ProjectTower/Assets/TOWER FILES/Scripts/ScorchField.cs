@@ -7,7 +7,7 @@ public class ScorchField : MonoBehaviour
     [SerializeField] private int damage;
     private Coroutine coroutine;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         Unit unit = collision.gameObject.GetComponent<Unit>();
 
@@ -17,13 +17,13 @@ public class ScorchField : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         Unit unit = collision.gameObject.GetComponent<Unit>();
 
         if (unit != null)
         {
-            if(coroutine != null)
+            if (coroutine != null)
             {
                 StopCoroutine(coroutine);
                 coroutine = null;
@@ -35,7 +35,7 @@ public class ScorchField : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSecondsRealtime(1);
+            yield return new WaitForSecondsRealtime(.5f);
             unit.TakeDamage(damage);
         }
     }
