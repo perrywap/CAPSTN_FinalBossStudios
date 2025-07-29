@@ -153,8 +153,8 @@ Transform:
   m_GameObject: {fileID: 195597827}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.4266, y: -0.0444, z: 0}
-  m_LocalScale: {x: 35.716377, y: 18.823435, z: 1}
+  m_LocalPosition: {x: 7.351, y: 0.062, z: 0}
+  m_LocalScale: {x: 225.4733, y: 118.30524, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6951101407293646264}
@@ -199,13 +199,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_SortingOrder: 99
+  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  m_Color: {r: 0.2784314, g: 0.29803923, b: 0.09019608, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1714,7 +1714,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4272140539889744821, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4465614259460392564, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
       propertyPath: m_Sprite
@@ -1976,11 +1976,18 @@ MonoBehaviour:
   damage: 0
   fireRate: 0.8
   brokenTowerPrefab: {fileID: 2423017884844294463, guid: 589095c82cd030a48bfbcdf2b13a158f, type: 3}
+  brokenSpawnPoint: {fileID: 0}
+  deathVFXPrefab: {fileID: 0}
   targetsInRange: []
   arrowPrefab: {fileID: 3615307263840977691, guid: d6476106262107b4f96e4b0ebcb97471, type: 3}
   firePoint: {fileID: 7873375786131346694}
   idleAnimator: {fileID: 2305972426494851110}
   bowObject: {fileID: 4332947202532122786}
+  archerSpriteObject: {fileID: 0}
+  bowPivot: {fileID: 0}
+  bowRotationOffset: 0
+  rotationSpeed: 720
+  angleThreshold: 2
 --- !u!4 &1924493272561128838
 Transform:
   m_ObjectHideFlags: 0
@@ -2082,6 +2089,7 @@ MonoBehaviour:
   - {fileID: 1355629749, guid: c691a08387095fc4791e2a39d6469b1d, type: 3}
   - {fileID: 808951954, guid: c691a08387095fc4791e2a39d6469b1d, type: 3}
   - {fileID: -1210456929, guid: c691a08387095fc4791e2a39d6469b1d, type: 3}
+  baseArcherSprite: {fileID: 0}
   frameRate: 0.2
 --- !u!114 &2305972426494851110
 MonoBehaviour:
@@ -2101,6 +2109,7 @@ MonoBehaviour:
   - {fileID: 1355629749, guid: c691a08387095fc4791e2a39d6469b1d, type: 3}
   - {fileID: 808951954, guid: c691a08387095fc4791e2a39d6469b1d, type: 3}
   - {fileID: -1210456929, guid: c691a08387095fc4791e2a39d6469b1d, type: 3}
+  baseArcherSprite: {fileID: 0}
   frameRate: 0.2
 --- !u!4 &2655948186751034144
 Transform:
@@ -2202,11 +2211,18 @@ MonoBehaviour:
   damage: 0
   fireRate: 0.8
   brokenTowerPrefab: {fileID: 2423017884844294463, guid: 589095c82cd030a48bfbcdf2b13a158f, type: 3}
+  brokenSpawnPoint: {fileID: 0}
+  deathVFXPrefab: {fileID: 0}
   targetsInRange: []
   arrowPrefab: {fileID: 3615307263840977691, guid: d6476106262107b4f96e4b0ebcb97471, type: 3}
   firePoint: {fileID: 5993489777167737760}
   idleAnimator: {fileID: 2192842998429240960}
   bowObject: {fileID: 166428834285147652}
+  archerSpriteObject: {fileID: 0}
+  bowPivot: {fileID: 0}
+  bowRotationOffset: 0
+  rotationSpeed: 720
+  angleThreshold: 2
 --- !u!1 &3676205675761483175
 GameObject:
   m_ObjectHideFlags: 0
