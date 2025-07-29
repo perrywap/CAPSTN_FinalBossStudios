@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: CrossBower
   m_EditorClassIdentifier: 
   _name: CrossBower
-  _hp: 1
-  _speed: 1
-  _damage: 1
-  _attackRange: 1
-  _manaCost: 1
+  _hp: 100
+  _speed: 2
+  _damage: 25
+  _attackRange: 2
+  _manaCost: 2
   _spawnCount: 1
   _spawnRate: 1
   _type: 0

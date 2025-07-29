@@ -26,11 +26,18 @@ public class ProgressionManager : MonoBehaviour
 
     public void WinLevel()
     {
-        if (GameProgress.Instance != null && nextLevelNames != null)
+        string currentLevelName = SceneManager.GetActiveScene().name;
+
+        if (GameProgress.Instance != null)
         {
-            foreach (string level in nextLevelNames)
+            GameProgress.Instance.MarkLevelCompleted(currentLevelName);
+
+            if (nextLevelNames != null)
             {
-                GameProgress.Instance.UnlockLevel(level);
+                foreach (string level in nextLevelNames)
+                {
+                    GameProgress.Instance.UnlockLevel(level);
+                }
             }
         }
 
