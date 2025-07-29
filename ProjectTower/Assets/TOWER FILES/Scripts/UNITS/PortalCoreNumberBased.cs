@@ -11,6 +11,11 @@ public class PortalCoreNumberBased : PortalCore
 
     [SerializeField] private int unitsRequired;
 
+    private void Start()
+    {
+        portalTxt.text = $"{unitsEntered}/{unitsRequired}";
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (isGameEnd)
@@ -21,6 +26,8 @@ public class PortalCoreNumberBased : PortalCore
         if (unit != null)
         {
             unitsEntered++;
+
+            portalTxt.text = $"{unitsEntered}/{unitsRequired}";
 
             if (unitsEntered >= unitsRequired)
             {
