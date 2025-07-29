@@ -56,11 +56,12 @@ public class MortarTower : Tower
             else
             {
                 RotateToIdle();
+                animator?.StopAnimation();
             }
         }
     }
 
-    protected override void Attack(Unit target)
+    public override void Attack(Unit target)
     {
         float distance = Vector3.Distance(transform.position, target.transform.position);
 
@@ -83,7 +84,7 @@ public class MortarTower : Tower
 
         foreach (Unit u in targetsInRange)
         {
-            if (u == null) continue;
+            if (u == null || u.Type == UnitType.Flying) continue;
 
             float dist = Vector2.Distance(transform.position, u.transform.position);
             if (dist >= minRange && dist <= maxRange && dist < shortestDist)
@@ -98,14 +99,13 @@ public class MortarTower : Tower
 
     private void RotateTurretTowards(Unit target)
     {
-        Vector2 dirToTarget = target.transform.position - turretPivot.position;
-        float angleToTarget = Mathf.Atan2(dirToTarget.y, dirToTarget.x) * Mathf.Rad2Deg;
+        Vector3 directionToTarget = target.transform.position - turretPivot.position;
 
-        float adjustedAngle = angleToTarget - 90f;
-        float clampedAngle = Mathf.Clamp(adjustedAngle, -maxRotationAngle, maxRotationAngle);
+        float angleToTarget = Vector2.SignedAngle(Vector2.up, directionToTarget);
 
-        currentTargetRotation = Quaternion.Euler(0, 0, clampedAngle);
+        float clampedAngle = Mathf.Clamp(angleToTarget, -maxRotationAngle, maxRotationAngle);
 
+        currentTargetRotation = Quaternion.Euler(0f, 0f, clampedAngle);
         turretPivot.rotation = Quaternion.RotateTowards(
             turretPivot.rotation,
             currentTargetRotation,

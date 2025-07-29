@@ -100,3 +100,4 @@ MonoBehaviour:
   speed: 8
   explosionRadius: 2
   arcHeight: 2
+  explosionVFXPrefab: {fileID: 725748389856807714, guid: 8155b258cc2edeb4ba8ca4e03de671a6, type: 3}

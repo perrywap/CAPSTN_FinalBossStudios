@@ -134,15 +134,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: 
-  _hp: 75
+  _hp: 100
   _speed: 2
   _damage: 25
-  _manaCost: 3
+  _manaCost: 2
   _spawnCount: 1
   _type: 0
   state: 0
   unitData: {fileID: 11400000, guid: 83be6d349e33ab74fbd0d67cb0ed45ef, type: 2}
   AttackSound: {fileID: 8300000, guid: 1b7aa8b7adf06cb4cb59f160d1b8d728, type: 3}
+  isDead: 0
 --- !u!114 &-2158196064136534519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,6 +177,7 @@ MonoBehaviour:
   wpManager: {fileID: 0}
   points: []
   pointIndex: 0
+  walkingSound: {fileID: 0}
 --- !u!95 &1856727910651703758
 Animator:
   serializedVersion: 5
@@ -407,7 +409,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.5
+  m_Radius: 3
 --- !u!114 &2119384582969335771
 MonoBehaviour:
   m_ObjectHideFlags: 0
