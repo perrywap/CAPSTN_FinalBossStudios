@@ -196,6 +196,7 @@ MonoBehaviour:
   isWalking: 0
   isSeeking: 0
   isAttacking: 0
+  isDead: 0
 --- !u!95 &6495792617057323168
 Animator:
   serializedVersion: 5

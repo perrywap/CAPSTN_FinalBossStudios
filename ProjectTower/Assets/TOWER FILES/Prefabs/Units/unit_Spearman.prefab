@@ -297,6 +297,7 @@ MonoBehaviour:
   isWalking: 0
   isSeeking: 0
   isAttacking: 0
+  isDead: 0
 --- !u!61 &7199970054582346367
 BoxCollider2D:
   m_ObjectHideFlags: 0
