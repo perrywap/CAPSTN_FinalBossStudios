@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Flyer
   m_EditorClassIdentifier: 
   _name: Flying
-  _hp: 1
-  _speed: 1
-  _damage: 1
-  _attackRange: 1
-  _manaCost: 1
+  _hp: 150
+  _speed: 2
+  _damage: 25
+  _attackRange: 1.5
+  _manaCost: 2
   _spawnCount: 1
   _spawnRate: 1
   _type: 3

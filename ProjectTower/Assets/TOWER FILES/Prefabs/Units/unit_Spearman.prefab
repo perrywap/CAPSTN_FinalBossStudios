@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1955738a3d5999b4c9f4bdffd11d3005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSpeed: 3
+  attackSpeed: 2
   target: {fileID: 0}
   detectionRangeCollider: {fileID: 8071742867996391360}
   attackRangeCollider: {fileID: 1329221666173362544}

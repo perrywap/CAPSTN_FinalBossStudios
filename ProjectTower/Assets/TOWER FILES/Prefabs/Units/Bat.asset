@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Bat
   m_EditorClassIdentifier: 
   _name: Bat
-  _hp: 1
-  _speed: 1
+  _hp: 100
+  _speed: 2
   _damage: 1
   _attackRange: 1
   _manaCost: 1

@@ -49,7 +49,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &443719306503520725
 Transform:
   m_ObjectHideFlags: 0
@@ -129,7 +129,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4846777022434841124
 Transform:
   m_ObjectHideFlags: 0
@@ -326,15 +326,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: 
-  _hp: 100
+  _hp: 150
   _speed: 2
-  _damage: 15
-  _manaCost: 3
+  _damage: 25
+  _manaCost: 2
   _spawnCount: 1
   _type: 0
   state: 0
   unitData: {fileID: 11400000, guid: 3bf53598bcc91814faf1e02b41d8700a, type: 2}
   AttackSound: {fileID: 0}
+  isDead: 0
 --- !u!114 &6229334336253342476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,7 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1955738a3d5999b4c9f4bdffd11d3005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSpeed: 3
+  attackSpeed: 2
   target: {fileID: 0}
   detectionRangeCollider: {fileID: 1561015900496777176}
   attackRangeCollider: {fileID: 2851321698353303859}
@@ -387,6 +388,7 @@ MonoBehaviour:
   isWalking: 0
   isSeeking: 0
   isAttacking: 0
+  isDead: 0
 --- !u!95 &6112310326719515920
 Animator:
   serializedVersion: 5
