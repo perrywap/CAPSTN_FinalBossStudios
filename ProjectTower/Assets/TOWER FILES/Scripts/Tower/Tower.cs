@@ -13,6 +13,9 @@ public class Tower : MonoBehaviour
     [SerializeField] private GameObject brokenTowerPrefab;
     [SerializeField] private Transform brokenSpawnPoint;
 
+    [Header("VFX")]
+    [SerializeField] private GameObject deathVFXPrefab;
+
     protected float fireCooldown = 0f;
     public List<Unit> targetsInRange = new List<Unit>();
 
@@ -94,6 +97,11 @@ public class Tower : MonoBehaviour
     private void Die()
     {
         Vector3 spawnPosition = brokenSpawnPoint != null ? brokenSpawnPoint.position : transform.position;
+
+        if (deathVFXPrefab != null)
+        {
+            Instantiate(deathVFXPrefab, spawnPosition, Quaternion.identity);
+        }
 
         if (brokenTowerPrefab != null)
         {

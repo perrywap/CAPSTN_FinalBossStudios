@@ -56,8 +56,6 @@ public class AntiAirTower : Tower
             {
                 currentTarget.TakeDamage(damage);
                 tickTimer = 0f;
-
-                currentTarget.Die();
             }
         }
         else

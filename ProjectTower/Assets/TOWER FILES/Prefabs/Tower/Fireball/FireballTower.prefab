@@ -157,7 +157,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.8}
+  m_Offset: {x: 0, y: 0.7}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -188,6 +188,7 @@ MonoBehaviour:
   fireRate: 0
   brokenTowerPrefab: {fileID: 135304044838293683, guid: 63fb0e8ab57909242a20a1e35cd745af, type: 3}
   brokenSpawnPoint: {fileID: 1321048845712977062}
+  deathVFXPrefab: {fileID: 141433446842962269, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
   targetsInRange: []
   fireballPrefab: {fileID: 3615307263840977691, guid: e87db399a2c11b34a845a2a74bb58b6c, type: 3}
   firePoint: {fileID: 963540213608870044}

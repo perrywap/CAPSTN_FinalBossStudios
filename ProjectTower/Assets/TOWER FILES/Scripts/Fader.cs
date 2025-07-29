@@ -6,6 +6,7 @@ public class Fader : MonoBehaviour
 {
     public void ReturnToBigMap()
     {
-        GameSceneManager.Instance.ReturnToBigMap();
+        //GameSceneManager.Instance.ReturnToBigMap();
+        ProgressionManager.Instance.WinLevel();
     }
 }

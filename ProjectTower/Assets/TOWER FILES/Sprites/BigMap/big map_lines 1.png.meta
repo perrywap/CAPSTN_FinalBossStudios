@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ebb91f08e866e484681ecfebbdec243b
+guid: 6cfdb0c9fdabca0439241bcb3bb18df3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: big map_lines_0
+      name: big map_lines 1_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 210
-        width: 31
-        height: 26
+        width: 29
+        height: 25
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64ea87737005f004397065bcdf1b1193
-      internalID: -1941243821
+      spriteID: e1fb6a115cbb8244fa14f98a90bcfa5f
+      internalID: -2084729695
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: big map_lines_1
+      name: big map_lines 1_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 186
-        width: 43
-        height: 11
+        x: 1
+        y: 187
+        width: 40
+        height: 9
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aad8ee8861b0a094eb35fe77facaa6c4
-      internalID: 1149125501
+      spriteID: 3b734901d39e1174f87925be5d067ec5
+      internalID: 1208865820
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: big map_lines_2
+      name: big map_lines 1_2
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 139
-        width: 70
-        height: 26
+        width: 68
+        height: 25
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: acf92e3ec6b6d2e4c8eeab8860c78a4a
-      internalID: -1875545580
+      spriteID: 78b17a63b4cf5d14fb7128dc01e1d064
+      internalID: -455693005
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: big map_lines_3
+      name: big map_lines 1_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 98
+        x: 1
+        y: 100
+        width: 72
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b1f1572c99a6fe4e9a231cf45d8ad10
+      internalID: -46522487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big map_lines 1_4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 75
         width: 75
-        height: 26
+        height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a1a1a54638b57e4f985437afd3300f1
-      internalID: 77481336
+      spriteID: b363feb5aa797954a85f0b8c7d859a92
+      internalID: -663315384
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: big map_lines_4
+      name: big map_lines 1_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 74
-        width: 77
-        height: 11
+        x: 1
+        y: 41
+        width: 192
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +242,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6b7cc33c6c9912439a45cbb4fc4d159
-      internalID: 1368856025
+      spriteID: 08e6107591700a847b825ea64e10c6b4
+      internalID: -1284748626
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: big map_lines_5
+      name: big map_lines 1_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 40
-        width: 77
-        height: 20
+        x: 1
+        y: 1
+        width: 135
+        height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,29 +263,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 720d0be5d08e81b4bb9a4a4617865df2
-      internalID: 432659056
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: big map_lines_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 73
-        height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 638579cdba19a57468fbfdd0177c692e
-      internalID: -1840149542
+      spriteID: 7ad891ca279b18c4d86148ff902c3aff
+      internalID: -330511727
       vertices: []
       indices: 
       edges: []
@@ -280,13 +280,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      big map_lines_0: -1941243821
-      big map_lines_1: 1149125501
-      big map_lines_2: -1875545580
-      big map_lines_3: 77481336
-      big map_lines_4: 1368856025
-      big map_lines_5: 432659056
-      big map_lines_6: -1840149542
+      big map_lines 1_0: -2084729695
+      big map_lines 1_1: 1208865820
+      big map_lines 1_2: -455693005
+      big map_lines 1_3: -46522487
+      big map_lines 1_4: -663315384
+      big map_lines 1_5: -1284748626
+      big map_lines 1_6: -330511727
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

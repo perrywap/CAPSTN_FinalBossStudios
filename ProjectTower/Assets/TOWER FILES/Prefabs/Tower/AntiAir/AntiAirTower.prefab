@@ -284,6 +284,7 @@ MonoBehaviour:
   fireRate: 1
   brokenTowerPrefab: {fileID: 6550416819699816122, guid: ecb16110ae32896408dff6d559458e75, type: 3}
   brokenSpawnPoint: {fileID: 8287684294171919270}
+  deathVFXPrefab: {fileID: 1429954232896169633, guid: 83036083a4ebcd34f98131bd3cf6f4d2, type: 3}
   targetsInRange: []
   lightningWidth: 0.5
   firePoint: {fileID: 3839528323896082772}
