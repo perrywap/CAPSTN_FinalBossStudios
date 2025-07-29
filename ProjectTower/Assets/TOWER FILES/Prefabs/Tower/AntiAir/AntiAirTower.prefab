@@ -220,7 +220,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 4
+  m_Radius: 4.5
 --- !u!61 &8654650891875251785
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -279,7 +279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
-  range: 4
+  range: 4.5
   damage: 20
   fireRate: 1
   brokenTowerPrefab: {fileID: 6550416819699816122, guid: ecb16110ae32896408dff6d559458e75, type: 3}
