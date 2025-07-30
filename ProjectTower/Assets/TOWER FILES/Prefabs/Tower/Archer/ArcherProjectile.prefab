@@ -98,3 +98,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
+  fireSFX: {fileID: 8300000, guid: 1b7aa8b7adf06cb4cb59f160d1b8d728, type: 3}
+  audioSource: {fileID: 0}

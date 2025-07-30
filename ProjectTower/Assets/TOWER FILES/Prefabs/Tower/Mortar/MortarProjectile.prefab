@@ -101,3 +101,4 @@ MonoBehaviour:
   explosionRadius: 2
   arcHeight: 2
   explosionVFXPrefab: {fileID: 725748389856807714, guid: 8155b258cc2edeb4ba8ca4e03de671a6, type: 3}
+  launchSound: {fileID: 8300000, guid: 36e3fce0f240d82469d6bf5af05d1760, type: 3}

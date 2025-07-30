@@ -3,7 +3,12 @@ guid: 3484863aef7fbbf4196d602b8a46511a
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - brokenTowerPrefab: {instanceID: 0}
+  - brokenSpawnPoint: {instanceID: 0}
+  - deathVFXPrefab: {instanceID: 0}
+  - deathSFX: {fileID: 8300000, guid: 93a740f08d4e6814aa8baac5317d33e9, type: 3}
+  - currentTarget: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

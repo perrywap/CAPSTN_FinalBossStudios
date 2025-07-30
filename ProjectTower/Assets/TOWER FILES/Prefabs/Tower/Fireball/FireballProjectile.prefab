@@ -113,3 +113,4 @@ MonoBehaviour:
   - {fileID: -1070102584, guid: 38d5bff29744961458d6df7056485082, type: 3}
   - {fileID: -1958835541, guid: 38d5bff29744961458d6df7056485082, type: 3}
   animationSpeed: 0.1
+  fireSFX: {fileID: 8300000, guid: 1fa47aca6be9dfd4481276183892a154, type: 3}
