@@ -11,13 +11,18 @@ public class FrostTower : Tower
 
     [Header("Visual References")]
     [SerializeField] private GameObject frostMageObject;
+    [SerializeField] private Transform hpBarComponent;
 
     private Vector3 frostMageOriginalScale;
+    private Vector3 hpBarOriginalScale;
 
     private void Start()
     {
         if (frostMageObject != null)
             frostMageOriginalScale = frostMageObject.transform.localScale;
+
+        if (hpBarComponent != null)
+            hpBarOriginalScale = hpBarComponent.localScale;
 
         if (animator != null)
         {
@@ -72,16 +77,26 @@ public class FrostTower : Tower
     {
         if (frostMageObject == null) return;
 
-        Vector3 scale = frostMageOriginalScale;
         bool shouldFlip = targetX > transform.position.x;
 
+        Vector3 scale = frostMageOriginalScale;
         scale.x = Mathf.Abs(scale.x) * (shouldFlip ? -1 : 1);
         frostMageObject.transform.localScale = scale;
+
+        if (hpBarComponent != null)
+        {
+            Vector3 hpScale = hpBarOriginalScale;
+            hpScale.x = Mathf.Abs(hpScale.x) * (shouldFlip ? -1 : 1);
+            hpBarComponent.localScale = hpScale;
+        }
     }
 
     private void ResetToIdleFacingLeft()
     {
         if (frostMageObject != null)
             frostMageObject.transform.localScale = frostMageOriginalScale;
+
+        if (hpBarComponent != null)
+            hpBarComponent.localScale = hpBarOriginalScale;
     }
 }

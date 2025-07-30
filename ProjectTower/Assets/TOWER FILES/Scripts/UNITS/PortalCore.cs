@@ -16,7 +16,8 @@ public class PortalCore : MonoBehaviour
 
     public void GameEnd()
     {
-        isGameEnd = true;   
+        isGameEnd = true;
+        GameManager.Instance.playerWon = true;
         GameManager.Instance.winPanel.SetActive(true);
         GameManager.Instance.isGameFinished = true;
     }

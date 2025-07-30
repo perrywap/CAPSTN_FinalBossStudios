@@ -11,6 +11,7 @@ public class ArcherTower : Tower
     [SerializeField] private GameObject bowObject;
     [SerializeField] private GameObject archerSpriteObject;
     [SerializeField] private Transform bowPivot;
+    [SerializeField] private Transform hpBarComponent;
     [SerializeField] private float bowRotationOffset = 0f;
 
     [Header("Bow Rotation")]
@@ -19,6 +20,7 @@ public class ArcherTower : Tower
 
     private Vector3 archerOriginalScale;
     private Vector3 bowOriginalScale;
+    private Vector3 hpBarOriginalScale;
 
     private Quaternion desiredRotation;
     private bool isRotatingToTarget = false;
@@ -30,6 +32,9 @@ public class ArcherTower : Tower
 
         if (bowPivot != null)
             bowOriginalScale = bowPivot.localScale;
+
+        if (hpBarComponent != null)
+            hpBarOriginalScale = hpBarComponent.localScale;
     }
 
     protected override void Update()
@@ -111,6 +116,13 @@ public class ArcherTower : Tower
             bowPivot.localScale = scale;
             bowPivot.rotation = desiredRotation;
         }
+
+        if (hpBarComponent != null)
+        {
+            Vector3 scale = hpBarOriginalScale;
+            scale.x = Mathf.Abs(scale.x) * (shouldFlip ? -1 : 1);
+            hpBarComponent.localScale = scale;
+        }
     }
 
     private void ResetToIdleFacingLeft()
@@ -123,6 +135,9 @@ public class ArcherTower : Tower
             bowPivot.localScale = bowOriginalScale;
             bowPivot.rotation = Quaternion.identity;
         }
+
+        if (hpBarComponent != null)
+            hpBarComponent.localScale = hpBarOriginalScale;
 
         isRotatingToTarget = false;
     }

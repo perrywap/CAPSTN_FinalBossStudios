@@ -25,6 +25,8 @@ public class PortalCoreNumberBased : PortalCore
 
         if (unit != null)
         {
+            GameManager.Instance.unitsOnField.Remove(unit.gameObject);
+
             unitsEntered++;
 
             portalTxt.text = $"{unitsEntered}/{unitsRequired}";
