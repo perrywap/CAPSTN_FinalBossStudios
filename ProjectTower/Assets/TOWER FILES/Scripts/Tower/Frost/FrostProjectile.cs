@@ -15,6 +15,9 @@ public class FrostProjectile : Projectile
     [SerializeField] private Sprite[] animationFrames;
     [SerializeField] private float animationSpeed = 0.1f;
 
+    [Header("Audio")]
+    [SerializeField] private AudioClip explodeSFX;
+
     private SpriteRenderer spriteRenderer;
     private Unit target;
 
@@ -25,6 +28,15 @@ public class FrostProjectile : Projectile
         if (animationFrames.Length > 0)
         {
             StartCoroutine(PlayAnimation());
+        }
+
+        if (explodeSFX != null)
+        {
+            AudioController audioController = FindObjectOfType<AudioController>();
+            if (audioController != null)
+            {
+                audioController.PlayAudio(null, explodeSFX);
+            }
         }
     }
 
@@ -43,7 +55,6 @@ public class FrostProjectile : Projectile
         }
 
         Vector3 direction = (target.transform.position - transform.position).normalized;
-
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, angle + 180f);
 
@@ -63,7 +74,6 @@ public class FrostProjectile : Projectile
         }
 
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
-
         foreach (Collider2D hit in hits)
         {
             Unit enemy = hit.GetComponent<Unit>();

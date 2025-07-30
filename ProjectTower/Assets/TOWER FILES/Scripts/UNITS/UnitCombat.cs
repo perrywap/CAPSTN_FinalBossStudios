@@ -16,8 +16,6 @@ public class UnitCombat : MonoBehaviour
 
     private Unit unit;
     private Coroutine attackCoroutine;
-
-    // ?? New: walking sound
     private AudioSource walkingAudioSource;
     private bool isWalkingSoundPlaying = false;
     #endregion

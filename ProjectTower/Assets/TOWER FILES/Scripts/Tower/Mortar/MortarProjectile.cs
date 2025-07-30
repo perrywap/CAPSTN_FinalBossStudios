@@ -8,6 +8,9 @@ public class MortarProjectile : Projectile
     [SerializeField] private float arcHeight = 2f;
     [SerializeField] private GameObject explosionVFXPrefab;
 
+    [Header("Audio")]
+    [SerializeField] private AudioClip launchSound;
+
     private Vector3 startPos;
     private Vector3 targetPos;
     private float timeToTarget = 1f;
@@ -18,6 +21,15 @@ public class MortarProjectile : Projectile
         base.SetTarget(newTarget, dmg);
         startPos = transform.position;
         targetPos = newTarget.transform.position;
+
+        if (launchSound != null)
+        {
+            AudioController ac = FindObjectOfType<AudioController>();
+            if (ac != null)
+            {
+                ac.PlayAudio(null, launchSound);
+            }
+        }
     }
 
     private void Update()
@@ -66,7 +78,6 @@ public class MortarProjectile : Projectile
         float knockbackDuration = 0.25f;
 
         Vector2 knockbackDir = (unit.transform.position - transform.position).normalized;
-
         unit.StartCoroutine(Knockback(unit.transform, knockbackDir, knockbackStrength, knockbackDuration));
     }
 

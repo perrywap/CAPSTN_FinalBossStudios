@@ -12,6 +12,9 @@ public class FireballProjectile : Projectile
     [SerializeField] private Sprite[] animationFrames;
     [SerializeField] private float animationSpeed = 0.1f;
 
+    [Header("Audio")]
+    [SerializeField] private AudioClip fireSFX;
+
     private SpriteRenderer spriteRenderer;
     private Unit target;
 
@@ -22,6 +25,15 @@ public class FireballProjectile : Projectile
         if (animationFrames.Length > 0)
         {
             StartCoroutine(PlayAnimation());
+        }
+
+        if (fireSFX != null)
+        {
+            AudioController audioController = FindObjectOfType<AudioController>();
+            if (audioController != null)
+            {
+                audioController.PlayAudio(null, fireSFX);
+            }
         }
     }
 
@@ -40,7 +52,6 @@ public class FireballProjectile : Projectile
         }
 
         Vector3 direction = (target.transform.position - transform.position).normalized;
-
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, angle + 180f);
 

@@ -4,10 +4,25 @@ public class ArcherProjectile : Projectile
 {
     private Unit target;
 
+    [Header("Audio")]
+    [SerializeField] private AudioClip fireSFX;
+
+    private AudioController audioController;
+
+    private void Start()
+    {
+        audioController = FindObjectOfType<AudioController>();
+    }
+
     public override void SetTarget(Unit newTarget, float dmg)
     {
         base.SetTarget(newTarget, dmg);
         target = newTarget;
+
+        if (fireSFX != null && audioController != null)
+        {
+            audioController.PlayAudio(null, fireSFX);
+        }
 
         if (target != null)
         {

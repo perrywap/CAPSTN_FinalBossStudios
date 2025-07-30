@@ -287,7 +287,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 0f18f26a3ae00bf42b2644b457f83f70, type: 3}
+      - m_Target: {fileID: 571993192}
         m_TargetAssemblyTypeName: 
         m_MethodName: 
         m_Mode: 1
@@ -400,7 +400,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7753233046594746121, guid: 47ff5d980e2d20b4d8b0f35a73e0750b, type: 3}
   m_PrefabInstance: {fileID: 6617199890767896006}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 571993192}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f18f26a3ae00bf42b2644b457f83f70, type: 3}
@@ -444,6 +444,11 @@ RectTransform:
   m_AnchoredPosition: {x: -88.99998, y: 57}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &571993192 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1681236024148969148, guid: 47ff5d980e2d20b4d8b0f35a73e0750b, type: 3}
+  m_PrefabInstance: {fileID: 6617199890767896006}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &631767784 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1124629269295190559, guid: 901e995faca95054b823d70438634595, type: 3}
@@ -2058,6 +2063,10 @@ PrefabInstance:
       propertyPath: sceneButtons.Array.data[0].button
       value: 
       objectReference: {fileID: 189586044}
+    - target: {fileID: 7753233046594746121, guid: 47ff5d980e2d20b4d8b0f35a73e0750b, type: 3}
+      propertyPath: sceneButtons.Array.data[0].sceneName
+      value: LevelSelect
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
