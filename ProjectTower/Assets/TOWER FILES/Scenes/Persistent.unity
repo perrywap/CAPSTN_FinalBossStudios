@@ -895,7 +895,7 @@ MonoBehaviour:
   - {fileID: 2227460828160762685, guid: 5f58a649c86142b4680a20d15aea2d7a, type: 3}
   goldTxt: {fileID: 167862594}
   gold: 0
-  scene: LevelSelect
+  scene: SampleScene
 --- !u!1 &1063697914
 GameObject:
   m_ObjectHideFlags: 0
