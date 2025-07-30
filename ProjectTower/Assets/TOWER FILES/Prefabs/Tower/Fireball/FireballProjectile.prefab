@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  burnDamagePerSecond: 5
+  burnDamagePerSecond: 10
   burnDuration: 2
   burnVFXPrefab: {fileID: 8764043878647920493, guid: b2c69f789b3fcfa4ea109c6442af163d, type: 3}
   animationFrames:

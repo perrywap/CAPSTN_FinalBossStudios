@@ -16,7 +16,7 @@ MonoBehaviour:
   _hp: 100
   _speed: 2
   _damage: 10
-  _attackRange: 1
+  _attackRange: 0.75
   _manaCost: 1
   _spawnCount: 1
   _spawnRate: 1
