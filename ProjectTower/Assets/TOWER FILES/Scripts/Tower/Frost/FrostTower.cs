@@ -23,10 +23,9 @@ public class FrostTower : Tower
         {
             animator.OnCastFrameReached += () =>
             {
-                Unit target = GetNearestTarget();
-                if (target != null)
+                if (currentTarget != null)
                 {
-                    Attack(target);
+                    Attack(currentTarget);
                     fireCooldown = 1f / fireRate;
                 }
             };
@@ -35,14 +34,18 @@ public class FrostTower : Tower
 
     protected override void Update()
     {
-        base.Update();
+        fireCooldown -= Time.deltaTime;
+        RemoveNullTargets();
 
-        Unit target = GetNearestTarget();
+        if (currentTarget == null || Vector2.Distance(transform.position, currentTarget.transform.position) > range + 0.1f)
+        {
+            currentTarget = GetNearestTarget();
+        }
 
-        if (target != null)
+        if (currentTarget != null)
         {
             animator.PlayAttack();
-            FlipMage(target.transform.position.x);
+            FlipMage(currentTarget.transform.position.x);
         }
         else
         {

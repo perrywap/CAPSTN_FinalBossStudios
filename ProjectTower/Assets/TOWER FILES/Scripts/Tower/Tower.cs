@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,24 +14,31 @@ public class Tower : MonoBehaviour
     [SerializeField] private GameObject brokenTowerPrefab;
     [SerializeField] private Transform brokenSpawnPoint;
 
+    [Header("VFX")]
+    [SerializeField] private GameObject deathVFXPrefab;
+
     protected float fireCooldown = 0f;
     public List<Unit> targetsInRange = new List<Unit>();
 
+    public Unit currentTarget;
+
     public float Hp { get { return hp; } }
+    public bool IsDying { get; private set; } = false;
 
     protected virtual void Update()
     {
         fireCooldown -= Time.deltaTime;
         RemoveNullTargets();
 
-        if (targetsInRange.Count > 0 && fireCooldown <= 0f)
+        if (currentTarget == null || Vector2.Distance(transform.position, currentTarget.transform.position) > range + 0.1f)
         {
-            Unit target = GetNearestTarget();
-            if (target != null)
-            {
-                Attack(target);
-                fireCooldown = 1f / fireRate;
-            }
+            currentTarget = GetNearestTarget();
+        }
+
+        if (currentTarget != null && fireCooldown <= 0f)
+        {
+            Attack(currentTarget);
+            fireCooldown = 1f / fireRate;
         }
     }
 
@@ -52,6 +60,11 @@ public class Tower : MonoBehaviour
             if (dist > range + 0.1f)
             {
                 targetsInRange.Remove(unit);
+
+                if (unit == currentTarget)
+                {
+                    currentTarget = null;
+                }
             }
         }
     }
@@ -93,7 +106,23 @@ public class Tower : MonoBehaviour
 
     private void Die()
     {
+        IsDying = true;
+        StartCoroutine(DelayedDestroy());
+    }
+
+    private IEnumerator DelayedDestroy()
+    {
+        Collider2D col = GetComponent<Collider2D>();
+        if (col != null) col.enabled = false;
+
+        yield return new WaitForSeconds(0.5f);
+
         Vector3 spawnPosition = brokenSpawnPoint != null ? brokenSpawnPoint.position : transform.position;
+
+        if (deathVFXPrefab != null)
+        {
+            Instantiate(deathVFXPrefab, spawnPosition, Quaternion.identity);
+        }
 
         if (brokenTowerPrefab != null)
         {

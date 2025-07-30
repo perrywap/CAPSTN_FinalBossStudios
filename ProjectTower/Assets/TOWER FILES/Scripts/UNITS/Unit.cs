@@ -15,7 +15,8 @@ public enum UnitState
 {
     WALKING,
     SEEKING,
-    ATTACKING
+    ATTACKING,
+    DEAD
 }
 
 public class Unit : MonoBehaviour
@@ -91,14 +92,14 @@ public class Unit : MonoBehaviour
         {
             _hp = 0;
             isDead = true;
+            state = UnitState.DEAD;
         }
-
-        
     }
 
     public virtual void Die()
     {
-        if (!isDead) return;
+        if (!isDead)
+            return;
 
         GameManager.Instance.unitsOnField.Remove(this.gameObject);
         Destroy(gameObject);

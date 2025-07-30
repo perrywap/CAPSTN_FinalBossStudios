@@ -217,13 +217,13 @@ MonoBehaviour:
   _hp: 100
   _speed: 2
   _damage: 20
-  _manaCost: 3
+  _manaCost: 1
   _spawnCount: 1
   _type: 0
   state: 0
   unitData: {fileID: 11400000, guid: 770aed65ef16b5f4187f1b71caa90a1c, type: 2}
   AttackSound: {fileID: 8300000, guid: 7b940470b44c32d4490afd3889a16dae, type: 3}
-  WalkingSound: {fileID: 0}
+  isDead: 0
 --- !u!114 &5819234075783235450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1955738a3d5999b4c9f4bdffd11d3005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSpeed: 3
+  attackSpeed: 2
   target: {fileID: 0}
   detectionRangeCollider: {fileID: 8071742867996391360}
   attackRangeCollider: {fileID: 1329221666173362544}
@@ -257,6 +257,7 @@ MonoBehaviour:
   wpManager: {fileID: 0}
   points: []
   pointIndex: 0
+  walkingSound: {fileID: 0}
 --- !u!95 &4140628030929167426
 Animator:
   serializedVersion: 5
@@ -296,6 +297,7 @@ MonoBehaviour:
   isWalking: 0
   isSeeking: 0
   isAttacking: 0
+  isDead: 0
 --- !u!61 &7199970054582346367
 BoxCollider2D:
   m_ObjectHideFlags: 0

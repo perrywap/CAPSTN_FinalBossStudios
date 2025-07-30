@@ -248,12 +248,13 @@ MonoBehaviour:
   _hp: 100
   _speed: 2
   _damage: 20
-  _manaCost: 3
+  _manaCost: 2
   _spawnCount: 1
   _type: 2
   state: 0
   unitData: {fileID: 11400000, guid: 2f161326e693b784cb96f00c5ae100c1, type: 2}
   AttackSound: {fileID: 0}
+  isDead: 0
 --- !u!114 &8297948887635461113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,6 +310,7 @@ MonoBehaviour:
   isWalking: 0
   isSeeking: 0
   isAttacking: 0
+  isDead: 0
 --- !u!61 &300117446204998125
 BoxCollider2D:
   m_ObjectHideFlags: 0

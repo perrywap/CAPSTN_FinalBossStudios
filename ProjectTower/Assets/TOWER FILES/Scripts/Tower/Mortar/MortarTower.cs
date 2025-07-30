@@ -17,7 +17,6 @@ public class MortarTower : Tower
     [SerializeField] private MortarTowerAnimator animator;
 
     private Quaternion currentTargetRotation;
-    private Unit currentTarget;
 
     private void Start()
     {

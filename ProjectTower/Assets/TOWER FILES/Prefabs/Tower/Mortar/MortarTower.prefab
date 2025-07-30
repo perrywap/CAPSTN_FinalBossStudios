@@ -333,11 +333,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 100
   range: 0
-  damage: 15
+  damage: 30
   fireRate: 0.25
   brokenTowerPrefab: {fileID: 3759120037726172696, guid: 32be73e23c4791545a5d84b04bcf3107, type: 3}
   brokenSpawnPoint: {fileID: 4813422588175176451}
+  deathVFXPrefab: {fileID: 2504214343621411470, guid: 3ed0d324122d7b24eaec75c55c74aafc, type: 3}
   targetsInRange: []
+  currentTarget: {fileID: 0}
   mortarPrefab: {fileID: 3615307263840977691, guid: 047c8199f9e957c46b594457ccad2ebc, type: 3}
   firePoint: {fileID: 8648848733291488598}
   minRange: 2.5

@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class FrostProjectile : Projectile
@@ -20,6 +21,9 @@ public class FrostProjectile : Projectile
 
     private SpriteRenderer spriteRenderer;
     private Unit target;
+
+    private static Dictionary<Unit, int> slowStacks = new();
+    private static Dictionary<Unit, float> originalAttackSpeeds = new();
 
     private void Start()
     {
@@ -93,14 +97,44 @@ public class FrostProjectile : Projectile
     {
         if (unit == null) yield break;
 
+        // Slow movement
         float actualSlow = Mathf.Min(slowAmount, unit.Speed);
         unit.Speed -= actualSlow;
+
+        UnitCombat combat = unit.GetComponent<UnitCombat>();
+        if (combat != null)
+        {
+            if (!originalAttackSpeeds.ContainsKey(unit))
+                originalAttackSpeeds[unit] = combat.attackSpeed;
+
+            // Apply stacking slow
+            if (!slowStacks.ContainsKey(unit))
+                slowStacks[unit] = 0;
+
+            slowStacks[unit]++;
+            combat.attackSpeed = originalAttackSpeeds[unit] + slowStacks[unit] * slowAmount;
+        }
 
         yield return new WaitForSeconds(slowDuration);
 
         if (unit != null)
-        {
             unit.Speed += actualSlow;
+
+        if (combat != null && slowStacks.ContainsKey(unit))
+        {
+            slowStacks[unit]--;
+
+            if (slowStacks[unit] > 0)
+            {
+                combat.attackSpeed = originalAttackSpeeds[unit] + slowStacks[unit] * slowAmount;
+            }
+            else
+            {
+                // Reset fully when no more slows active
+                combat.attackSpeed = originalAttackSpeeds[unit];
+                slowStacks.Remove(unit);
+                originalAttackSpeeds.Remove(unit);
+            }
         }
     }
 

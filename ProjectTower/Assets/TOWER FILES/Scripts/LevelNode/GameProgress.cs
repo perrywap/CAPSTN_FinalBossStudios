@@ -7,6 +7,7 @@ public class GameProgress : MonoBehaviour
     public static GameProgress Instance;
 
     public HashSet<string> unlockedLevels = new HashSet<string>();
+    public HashSet<string> completedLevels = new HashSet<string>();
     private int currentTier = 1;
 
     private void Awake()
@@ -60,5 +61,15 @@ public class GameProgress : MonoBehaviour
             }
         }
         return -1;
+    }
+
+    public void MarkLevelCompleted(string levelName)
+    {
+        completedLevels.Add(levelName);
+    }
+
+    public bool IsCompleted(string levelName)
+    {
+        return completedLevels.Contains(levelName);
     }
 }

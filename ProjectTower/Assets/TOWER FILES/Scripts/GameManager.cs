@@ -50,6 +50,16 @@ public class GameManager : MonoBehaviour
         cardsOnHandCount = cardsOnHand.Count;
         unitsOnFieldCount = unitsOnField.Count;
 
+        if (!isGameFinished && cardsOnHandCount == 0 && unitsOnFieldCount == 0)
+        {
+            StartCoroutine(DelayedLoseCheck());
+        }
+    }
+
+    private IEnumerator DelayedLoseCheck()
+    {
+        yield return new WaitForSeconds(2.0f);
+
         if (cardsOnHand.Count == 0 && unitsOnField.Count == 0)
         {
             losePanel.SetActive(true);
@@ -79,11 +89,14 @@ public class GameManager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(regenRate);
-
             if (currentMana < maxMana)
             {
+                yield return new WaitForSeconds(regenRate);
                 currentMana += regenAmount;
+            }
+            else
+            {
+                yield return null;
             }
         }
     }
