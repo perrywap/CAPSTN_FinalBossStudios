@@ -171,8 +171,22 @@ MonoBehaviour:
   range: 5
   damage: 1
   fireRate: 1
+  brokenTowerPrefab: {fileID: 0}
+  brokenSpawnPoint: {fileID: 0}
+  deathVFXPrefab: {fileID: 0}
+  deathSFX: {fileID: 8300000, guid: 93a740f08d4e6814aa8baac5317d33e9, type: 3}
+  targetsInRange: []
+  currentTarget: {fileID: 0}
   arrowPrefab: {fileID: 3615307263840977691, guid: d6476106262107b4f96e4b0ebcb97471, type: 3}
   firePoint: {fileID: 5793854217910498250}
+  idleAnimator: {fileID: 0}
+  bowObject: {fileID: 0}
+  archerSpriteObject: {fileID: 0}
+  bowPivot: {fileID: 0}
+  hpBarComponent: {fileID: 0}
+  bowRotationOffset: 0
+  rotationSpeed: 720
+  angleThreshold: 2
 --- !u!1 &6169018714273603152
 GameObject:
   m_ObjectHideFlags: 0
