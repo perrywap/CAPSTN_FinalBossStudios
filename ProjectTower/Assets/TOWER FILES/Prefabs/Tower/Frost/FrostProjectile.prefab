@@ -109,3 +109,4 @@ MonoBehaviour:
   - {fileID: -719901591, guid: c349ded82b8fef24e998eb904ead74c6, type: 3}
   - {fileID: -318978651, guid: c349ded82b8fef24e998eb904ead74c6, type: 3}
   animationSpeed: 0.2
+  explodeSFX: {fileID: 8300000, guid: 265b8ce3c29218049a9c6f20086a57c2, type: 3}
