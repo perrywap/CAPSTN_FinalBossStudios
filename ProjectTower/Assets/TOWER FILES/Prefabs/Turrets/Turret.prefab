@@ -335,3 +335,9 @@ MonoBehaviour:
   range: 3
   damage: 1
   fireRate: 1
+  brokenTowerPrefab: {fileID: 0}
+  brokenSpawnPoint: {fileID: 0}
+  deathVFXPrefab: {fileID: 0}
+  deathSFX: {fileID: 8300000, guid: 93a740f08d4e6814aa8baac5317d33e9, type: 3}
+  targetsInRange: []
+  currentTarget: {fileID: 0}

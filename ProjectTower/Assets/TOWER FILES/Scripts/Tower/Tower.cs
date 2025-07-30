@@ -17,6 +17,9 @@ public class Tower : MonoBehaviour
     [Header("VFX")]
     [SerializeField] private GameObject deathVFXPrefab;
 
+    [Header("Audio")]
+    [SerializeField] private AudioClip deathSFX;
+
     protected float fireCooldown = 0f;
     public List<Unit> targetsInRange = new List<Unit>();
 
@@ -101,6 +104,7 @@ public class Tower : MonoBehaviour
             hp = 0f;
             Die();
         }
+
         this.gameObject.GetComponentInChildren<HpBar>().PopHpBar();
     }
 
@@ -114,6 +118,15 @@ public class Tower : MonoBehaviour
     {
         Collider2D col = GetComponent<Collider2D>();
         if (col != null) col.enabled = false;
+
+        if (deathSFX != null)
+        {
+            AudioController audioController = FindObjectOfType<AudioController>();
+            if (audioController != null)
+            {
+                audioController.PlayAudio(null, deathSFX);
+            }
+        }
 
         yield return new WaitForSeconds(0.5f);
 
@@ -134,7 +147,6 @@ public class Tower : MonoBehaviour
 
     public virtual void Attack(Unit target)
     {
-
     }
 
     protected virtual void OnDrawGizmosSelected()

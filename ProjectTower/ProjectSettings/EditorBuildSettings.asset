@@ -131,4 +131,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/TOWER FILES/Scenes/ForTestMerchant.unity
     guid: 627a8f4d3fc0741458f4e6f30c363813
+  - enabled: 1
+    path: Assets/TOWER FILES/Scenes/Credits.unity
+    guid: 184c488b740a1924aa8159ac7f3b3198
   m_configObjects: {}
