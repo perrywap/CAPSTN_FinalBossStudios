@@ -47,12 +47,15 @@ public class UnitCombat : MonoBehaviour
     {
         attackRangeCollider.radius = unit.AttackRange;
 
-        if (unit.State == UnitState.SEEKING)
+        if (target == null || (currentTargetTower != null && currentTargetTower.IsDying))
         {
-
-            Seek();
+            TryPickNewTarget();
         }
 
+        if (unit.State == UnitState.SEEKING)
+        {
+            Seek();
+        }
     }
     #endregion
 
@@ -95,6 +98,50 @@ public class UnitCombat : MonoBehaviour
                 audioController.PlayAudio(null, attackSound);
             }
         }
+    }
+
+    private void TryPickNewTarget()
+    {
+        detectionRangeTrigger.RemoveNullTowers();
+
+        Tower newTarget = null;
+        float shortestDist = Mathf.Infinity;
+
+        foreach (Tower tower in detectionRangeTrigger.GetCurrentTowers())
+        {
+            if (tower == null || tower.IsDying) continue;
+
+            float dist = Vector2.Distance(transform.position, tower.transform.position);
+            if (dist < shortestDist)
+            {
+                shortestDist = dist;
+                newTarget = tower;
+            }
+        }
+
+        if (newTarget != null)
+        {
+            target = newTarget.transform;
+            unit.State = UnitState.SEEKING;
+
+            float attackRange = unit.AttackRange;
+            if (Vector2.Distance(transform.position, newTarget.transform.position) <= attackRange)
+            {
+                OnAttackRangeEnter(newTarget);
+            }
+        }
+        else
+        {
+            target = null;
+            currentTargetTower = null;
+            unit.State = UnitState.WALKING;
+        }
+    }
+
+    public virtual void HandleDeath()
+    {
+        GameManager.Instance.unitsOnField.Remove(this.gameObject);
+        Destroy(this.gameObject);
     }
     #endregion
 

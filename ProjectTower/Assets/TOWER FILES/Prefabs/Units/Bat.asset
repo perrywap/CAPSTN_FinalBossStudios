@@ -15,7 +15,7 @@ MonoBehaviour:
   _name: Bat
   _hp: 100
   _speed: 3
-  _damage: 1
+  _damage: 0
   _attackRange: 1
   _manaCost: 1
   _spawnCount: 1

@@ -16,10 +16,34 @@ public class MortarTower : Tower
     [Header("Animation")]
     [SerializeField] private MortarTowerAnimator animator;
 
+    [SerializeField] private Transform hpBarComponent;
+
     private Quaternion currentTargetRotation;
+    private Vector3 hpBarWorldOffset;
+
+    private void Awake()
+    {
+        Transform baseTransform = transform.Find("Base");
+        if (baseTransform != null)
+        {
+            TowerHitboxRelay relay = baseTransform.GetComponent<TowerHitboxRelay>();
+            if (relay != null)
+            {
+                relay.GetType().GetField("targetTower", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
+                     .SetValue(relay, this);
+            }
+        }
+    }
 
     private void Start()
     {
+        if (hpBarComponent != null)
+        {
+            hpBarWorldOffset = hpBarComponent.position - transform.position;
+
+            hpBarComponent.SetParent(transform);
+        }
+
         if (animator != null)
         {
             animator.OnFireFrameReached += () =>
@@ -58,6 +82,8 @@ public class MortarTower : Tower
                 animator?.StopAnimation();
             }
         }
+
+        MaintainHpBarPosition();
     }
 
     public override void Attack(Unit target)
@@ -120,6 +146,15 @@ public class MortarTower : Tower
             idleRotation,
             rotationSpeed * Time.deltaTime
         );
+    }
+
+    private void MaintainHpBarPosition()
+    {
+        if (hpBarComponent != null)
+        {
+            hpBarComponent.position = transform.position + hpBarWorldOffset;
+            hpBarComponent.rotation = Quaternion.identity;
+        }
     }
 
     protected override void OnDrawGizmosSelected()

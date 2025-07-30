@@ -344,7 +344,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3278613408311749845, guid: 71fe6af9f8c14b4488524921eb481463, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 3278613408311749845, guid: 71fe6af9f8c14b4488524921eb481463, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7240,7 +7240,7 @@ PrefabInstance:
       objectReference: {fileID: 1762907441}
     - target: {fileID: 759544938162381740, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
       propertyPath: goldRewardAmount
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1002252852925640752, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target

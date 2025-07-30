@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Slime
   m_EditorClassIdentifier: 
   _name: Slime
-  _hp: 150
+  _hp: 100
   _speed: 2
   _damage: 100
-  _attackRange: 5
+  _attackRange: 3.5
   _manaCost: 3
   _spawnCount: 1
   _spawnRate: 1

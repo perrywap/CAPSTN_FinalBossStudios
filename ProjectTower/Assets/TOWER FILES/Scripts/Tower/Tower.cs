@@ -115,7 +115,7 @@ public class Tower : MonoBehaviour
         Collider2D col = GetComponent<Collider2D>();
         if (col != null) col.enabled = false;
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.3f);
 
         Vector3 spawnPosition = brokenSpawnPoint != null ? brokenSpawnPoint.position : transform.position;
 
