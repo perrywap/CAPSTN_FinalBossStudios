@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Flyer
   m_EditorClassIdentifier: 
   _name: Flying
-  _hp: 150
-  _speed: 2.5
-  _damage: 25
+  _hp: 100
+  _speed: 2
+  _damage: 20
   _attackRange: 1.25
   _manaCost: 2
   _spawnCount: 1

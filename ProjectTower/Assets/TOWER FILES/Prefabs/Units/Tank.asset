@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tank
   m_EditorClassIdentifier: 
   _name: Heavy
-  _hp: 350
+  _hp: 300
   _speed: 1
   _damage: 10
   _attackRange: 1
