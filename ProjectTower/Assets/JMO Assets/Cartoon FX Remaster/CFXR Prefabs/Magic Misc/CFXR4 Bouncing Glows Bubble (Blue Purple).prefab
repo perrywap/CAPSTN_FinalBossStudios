@@ -5154,7 +5154,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.05
+      scalar: 0.04
       minScalar: 0.1
       maxCurve:
         serializedVersion: 2
@@ -9843,8 +9843,8 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.54337513, g: 0.3035605, b: 1, a: 1}
-  m_Intensity: 11.857569
+  m_Color: {r: 0.56824756, g: 0.29949462, b: 1, a: 1}
+  m_Intensity: 9.421609
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
