@@ -104,6 +104,9 @@ public class UnitCombat : MonoBehaviour
     {
         detectionRangeTrigger.RemoveNullTowers();
 
+        if (currentTargetTower != null && currentTargetTower.IsDying)
+            return;
+
         Tower newTarget = null;
         float shortestDist = Mathf.Infinity;
 
@@ -140,8 +143,16 @@ public class UnitCombat : MonoBehaviour
 
     public virtual void HandleDeath()
     {
-        GameManager.Instance.unitsOnField.Remove(this.gameObject);
-        Destroy(this.gameObject);
+        Animator anim = GetComponent<Animator>();
+        if (anim != null)
+        {
+            anim.SetTrigger("Die");
+        }
+        else
+        {
+            GameManager.Instance.unitsOnField.Remove(this.gameObject);
+            Destroy(this.gameObject);
+        }
     }
     #endregion
 
