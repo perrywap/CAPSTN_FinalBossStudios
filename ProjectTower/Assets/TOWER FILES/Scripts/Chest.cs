@@ -16,8 +16,10 @@ public class Chest : MonoBehaviour
     public void OpenChest()
     {
 
-        Debug.Log("SHould open chest");
+        Debug.Log("Should open chest");
         this.GetComponent<Animator>().SetTrigger("Open");
+
+        StartCoroutine(OnRewardReceived());
     }
 
     public void SpawnCard()
@@ -36,9 +38,48 @@ public class Chest : MonoBehaviour
         }
     }
 
-    public IEnumerator OnRewardReceived()
+    private IEnumerator OnRewardReceived()
     {
-        yield return new WaitForSecondsRealtime(2f);
-        Destroy(this.gameObject);
+        if (LevelNode.LastClickedNode != null)
+        {
+            var levelName = LevelNode.LastClickedNode.levelSceneName;
+
+            GameProgress.Instance.MarkLevelCompleted(levelName);
+
+            if (LevelNode.LastClickedNode.nextLevels != null)
+            {
+                foreach (var level in LevelNode.LastClickedNode.nextLevels)
+                {
+                    GameProgress.Instance.UnlockLevel(level);
+                }
+            }
+
+            LevelNode[] allNodes = FindObjectsOfType<LevelNode>();
+            foreach (var node in allNodes)
+            {
+                node.isUnlocked = GameProgress.Instance.IsUnlocked(node.levelSceneName);
+                bool isCompleted = GameProgress.Instance.IsCompleted(node.levelSceneName);
+
+                if (isCompleted && node.completedSprite != null)
+                {
+                    node.GetComponent<SpriteRenderer>().sprite = node.completedSprite;
+                }
+
+                foreach (Transform child in node.transform)
+                {
+                    if (child.GetComponent<ParticleSystem>())
+                    {
+                        Destroy(child.gameObject);
+                    }
+                }
+
+                if (node.isUnlocked && !isCompleted && node.unlockedVFXPrefab != null)
+                {
+                    Instantiate(node.unlockedVFXPrefab, node.transform.position, Quaternion.identity, node.transform);
+                }
+            }
+        }
+        yield return new WaitForSeconds(4f);
+        UILevelOverlayManager.Instance.Hide();
     }
 }
