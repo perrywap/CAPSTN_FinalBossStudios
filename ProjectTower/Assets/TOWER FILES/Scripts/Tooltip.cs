@@ -23,7 +23,7 @@ public class Tooltip : MonoBehaviour
         }
     }
 
-    private void ToggleTooltip()
+    public void ToggleTooltip()
     {
         if (tooltipPanel != null)
         {

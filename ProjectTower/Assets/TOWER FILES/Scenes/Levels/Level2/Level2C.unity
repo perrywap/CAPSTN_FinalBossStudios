@@ -935,7 +935,7 @@ PrefabInstance:
     - target: {fileID: 7753233046594746121, guid: 47ff5d980e2d20b4d8b0f35a73e0750b, type: 3}
       propertyPath: _panel
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 622174350}
     - target: {fileID: 7753233046594746121, guid: 47ff5d980e2d20b4d8b0f35a73e0750b, type: 3}
       propertyPath: exitButton
       value: 
@@ -969,6 +969,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47ff5d980e2d20b4d8b0f35a73e0750b, type: 3}
+--- !u!114 &246597364 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7753233046594746121, guid: 47ff5d980e2d20b4d8b0f35a73e0750b, type: 3}
+  m_PrefabInstance: {fileID: 246597363}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f18f26a3ae00bf42b2644b457f83f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &247548134
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,6 +1413,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
+--- !u!1 &622174350 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1512107365731624284, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
+  m_PrefabInstance: {fileID: 1668147747}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &659587112 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3045561539784116379, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
@@ -2289,7 +2305,7 @@ PrefabInstance:
     - target: {fileID: 5579247894633068230, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 246597364}
     - target: {fileID: 5579247894633068230, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ClosePanelOnPress
@@ -4486,8 +4502,8 @@ Tilemap:
   - first: {x: -3, y: -2, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 20
-      m_TileSpriteIndex: 20
+      m_TileIndex: 24
+      m_TileSpriteIndex: 24
       m_TileMatrixIndex: 0
       m_TileColorIndex: 2
       m_TileObjectToInstantiateIndex: 65535
@@ -7405,7 +7421,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: ac8b069704544fd44b334374afaa1c3f, type: 2}
   - m_RefCount: 7
     m_Data: {fileID: 11400000, guid: b0d6cc4a91b1d2641bfc28d7b2514bd3, type: 2}
-  - m_RefCount: 15
+  - m_RefCount: 14
     m_Data: {fileID: 11400000, guid: 46e4bc773b2b4674b905fdfae10d6724, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 4d460bf4b9577214bb2bd16c0d4d06ee, type: 2}
@@ -7413,6 +7429,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 9b6158a8e9040a24ab4c347b67165ebe, type: 2}
   - m_RefCount: 8
     m_Data: {fileID: 11400000, guid: e2833ecdec42c1945b6ab51db7753cb7, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: cf48dcb8e5eb35c4e82382cafdeb5c7f, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 8
     m_Data: {fileID: -1517461542, guid: 6155c358e031d7e4a9209b05261e76de, type: 3}
@@ -7454,7 +7472,7 @@ Tilemap:
     m_Data: {fileID: -244960227, guid: 6155c358e031d7e4a9209b05261e76de, type: 3}
   - m_RefCount: 7
     m_Data: {fileID: -603525119, guid: 6155c358e031d7e4a9209b05261e76de, type: 3}
-  - m_RefCount: 15
+  - m_RefCount: 14
     m_Data: {fileID: 663725592, guid: 6155c358e031d7e4a9209b05261e76de, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -1033350823, guid: 6155c358e031d7e4a9209b05261e76de, type: 3}
@@ -7462,6 +7480,8 @@ Tilemap:
     m_Data: {fileID: 2096231236, guid: 6155c358e031d7e4a9209b05261e76de, type: 3}
   - m_RefCount: 8
     m_Data: {fileID: -1537416314, guid: 6155c358e031d7e4a9209b05261e76de, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 1195163318, guid: 6155c358e031d7e4a9209b05261e76de, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 480
     m_Data:
