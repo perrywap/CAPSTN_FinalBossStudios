@@ -2659,6 +2659,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7546009532920635721, guid: e95c8147bb40b894597af4e23ba1b592, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546009532920635721, guid: e95c8147bb40b894597af4e23ba1b592, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546009532920635721, guid: e95c8147bb40b894597af4e23ba1b592, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 881
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546009532920635721, guid: e95c8147bb40b894597af4e23ba1b592, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 513
+      objectReference: {fileID: 0}
     - target: {fileID: 7925618532174084613, guid: e95c8147bb40b894597af4e23ba1b592, type: 3}
       propertyPath: m_Name
       value: ToolTip
