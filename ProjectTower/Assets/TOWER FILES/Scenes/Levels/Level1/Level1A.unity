@@ -8598,10 +8598,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 424751894}
-    - target: {fileID: 4168113104264310269, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4653733788028454485, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -8686,10 +8682,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1749969856}
-    - target: {fileID: 6543924541203273233, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
-      propertyPath: tooltipPanel
-      value: 
-      objectReference: {fileID: 1927530019}
     - target: {fileID: 8371841032045206069, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -8740,11 +8732,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1927530019 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4168113104264310269, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
-  m_PrefabInstance: {fileID: 1927530015}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1927530020 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3987365478175734777, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
