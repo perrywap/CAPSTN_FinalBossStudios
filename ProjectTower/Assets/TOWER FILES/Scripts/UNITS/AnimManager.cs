@@ -24,6 +24,7 @@ public class AnimManager : MonoBehaviour
         isAttacking = (state == UnitState.ATTACKING) ? true : false;
         isDead = (state == UnitState.DEAD) ? true : false;
 
+        animator.SetBool("isWalking", isSeeking);
         animator.SetBool("isWalking", isWalking);
         animator.SetBool("isAttacking", isAttacking);
         
