@@ -552,54 +552,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 101102406054993868, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
-      propertyPath: isClickable
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 716732809538503939, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1301516954}
-    - target: {fileID: 716732809538503939, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: QuitToMainMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 759544938162381740, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
-      propertyPath: rewardsPanelGO
-      value: 
-      objectReference: {fileID: 772691376}
-    - target: {fileID: 759544938162381740, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
-      propertyPath: goldRewardAmount
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1002252852925640752, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2717603480754103743, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3045561539784116379, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3544121782441185060, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
-      propertyPath: summonPanel
-      value: 
-      objectReference: {fileID: 1693269695}
     - target: {fileID: 3762599971828025230, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1301516954}
-    - target: {fileID: 3762599971828025230, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RetryLevel
-      objectReference: {fileID: 0}
-    - target: {fileID: 3987365478175734777, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4653733788028454485, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -680,34 +640,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5579247894633068230, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5579247894633068230, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ClosePanelOnPress
-      objectReference: {fileID: 0}
-    - target: {fileID: 6091589183814150892, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6144211801282468061, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6144211801282468061, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6144211801282468061, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6144211801282468061, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8371841032045206069, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -716,33 +648,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1301516954}
-    - target: {fileID: 8431169472226006419, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ReturnToLevelSelect
-      objectReference: {fileID: 0}
     - target: {fileID: 8916957551768512714, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
-    - target: {fileID: 8916957551768512714, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 1498966595013464867, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
-    - {fileID: 4272140539889744821, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
 --- !u!1 &772691375 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7570237625162885522, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
-  m_PrefabInstance: {fileID: 772691374}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &772691376 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1661020458165277203, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
   m_PrefabInstance: {fileID: 772691374}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &772691377 stripped
@@ -772,6 +689,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &843079956 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1512107365731624284, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
+  m_PrefabInstance: {fileID: 772691374}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &892239702
 GameObject:
   m_ObjectHideFlags: 0
@@ -3024,35 +2946,11 @@ PrefabInstance:
     - target: {fileID: 7753233046594746121, guid: 47ff5d980e2d20b4d8b0f35a73e0750b, type: 3}
       propertyPath: _panel
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7753233046594746121, guid: 47ff5d980e2d20b4d8b0f35a73e0750b, type: 3}
-      propertyPath: exitButton
-      value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 843079956}
     - target: {fileID: 7753233046594746121, guid: 47ff5d980e2d20b4d8b0f35a73e0750b, type: 3}
       propertyPath: _audioSource
       value: 
       objectReference: {fileID: 1263632313}
-    - target: {fileID: 7753233046594746121, guid: 47ff5d980e2d20b4d8b0f35a73e0750b, type: 3}
-      propertyPath: _panelOpenSound
-      value: 
-      objectReference: {fileID: 8300000, guid: c263de09d604eac49b00cd2c8ad0a46c, type: 3}
-    - target: {fileID: 7753233046594746121, guid: 47ff5d980e2d20b4d8b0f35a73e0750b, type: 3}
-      propertyPath: _panelCloseSound
-      value: 
-      objectReference: {fileID: 8300000, guid: c263de09d604eac49b00cd2c8ad0a46c, type: 3}
-    - target: {fileID: 7753233046594746121, guid: 47ff5d980e2d20b4d8b0f35a73e0750b, type: 3}
-      propertyPath: _buttonClickSound
-      value: 
-      objectReference: {fileID: 8300000, guid: c263de09d604eac49b00cd2c8ad0a46c, type: 3}
-    - target: {fileID: 7753233046594746121, guid: 47ff5d980e2d20b4d8b0f35a73e0750b, type: 3}
-      propertyPath: sceneButtons.Array.data[0].button
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7753233046594746121, guid: 47ff5d980e2d20b4d8b0f35a73e0750b, type: 3}
-      propertyPath: sceneButtons.Array.data[0].sceneName
-      value: MainMenu
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8256,11 +8154,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 709489923}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1693269695 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6951554762006052772, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
-  m_PrefabInstance: {fileID: 772691374}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1805786997
 GameObject:
   m_ObjectHideFlags: 0

@@ -8594,14 +8594,14 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 348852137}
-    - target: {fileID: 3544121782441185060, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
-      propertyPath: summonPanel
-      value: 
-      objectReference: {fileID: 1927530019}
     - target: {fileID: 3762599971828025230, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 424751894}
+    - target: {fileID: 4168113104264310269, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4653733788028454485, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -8686,6 +8686,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1749969856}
+    - target: {fileID: 6543924541203273233, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
+      propertyPath: tooltipPanel
+      value: 
+      objectReference: {fileID: 1927530019}
     - target: {fileID: 8371841032045206069, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -8738,7 +8742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!1 &1927530019 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 6951554762006052772, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4168113104264310269, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
   m_PrefabInstance: {fileID: 1927530015}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1927530020 stripped

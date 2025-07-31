@@ -2097,6 +2097,7 @@ GameObject:
   - component: {fileID: 3346736608575528259}
   - component: {fileID: 4037596361001915409}
   - component: {fileID: 3544121782441185060}
+  - component: {fileID: 6543924541203273233}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -2206,8 +2207,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2e687bece8c47b418432f75aacf4eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  summonPanel: {fileID: 0}
+  summonPanel: {fileID: 6951554762006052772}
   fader: {fileID: 7276866489615591508}
+--- !u!114 &6543924541203273233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8916957551768512714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d1e2a21dd47a3d44b1012845eed10cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tooltipPanel: {fileID: 4168113104264310269}
+  toggleKey: 116
 --- !u!1 &9133454708478689357
 GameObject:
   m_ObjectHideFlags: 0
@@ -2384,6 +2399,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2b3fce81e0104b41be5485c2a8e06cf, type: 3}
+--- !u!1 &4168113104264310269 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2887909140327040020, guid: b2b3fce81e0104b41be5485c2a8e06cf, type: 3}
+  m_PrefabInstance: {fileID: 1282389853872269801}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4568882527235362916 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3363090185524181389, guid: b2b3fce81e0104b41be5485c2a8e06cf, type: 3}
@@ -2531,6 +2551,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4653733788028454485}
     m_Modifications:
+    - target: {fileID: 1402056052977409817, guid: e95c8147bb40b894597af4e23ba1b592, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402056052977409817, guid: e95c8147bb40b894597af4e23ba1b592, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402056052977409817, guid: e95c8147bb40b894597af4e23ba1b592, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6543924541203273233}
+    - target: {fileID: 1402056052977409817, guid: e95c8147bb40b894597af4e23ba1b592, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402056052977409817, guid: e95c8147bb40b894597af4e23ba1b592, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleTooltip
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402056052977409817, guid: e95c8147bb40b894597af4e23ba1b592, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Tooltip, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402056052977409817, guid: e95c8147bb40b894597af4e23ba1b592, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6978210663809294398, guid: e95c8147bb40b894597af4e23ba1b592, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

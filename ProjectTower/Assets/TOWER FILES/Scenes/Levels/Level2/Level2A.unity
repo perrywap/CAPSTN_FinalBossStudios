@@ -259,6 +259,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c83fb921c69507e4987adac6fe5e42b5, type: 3}
+--- !u!1 &242679278 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1512107365731624284, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
+  m_PrefabInstance: {fileID: 1569855291}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &375881458
 GameObject:
   m_ObjectHideFlags: 0
@@ -5616,7 +5621,7 @@ PrefabInstance:
     - target: {fileID: 7753233046594746121, guid: 47ff5d980e2d20b4d8b0f35a73e0750b, type: 3}
       propertyPath: _panel
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 242679278}
     - target: {fileID: 7753233046594746121, guid: 47ff5d980e2d20b4d8b0f35a73e0750b, type: 3}
       propertyPath: exitButton
       value: 
