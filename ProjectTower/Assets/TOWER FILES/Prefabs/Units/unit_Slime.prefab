@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: 
-  _hp: 150
+  _hp: 100
   _speed: 2
   _damage: 100
   _manaCost: 3
@@ -195,6 +195,7 @@ MonoBehaviour:
   detectionRangeTrigger: {fileID: 2317310989183793553}
   attackRangeTrigger: {fileID: 5084642087128919403}
   targets: []
+  explosionVFXPrefab: {fileID: 2708598583397607911, guid: 6398d43fe79ea0140913dc5530c646af, type: 3}
 --- !u!114 &2323240055322125650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,7 +406,7 @@ RectTransform:
   m_GameObject: {fileID: 3642002928560735931}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6428825295292605097}
@@ -461,7 +462,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &2263641971485462167
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -93,6 +93,8 @@ public class Unit : MonoBehaviour
             _hp = 0;
             isDead = true;
             state = UnitState.DEAD;
+
+            GetComponent<UnitCombat>()?.HandleDeath();
         }
     }
 

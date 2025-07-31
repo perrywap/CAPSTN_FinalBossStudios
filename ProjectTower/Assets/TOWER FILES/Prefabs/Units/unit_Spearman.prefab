@@ -216,7 +216,7 @@ MonoBehaviour:
   _name: 
   _hp: 100
   _speed: 2
-  _damage: 20
+  _damage: 10
   _manaCost: 1
   _spawnCount: 1
   _type: 0
