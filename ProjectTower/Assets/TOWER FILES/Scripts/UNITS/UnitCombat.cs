@@ -178,10 +178,7 @@ public class UnitCombat : MonoBehaviour
 
     public virtual void OnAttackRangeEnter(Tower col)
     {
-        if (col != null) return;
-
-        if (currentTargetTower != null && currentTargetTower != col)
-            return;
+        if (col != null)
         {
             unit.State = UnitState.ATTACKING;
 
