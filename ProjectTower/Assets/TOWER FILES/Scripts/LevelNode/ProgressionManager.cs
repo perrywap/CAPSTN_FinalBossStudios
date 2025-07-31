@@ -44,11 +44,11 @@ public class ProgressionManager : MonoBehaviour
         SceneManager.LoadScene("LevelSelect");
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            ProgressionManager.Instance.WinLevel();
-        }
-    }
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.W))
+    //    {
+    //        ProgressionManager.Instance.WinLevel();
+    //    }
+    //}
 }
