@@ -19,12 +19,11 @@ public class AnimManager : MonoBehaviour
     {
         state = unit.State;
 
-        isWalking = (state == UnitState.WALKING) ? true : false;
-        isSeeking = (state == UnitState.SEEKING) ? true : false;
+        isWalking = (state == UnitState.WALKING || (state == UnitState.SEEKING)) ? true : false;
+        //isSeeking = (state == UnitState.SEEKING) ? true : false;
         isAttacking = (state == UnitState.ATTACKING) ? true : false;
         isDead = (state == UnitState.DEAD) ? true : false;
 
-        animator.SetBool("isWalking", isSeeking);
         animator.SetBool("isWalking", isWalking);
         animator.SetBool("isAttacking", isAttacking);
         

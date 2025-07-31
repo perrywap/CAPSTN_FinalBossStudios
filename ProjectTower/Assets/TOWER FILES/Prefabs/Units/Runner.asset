@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Runner
   m_EditorClassIdentifier: 
   _name: Runner
-  _hp: 100
+  _hp: 60
   _speed: 3
   _damage: 0
   _attackRange: 1
   _manaCost: 2
-  _spawnCount: 1
+  _spawnCount: 2
   _spawnRate: 1
   _type: 2
   unitSprite: {fileID: 1532928914, guid: e5011615871ddb34e8049c9e7642019f, type: 3}
