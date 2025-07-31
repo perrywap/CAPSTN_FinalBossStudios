@@ -9,8 +9,10 @@ public class FireballTower : Tower
     [Header("Animation")]
     [SerializeField] private FireballTowerAnimator animator;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
+
         if (animator != null)
         {
             animator.OnGlowFrameReached += () =>

@@ -16,8 +16,10 @@ public class FrostTower : Tower
     private Vector3 frostMageOriginalScale;
     private Vector3 hpBarOriginalScale;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
+
         if (frostMageObject != null)
             frostMageOriginalScale = frostMageObject.transform.localScale;
 

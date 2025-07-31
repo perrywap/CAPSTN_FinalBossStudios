@@ -29,6 +29,11 @@ public class AntiAirTower : Tower
         boxCollider = GetComponent<BoxCollider2D>();
     }
 
+    protected override void Start()
+    {
+        base.Start();
+    }
+
     protected override void Update()
     {
         fireCooldown -= Time.deltaTime;
