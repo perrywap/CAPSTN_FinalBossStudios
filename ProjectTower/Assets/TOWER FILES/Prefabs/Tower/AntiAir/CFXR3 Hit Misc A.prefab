@@ -5148,8 +5148,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 14
-      minScalar: 10
+      scalar: 0.4
+      minScalar: 0.2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5583,7 +5583,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     gravitySource: 0
-    maxNumParticles: 50
+    maxNumParticles: 5
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -5959,7 +5959,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 50
+        scalar: 5
         minScalar: 6
         maxCurve:
           serializedVersion: 2
@@ -9852,90 +9852,36 @@ MonoBehaviour:
       m_RotationOrder: 4
     shakesDelay: 0
   animatedLights:
-  - light: {fileID: 1429954232937552485}
+  - light: {fileID: 0}
     loop: 0
-    animateIntensity: 1
-    intensityStart: 4.594794
+    animateIntensity: 0
+    intensityStart: 0
     intensityEnd: 0
-    intensityDuration: 0.4
+    intensityDuration: 0
     intensityCurve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.5
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.08
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.046567023
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
       m_RotationOrder: 0
     perlinIntensity: 0
-    perlinIntensitySpeed: 1
+    perlinIntensitySpeed: 0
     fadeIn: 0
-    fadeInDuration: 0.5
+    fadeInDuration: 0
     fadeOut: 0
-    fadeOutDuration: 0.5
+    fadeOutDuration: 0
     animateRange: 0
-    rangeStart: 8
-    rangeEnd: 4
-    rangeDuration: 0.5
+    rangeStart: 0
+    rangeEnd: 0
+    rangeDuration: 0
     rangeCurve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.25
-        value: 1
-        inSlope: 1.3333333
-        outSlope: 1.3333333
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.046567023
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
       m_RotationOrder: 0
     perlinRange: 0
-    perlinRangeSpeed: 1
+    perlinRangeSpeed: 0
     animateColor: 0
     colorGradient:
       serializedVersion: 2
@@ -9964,7 +9910,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_ColorSpace: -1
+      m_ColorSpace: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     colorDuration: 0
@@ -9975,7 +9921,7 @@ MonoBehaviour:
       m_PostInfinity: 0
       m_RotationOrder: 0
     perlinColor: 0
-    perlinColorSpeed: 1
+    perlinColorSpeed: 0
   fadeOutReference: {fileID: 0}
 --- !u!1 &1429954232937552486
 GameObject:
