@@ -128,7 +128,7 @@ public class Tower : MonoBehaviour
             }
         }
 
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.2f);
 
         Vector3 spawnPosition = brokenSpawnPoint != null ? brokenSpawnPoint.position : transform.position;
 
