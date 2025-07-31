@@ -97,9 +97,11 @@ public class FrostProjectile : Projectile
     {
         if (unit == null) yield break;
 
-        // Slow movement
-        float actualSlow = Mathf.Min(slowAmount, unit.Speed);
-        unit.Speed -= actualSlow;
+        float originalSpeed = unit.Speed;
+        float newSpeed = Mathf.Max(0.2f, originalSpeed - slowAmount);
+        float actualSlow = originalSpeed - newSpeed;
+
+        unit.Speed = newSpeed;
 
         UnitCombat combat = unit.GetComponent<UnitCombat>();
         if (combat != null)
@@ -107,7 +109,6 @@ public class FrostProjectile : Projectile
             if (!originalAttackSpeeds.ContainsKey(unit))
                 originalAttackSpeeds[unit] = combat.attackSpeed;
 
-            // Apply stacking slow
             if (!slowStacks.ContainsKey(unit))
                 slowStacks[unit] = 0;
 
@@ -130,7 +131,6 @@ public class FrostProjectile : Projectile
             }
             else
             {
-                // Reset fully when no more slows active
                 combat.attackSpeed = originalAttackSpeeds[unit];
                 slowStacks.Remove(unit);
                 originalAttackSpeeds.Remove(unit);

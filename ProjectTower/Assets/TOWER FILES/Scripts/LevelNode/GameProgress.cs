@@ -50,7 +50,7 @@ public class GameProgress : MonoBehaviour
         return unlockedLevels.Contains(levelName);
     }
 
-    private int GetLevelTier(string levelName)
+    public int GetLevelTier(string levelName)
     {
         if (levelName.StartsWith("Level"))
         {
