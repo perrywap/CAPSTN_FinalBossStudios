@@ -25,8 +25,10 @@ public class ArcherTower : Tower
     private Quaternion desiredRotation;
     private bool isRotatingToTarget = false;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
+
         if (archerSpriteObject != null)
             archerOriginalScale = archerSpriteObject.transform.localScale;
 
@@ -41,17 +43,15 @@ public class ArcherTower : Tower
     {
         base.Update();
 
-        Unit target = GetNearestTarget();
-
-        if (target != null)
+        if (IsValidTarget(currentTarget))
         {
             idleAnimator.StopIdle();
             bowObject.SetActive(true);
-            RotateBowTowardsSmooth(target);
+            RotateBowTowardsSmooth(currentTarget);
 
             if (!isRotatingToTarget && fireCooldown <= 0f)
             {
-                Attack(target);
+                Attack(currentTarget);
                 fireCooldown = 1f / fireRate;
             }
         }

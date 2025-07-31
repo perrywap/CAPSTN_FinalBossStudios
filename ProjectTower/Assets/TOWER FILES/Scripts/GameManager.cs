@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -105,6 +106,24 @@ public class GameManager : MonoBehaviour
         }
     }
     #endregion
+    public void RetryLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 
+    public void QuitToMainMenu()
+    {
+        if (ProgressionManager.Instance != null)
+            Destroy(ProgressionManager.Instance.gameObject);
 
+        if (GameProgress.Instance != null)
+            Destroy(GameProgress.Instance.gameObject);
+
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void ReturnToLevelSelect()
+    {
+        SceneManager.LoadScene("LevelSelect");
+    }
 }

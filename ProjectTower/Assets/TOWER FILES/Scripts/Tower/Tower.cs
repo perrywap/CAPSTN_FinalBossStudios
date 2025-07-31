@@ -28,12 +28,17 @@ public class Tower : MonoBehaviour
     public float Hp { get { return hp; } }
     public bool IsDying { get; private set; } = false;
 
+    protected virtual void Start()
+    {
+        UpgradeStatsIfHighTier();
+    }
+
     protected virtual void Update()
     {
         fireCooldown -= Time.deltaTime;
         RemoveNullTargets();
 
-        if (currentTarget == null || Vector2.Distance(transform.position, currentTarget.transform.position) > range + 0.1f)
+        if (!IsValidTarget(currentTarget))
         {
             currentTarget = GetNearestTarget();
         }
@@ -75,6 +80,14 @@ public class Tower : MonoBehaviour
     protected void RemoveNullTargets()
     {
         targetsInRange.RemoveAll(u => u == null);
+    }
+
+    protected bool IsValidTarget(Unit target)
+    {
+        if (target == null) return false;
+        if (Vector2.Distance(transform.position, target.transform.position) > range + 0.1f) return false;
+        if (target.State == UnitState.DEAD || target.isDead) return false;
+        return true;
     }
 
     protected Unit GetNearestTarget()
@@ -153,5 +166,22 @@ public class Tower : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
+    }
+
+    private void UpgradeStatsIfHighTier()
+    {
+        string currentSceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+
+        int tier = GameProgress.Instance != null
+            ? GameProgress.Instance.GetLevelTier(currentSceneName)
+            : -1;
+
+        if (tier >= 6)
+        {
+            hp += 20f;
+            damage += 5f;
+
+            Debug.Log($"[Tower] Upgraded stats for level {tier}");
+        }
     }
 }

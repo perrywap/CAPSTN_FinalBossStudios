@@ -18,6 +18,10 @@ public class Spawner : MonoBehaviour, IDropHandler
     {
         if (eventData.pointerDrag != null)
         {
+            Card card = eventData.pointerDrag.GetComponent<Card>();
+
+            if (card.spawned) return;
+
             if (eventData.pointerDrag.GetComponent<Card>().UnitPrefab.
                 GetComponent<Unit>().ManaCost > GameManager.Instance.CurrentMana)
             {

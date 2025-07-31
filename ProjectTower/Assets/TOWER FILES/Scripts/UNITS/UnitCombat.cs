@@ -159,12 +159,16 @@ public class UnitCombat : MonoBehaviour
     #region TRIGGER EVENTS
     public void OnDetectionRangeEnter(Tower col)
     {
-        if (col != null)
+        if (col == null) return;
+
+        if (currentTargetTower == null)
         {
             target = col.transform;
+            currentTargetTower = col;
             unit.State = UnitState.SEEKING;
         }
     }
+
 
     public void OnDetectionRangeExit(Tower col)
     {
@@ -174,7 +178,10 @@ public class UnitCombat : MonoBehaviour
 
     public virtual void OnAttackRangeEnter(Tower col)
     {
-        if (col != null)
+        if (col != null) return;
+
+        if (currentTargetTower != null && currentTargetTower != col)
+            return;
         {
             unit.State = UnitState.ATTACKING;
 
