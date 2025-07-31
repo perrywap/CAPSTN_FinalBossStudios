@@ -681,10 +681,10 @@ PrefabInstance:
     - target: {fileID: 5775143427121731267, guid: 901e995faca95054b823d70438634595, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7753233046594746121, guid: 47ff5d980e2d20b4d8b0f35a73e0750b, type: 3}
     - target: {fileID: 5775143427121731267, guid: 901e995faca95054b823d70438634595, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: ClosePanelOnPress
       objectReference: {fileID: 0}
     - target: {fileID: 6028890396585751041, guid: 901e995faca95054b823d70438634595, type: 3}
       propertyPath: m_Type
