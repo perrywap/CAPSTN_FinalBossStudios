@@ -278,9 +278,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cc55223f38abfa408cce75b30f0ca7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
+  hp: 200
   range: 4.5
-  damage: 20
+  damage: 30
   fireRate: 1
   brokenTowerPrefab: {fileID: 6550416819699816122, guid: ecb16110ae32896408dff6d559458e75, type: 3}
   brokenSpawnPoint: {fileID: 8287684294171919270}

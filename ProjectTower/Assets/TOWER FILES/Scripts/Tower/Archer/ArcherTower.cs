@@ -25,10 +25,8 @@ public class ArcherTower : Tower
     private Quaternion desiredRotation;
     private bool isRotatingToTarget = false;
 
-    protected override void Start()
+    private void Start()
     {
-        base.Start();
-
         if (archerSpriteObject != null)
             archerOriginalScale = archerSpriteObject.transform.localScale;
 

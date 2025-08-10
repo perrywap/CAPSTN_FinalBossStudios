@@ -182,13 +182,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff4e2703d627c2d43a2c5dc88b7b9386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
+  hp: 200
   range: 3
-  damage: 20
+  damage: 25
   fireRate: 1
   brokenTowerPrefab: {fileID: 135304044838293683, guid: 63fb0e8ab57909242a20a1e35cd745af, type: 3}
   brokenSpawnPoint: {fileID: 1321048845712977062}
   deathVFXPrefab: {fileID: 141433446842962269, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+  deathSFX: {fileID: 0}
   targetsInRange: []
   currentTarget: {fileID: 0}
   fireballPrefab: {fileID: 3615307263840977691, guid: e87db399a2c11b34a845a2a74bb58b6c, type: 3}

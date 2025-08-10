@@ -133,11 +133,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: 
-  _hp: 100
-  _speed: 2
+  _hp: 75
+  _speed: 3
   _damage: 0
-  _manaCost: 1
-  _spawnCount: 1
+  _manaCost: 3
+  _spawnCount: 2
   _type: 3
   state: 0
   unitData: {fileID: 11400000, guid: fc2461967aaa39146a7219a1f978539d, type: 2}

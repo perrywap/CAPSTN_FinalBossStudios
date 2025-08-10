@@ -17,8 +17,8 @@ MonoBehaviour:
   _speed: 2
   _damage: 15
   _attackRange: 0.5
-  _manaCost: 1
-  _spawnCount: 1
+  _manaCost: 3
+  _spawnCount: 2
   _spawnRate: 1
   _type: 0
   unitSprite: {fileID: -597507607, guid: 191d034b9ef9a154ab6fe54e17853af7, type: 3}

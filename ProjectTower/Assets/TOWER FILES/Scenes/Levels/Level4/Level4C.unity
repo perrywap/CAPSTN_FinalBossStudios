@@ -7060,11 +7060,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 516620990746400427, guid: 0e738e8cf82a2744d8170e2b36436770, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 516620990746400427, guid: 0e738e8cf82a2744d8170e2b36436770, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 516620990746400427, guid: 0e738e8cf82a2744d8170e2b36436770, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7325,7 +7325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 516620990746400427, guid: 0e738e8cf82a2744d8170e2b36436770, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 516620990746400427, guid: 0e738e8cf82a2744d8170e2b36436770, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7379,14 +7379,6 @@ PrefabInstance:
     - target: {fileID: 772568936923651177, guid: 339dc854f1d267b45b384928dfa75b03, type: 3}
       propertyPath: m_Name
       value: AntiAirTower
-      objectReference: {fileID: 0}
-    - target: {fileID: 8287684294171919270, guid: 339dc854f1d267b45b384928dfa75b03, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8287684294171919270, guid: 339dc854f1d267b45b384928dfa75b03, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8905257182139659812, guid: 339dc854f1d267b45b384928dfa75b03, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7617,9 +7609,9 @@ MonoBehaviour:
   manaImage: {fileID: 56421482}
   manatext: {fileID: 56421479}
   currentMana: 0
-  maxMana: 6
+  maxMana: 10
   regenAmount: 1
-  regenRate: 5
+  regenRate: 8
   winPanel: {fileID: 56421481}
   losePanel: {fileID: 56421483}
   cardsOnHandCount: 0

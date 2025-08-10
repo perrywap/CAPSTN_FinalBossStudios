@@ -424,7 +424,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9165153348550367545, guid: c83fb921c69507e4987adac6fe5e42b5, type: 3}
       propertyPath: unitsRequired
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1039,9 +1039,9 @@ MonoBehaviour:
   manaImage: {fileID: 1762907443}
   manatext: {fileID: 1762907440}
   currentMana: 0
-  maxMana: 5
+  maxMana: 10
   regenAmount: 1
-  regenRate: 5
+  regenRate: 8
   winPanel: {fileID: 1762907442}
   losePanel: {fileID: 1762907444}
   cardsOnHandCount: 0

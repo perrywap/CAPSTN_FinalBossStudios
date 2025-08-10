@@ -291,9 +291,9 @@ MonoBehaviour:
   manaImage: {fileID: 239494806}
   manatext: {fileID: 239494805}
   currentMana: 0
-  maxMana: 8
+  maxMana: 10
   regenAmount: 1
-  regenRate: 5
+  regenRate: 8
   winPanel: {fileID: 239494808}
   losePanel: {fileID: 239494809}
   cardsOnHandCount: 0
@@ -327,7 +327,7 @@ GameObject:
   m_Component:
   - component: {fileID: 58991983}
   m_Layer: 0
-  m_Name: WP10
+  m_Name: WP8
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -655,6 +655,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1405839340710042691, guid: 71fe6af9f8c14b4488524921eb481463, type: 3}
+      propertyPath: hp
+      value: 225
+      objectReference: {fileID: 0}
+    - target: {fileID: 1405839340710042691, guid: 71fe6af9f8c14b4488524921eb481463, type: 3}
+      propertyPath: damage
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 1872622229262136602, guid: 71fe6af9f8c14b4488524921eb481463, type: 3}
       propertyPath: m_Name
       value: MortarTower
@@ -5811,7 +5819,7 @@ GameObject:
   m_Component:
   - component: {fileID: 528942003}
   m_Layer: 0
-  m_Name: WP11
+  m_Name: WP9
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -6688,24 +6696,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1597648263463518252, guid: 18eb4b100d4045944ae1f7c89392b989, type: 3}
       propertyPath: waypoints.Array.size
-      value: 13
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1597648263463518252, guid: 18eb4b100d4045944ae1f7c89392b989, type: 3}
       propertyPath: waypoints.Array.data[7]
       value: 
-      objectReference: {fileID: 2086842537}
+      objectReference: {fileID: 1026514182}
     - target: {fileID: 1597648263463518252, guid: 18eb4b100d4045944ae1f7c89392b989, type: 3}
       propertyPath: waypoints.Array.data[8]
       value: 
-      objectReference: {fileID: 1952747911}
+      objectReference: {fileID: 58991983}
     - target: {fileID: 1597648263463518252, guid: 18eb4b100d4045944ae1f7c89392b989, type: 3}
       propertyPath: waypoints.Array.data[9]
       value: 
-      objectReference: {fileID: 1026514182}
+      objectReference: {fileID: 528942003}
     - target: {fileID: 1597648263463518252, guid: 18eb4b100d4045944ae1f7c89392b989, type: 3}
       propertyPath: waypoints.Array.data[10]
       value: 
-      objectReference: {fileID: 58991983}
+      objectReference: {fileID: 975601873}
     - target: {fileID: 1597648263463518252, guid: 18eb4b100d4045944ae1f7c89392b989, type: 3}
       propertyPath: waypoints.Array.data[11]
       value: 
@@ -6776,7 +6784,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7124605417475327080, guid: 18eb4b100d4045944ae1f7c89392b989, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7124605417475327080, guid: 18eb4b100d4045944ae1f7c89392b989, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6850,12 +6858,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7886144566027095254, guid: 18eb4b100d4045944ae1f7c89392b989, type: 3}
       insertIndex: 1
       addedObject: {fileID: 1351391048}
-    - targetCorrespondingSourceObject: {fileID: 5484018645184041768, guid: 18eb4b100d4045944ae1f7c89392b989, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2086842537}
-    - targetCorrespondingSourceObject: {fileID: 5484018645184041768, guid: 18eb4b100d4045944ae1f7c89392b989, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1952747911}
     - targetCorrespondingSourceObject: {fileID: 5484018645184041768, guid: 18eb4b100d4045944ae1f7c89392b989, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1026514182}
@@ -6934,17 +6936,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2256070818154814763, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
+      propertyPath: hp
+      value: 225
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256070818154814763, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
+      propertyPath: damage
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 5361463763859701013, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
       propertyPath: m_Name
       value: ArcherTower (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6462113813713830778, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.5
+      value: 8.55
       objectReference: {fileID: 0}
     - target: {fileID: 6462113813713830778, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6462113813713830778, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7126,7 +7136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9165153348550367545, guid: c83fb921c69507e4987adac6fe5e42b5, type: 3}
       propertyPath: unitsRequired
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7148,7 +7158,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1026514182}
   m_Layer: 0
-  m_Name: WP9
+  m_Name: WP7
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -7380,6 +7390,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1405839340710042691, guid: 71fe6af9f8c14b4488524921eb481463, type: 3}
+      propertyPath: hp
+      value: 225
+      objectReference: {fileID: 0}
+    - target: {fileID: 1405839340710042691, guid: 71fe6af9f8c14b4488524921eb481463, type: 3}
+      propertyPath: damage
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 1872622229262136602, guid: 71fe6af9f8c14b4488524921eb481463, type: 3}
       propertyPath: m_Name
       value: MortarTower (1)
@@ -7437,6 +7455,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2256070818154814763, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
+      propertyPath: hp
+      value: 225
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256070818154814763, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
+      propertyPath: damage
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 5361463763859701013, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
       propertyPath: m_Name
       value: ArcherTower
@@ -7447,7 +7473,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6462113813713830778, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6462113813713830778, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7498,13 +7524,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: AntiAirTower
       objectReference: {fileID: 0}
+    - target: {fileID: 2385748130979262609, guid: 339dc854f1d267b45b384928dfa75b03, type: 3}
+      propertyPath: hp
+      value: 225
+      objectReference: {fileID: 0}
+    - target: {fileID: 2385748130979262609, guid: 339dc854f1d267b45b384928dfa75b03, type: 3}
+      propertyPath: damage
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 8905257182139659812, guid: 339dc854f1d267b45b384928dfa75b03, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 8905257182139659812, guid: 339dc854f1d267b45b384928dfa75b03, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8905257182139659812, guid: 339dc854f1d267b45b384928dfa75b03, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7640,17 +7674,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2256070818154814763, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
+      propertyPath: hp
+      value: 225
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256070818154814763, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
+      propertyPath: damage
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 5361463763859701013, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
       propertyPath: m_Name
       value: ArcherTower (2)
       objectReference: {fileID: 0}
     - target: {fileID: 6462113813713830778, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.52
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 6462113813713830778, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.72
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6462113813713830778, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7689,37 +7731,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
---- !u!1 &1952747910
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1952747911}
-  m_Layer: 0
-  m_Name: WP8
-  m_TagString: Untagged
-  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1952747911
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1952747910}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 757541530}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2056201663
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7768,6 +7779,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3472221801394807799, guid: b59995c845311e84bbf313b41bbe2463, type: 3}
+      propertyPath: hp
+      value: 275
+      objectReference: {fileID: 0}
+    - target: {fileID: 3472221801394807799, guid: b59995c845311e84bbf313b41bbe2463, type: 3}
+      propertyPath: damage
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4277330279533722353, guid: b59995c845311e84bbf313b41bbe2463, type: 3}
       propertyPath: m_Name
       value: FrostTower
@@ -7777,37 +7796,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b59995c845311e84bbf313b41bbe2463, type: 3}
---- !u!1 &2086842536
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2086842537}
-  m_Layer: 0
-  m_Name: WP7
-  m_TagString: Untagged
-  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2086842537
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2086842536}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5, y: -1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 757541530}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2121337234
 GameObject:
   m_ObjectHideFlags: 0

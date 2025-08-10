@@ -28,11 +28,6 @@ public class Tower : MonoBehaviour
     public float Hp { get { return hp; } }
     public bool IsDying { get; private set; } = false;
 
-    protected virtual void Start()
-    {
-        UpgradeStatsIfHighTier();
-    }
-
     protected virtual void Update()
     {
         fireCooldown -= Time.deltaTime;
@@ -166,22 +161,5 @@ public class Tower : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
-    }
-
-    private void UpgradeStatsIfHighTier()
-    {
-        string currentSceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
-
-        int tier = GameProgress.Instance != null
-            ? GameProgress.Instance.GetLevelTier(currentSceneName)
-            : -1;
-
-        if (tier >= 6)
-        {
-            hp += 20f;
-            damage += 5f;
-
-            Debug.Log($"[Tower] Upgraded stats for level {tier}");
-        }
     }
 }

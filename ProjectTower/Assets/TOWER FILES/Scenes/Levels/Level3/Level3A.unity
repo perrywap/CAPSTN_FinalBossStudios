@@ -391,9 +391,9 @@ MonoBehaviour:
   manaImage: {fileID: 714468562}
   manatext: {fileID: 714468561}
   currentMana: 0
-  maxMana: 5
+  maxMana: 10
   regenAmount: 1
-  regenRate: 5
+  regenRate: 8
   winPanel: {fileID: 714468560}
   losePanel: {fileID: 714468558}
   cardsOnHandCount: 0
@@ -453,6 +453,10 @@ PrefabInstance:
     - target: {fileID: 7367408770515018758, guid: c83fb921c69507e4987adac6fe5e42b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9165153348550367545, guid: c83fb921c69507e4987adac6fe5e42b5, type: 3}
+      propertyPath: unitsRequired
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

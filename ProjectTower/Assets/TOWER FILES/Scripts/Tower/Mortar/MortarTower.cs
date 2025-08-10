@@ -35,10 +35,8 @@ public class MortarTower : Tower
         }
     }
 
-    protected override void Start()
+    private void Start()
     {
-        base.Start();
-
         if (hpBarComponent != null)
         {
             hpBarWorldOffset = hpBarComponent.position - transform.position;

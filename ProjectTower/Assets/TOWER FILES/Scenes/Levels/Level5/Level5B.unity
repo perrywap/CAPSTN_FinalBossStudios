@@ -7632,6 +7632,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9165153348550367545, guid: c83fb921c69507e4987adac6fe5e42b5, type: 3}
+      propertyPath: unitsRequired
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7788,9 +7792,9 @@ MonoBehaviour:
   manaImage: {fileID: 1534385931}
   manatext: {fileID: 1534385930}
   currentMana: 0
-  maxMana: 7
+  maxMana: 10
   regenAmount: 1
-  regenRate: 5
+  regenRate: 8
   winPanel: {fileID: 1534385929}
   losePanel: {fileID: 1534385932}
   cardsOnHandCount: 0

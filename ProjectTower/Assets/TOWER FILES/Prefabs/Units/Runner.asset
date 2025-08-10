@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Runner
   m_EditorClassIdentifier: 
   _name: Runner
-  _hp: 60
+  _hp: 50
   _speed: 3
   _damage: 0
   _attackRange: 1
-  _manaCost: 2
+  _manaCost: 5
   _spawnCount: 2
   _spawnRate: 1
   _type: 2

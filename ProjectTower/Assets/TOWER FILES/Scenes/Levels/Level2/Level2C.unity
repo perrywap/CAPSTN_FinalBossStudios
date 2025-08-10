@@ -169,9 +169,9 @@ MonoBehaviour:
   manaImage: {fileID: 1668147751}
   manatext: {fileID: 1668147748}
   currentMana: 0
-  maxMana: 4
+  maxMana: 10
   regenAmount: 1
-  regenRate: 5
+  regenRate: 8
   winPanel: {fileID: 1668147750}
   losePanel: {fileID: 1668147752}
   cardsOnHandCount: 0
@@ -472,10 +472,6 @@ PrefabInstance:
     - target: {fileID: 5361463763859701013, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
       propertyPath: m_Name
       value: ArcherTower
-      objectReference: {fileID: 0}
-    - target: {fileID: 5361463763859701013, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6462113813713830778, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2143,7 +2139,7 @@ PrefabInstance:
       objectReference: {fileID: 1613377213}
     - target: {fileID: 9165153348550367545, guid: c83fb921c69507e4987adac6fe5e42b5, type: 3}
       propertyPath: unitsRequired
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

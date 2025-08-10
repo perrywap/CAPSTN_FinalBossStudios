@@ -3069,9 +3069,9 @@ MonoBehaviour:
   manaImage: {fileID: 772691379}
   manatext: {fileID: 772691378}
   currentMana: 0
-  maxMana: 3
+  maxMana: 10
   regenAmount: 1
-  regenRate: 5
+  regenRate: 8
   winPanel: {fileID: 772691377}
   losePanel: {fileID: 772691375}
   cardsOnHandCount: 0

@@ -217,8 +217,8 @@ MonoBehaviour:
   _hp: 100
   _speed: 2
   _damage: 10
-  _manaCost: 1
-  _spawnCount: 1
+  _manaCost: 3
+  _spawnCount: 2
   _type: 0
   state: 0
   unitData: {fileID: 11400000, guid: 770aed65ef16b5f4187f1b71caa90a1c, type: 2}
