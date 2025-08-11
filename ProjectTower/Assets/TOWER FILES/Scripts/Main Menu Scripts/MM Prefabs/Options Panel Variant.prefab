@@ -388,7 +388,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2697917137861532965}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8936770170365872796
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,7 +536,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 699187810721695065, guid: 901e995faca95054b823d70438634595, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1198135174621548597, guid: 901e995faca95054b823d70438634595, type: 3}
       propertyPath: m_Value
@@ -556,11 +568,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4976409813316390393, guid: 901e995faca95054b823d70438634595, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4976409813316390393, guid: 901e995faca95054b823d70438634595, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4990463883359790165, guid: 901e995faca95054b823d70438634595, type: 3}
       propertyPath: m_fontSize
@@ -708,15 +720,15 @@ PrefabInstance:
       objectReference: {fileID: -1923963134, guid: fe772fe40b9173343bcb74bf17183006, type: 3}
     - target: {fileID: 7865600415758037594, guid: 901e995faca95054b823d70438634595, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7865600415758037594, guid: 901e995faca95054b823d70438634595, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7865600415758037594, guid: 901e995faca95054b823d70438634595, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8851765346217475760, guid: 901e995faca95054b823d70438634595, type: 3}
       propertyPath: m_fontSize
