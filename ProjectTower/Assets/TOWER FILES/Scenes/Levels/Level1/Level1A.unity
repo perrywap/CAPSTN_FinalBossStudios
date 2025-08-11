@@ -3142,7 +3142,7 @@ PrefabInstance:
       objectReference: {fileID: 1927530018}
     - target: {fileID: 5388914375032032531, guid: 18eb4b100d4045944ae1f7c89392b989, type: 3}
       propertyPath: regenRate
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5388914375032032531, guid: 18eb4b100d4045944ae1f7c89392b989, type: 3}
       propertyPath: regenAmount

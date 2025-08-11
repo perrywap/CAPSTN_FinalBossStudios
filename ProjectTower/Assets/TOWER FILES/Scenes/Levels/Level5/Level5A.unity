@@ -7639,7 +7639,7 @@ MonoBehaviour:
   currentMana: 0
   maxMana: 10
   regenAmount: 1
-  regenRate: 8
+  regenRate: 5
   winPanel: {fileID: 1682885194}
   losePanel: {fileID: 1682885195}
   cardsOnHandCount: 0
