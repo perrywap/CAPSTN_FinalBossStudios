@@ -396,11 +396,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6462113813713830778, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 6462113813713830778, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 6462113813713830778, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7043,6 +7043,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
+    - target: {fileID: 8916957551768512714, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 3693742219683791398, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
@@ -7819,6 +7823,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7367408770515018758, guid: c83fb921c69507e4987adac6fe5e42b5, type: 3}
   m_PrefabInstance: {fileID: 1584973454}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1616833700
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5361463763859701013, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
+      propertyPath: m_Name
+      value: ArcherTower (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462113813713830778, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462113813713830778, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462113813713830778, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462113813713830778, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462113813713830778, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462113813713830778, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462113813713830778, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462113813713830778, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462113813713830778, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462113813713830778, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
 --- !u!114 &1646772132 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 738950771814351460, guid: 18eb4b100d4045944ae1f7c89392b989, type: 3}
@@ -8066,6 +8127,7 @@ SceneRoots:
   - {fileID: 1465294189}
   - {fileID: 626669501}
   - {fileID: 354689044}
+  - {fileID: 1616833700}
   - {fileID: 102498956}
   - {fileID: 698394454}
   - {fileID: 1088899876}

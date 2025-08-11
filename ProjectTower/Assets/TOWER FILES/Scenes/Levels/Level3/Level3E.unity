@@ -196,6 +196,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6367771155118046927, guid: 60104deba465e564d88856850313dd59, type: 3}
   m_PrefabInstance: {fileID: 127905022}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &139247472 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8361199333498176308, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
+  m_PrefabInstance: {fileID: 1491758518}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &154439139
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -431,6 +442,63 @@ PrefabInstance:
     - target: {fileID: 6462113813713830778, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
       propertyPath: m_LocalPosition.y
       value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462113813713830778, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462113813713830778, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462113813713830778, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462113813713830778, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462113813713830778, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462113813713830778, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462113813713830778, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462113813713830778, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
+--- !u!1001 &457442907
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5361463763859701013, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
+      propertyPath: m_Name
+      value: ArcherTower (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462113813713830778, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462113813713830778, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6462113813713830778, guid: f7aa66cad69e5a945a7ec8fbd3aa7256, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7262,17 +7330,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1491758524 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8169690436032678921, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
-  m_PrefabInstance: {fileID: 1491758518}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1491758525 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7570237625162885522, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
@@ -7437,7 +7494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e752c0c763c738048b36ee45310a39bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manaImage: {fileID: 1491758524}
+  manaImage: {fileID: 139247472}
   manatext: {fileID: 1491758523}
   currentMana: 0
   maxMana: 10
@@ -7516,3 +7573,4 @@ SceneRoots:
   - {fileID: 1111863897}
   - {fileID: 1489402115}
   - {fileID: 166195269}
+  - {fileID: 457442907}

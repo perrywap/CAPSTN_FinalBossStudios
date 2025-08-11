@@ -94,8 +94,9 @@ MonoBehaviour:
   cardImage: {fileID: 4271134720977633491}
   isClickable: 1
   isPicked: 0
-  isChestCard: 0
-  amount: 1
+  cardType: 0
+  price: 0
+  amount: 0.25
 --- !u!114 &1495084076902184621
 MonoBehaviour:
   m_ObjectHideFlags: 0

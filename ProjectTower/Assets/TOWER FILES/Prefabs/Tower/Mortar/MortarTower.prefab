@@ -382,7 +382,7 @@ MonoBehaviour:
   - {fileID: 1001272958, guid: c488ebb1a04ba0a43abd57593c7692f2, type: 3}
   - {fileID: -829779662, guid: c488ebb1a04ba0a43abd57593c7692f2, type: 3}
   - {fileID: 116841512, guid: c488ebb1a04ba0a43abd57593c7692f2, type: 3}
-  attackFrameRate: 0.8
+  attackFrameRate: 0.6
 --- !u!1 &7812013353734883459
 GameObject:
   m_ObjectHideFlags: 0

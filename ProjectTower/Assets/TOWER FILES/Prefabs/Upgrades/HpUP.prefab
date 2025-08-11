@@ -171,7 +171,7 @@ MonoBehaviour:
   isPicked: 0
   cardType: 0
   price: 0
-  amount: 50
+  amount: 25
 --- !u!114 &2111761874061447977
 MonoBehaviour:
   m_ObjectHideFlags: 0
