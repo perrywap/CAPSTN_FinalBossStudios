@@ -41,14 +41,21 @@ public class ProgressionManager : MonoBehaviour
             }
         }
 
-        SceneManager.LoadScene("LevelSelect");
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (currentLevelName == "Level10A")
         {
-            ProgressionManager.Instance.WinLevel();
+            SceneManager.LoadScene("Credits");
+        }
+        else
+        {
+            SceneManager.LoadScene("LevelSelect");
         }
     }
+
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.W))
+    //    {
+    //        ProgressionManager.Instance.WinLevel();
+    //    }
+    //}
 }
