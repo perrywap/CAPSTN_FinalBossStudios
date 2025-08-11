@@ -2427,6 +2427,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1444644945836525266, guid: 7cf12a0f742b35945be2d1f6113b5e1b, type: 3}
+      propertyPath: m_MinValue
+      value: -60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1444644945836525266, guid: 7cf12a0f742b35945be2d1f6113b5e1b, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetVolume
       objectReference: {fileID: 0}
@@ -2517,6 +2521,10 @@ PrefabInstance:
     - target: {fileID: 5579242312698813454, guid: 7cf12a0f742b35945be2d1f6113b5e1b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6091583736130060324, guid: 7cf12a0f742b35945be2d1f6113b5e1b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6091583736130060324, guid: 7cf12a0f742b35945be2d1f6113b5e1b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -2637,7 +2645,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1046152870408637666, guid: 7cf12a0f742b35945be2d1f6113b5e1b, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cf12a0f742b35945be2d1f6113b5e1b, type: 3}

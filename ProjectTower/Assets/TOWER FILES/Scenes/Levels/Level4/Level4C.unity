@@ -250,6 +250,22 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1330915727606299912, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1330915727606299912, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1330915727606299912, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1041112295}
+    - target: {fileID: 1330915727606299912, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2717603480754103743, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -541,6 +557,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1018488314}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &258312725 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4254214234539037161, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
+  m_PrefabInstance: {fileID: 56421478}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &258312726 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1330915727606299912, guid: e1f3b4479d631a944aedf03e364f4af9, type: 3}
+  m_PrefabInstance: {fileID: 56421478}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &333482751
 GameObject:
   m_ObjectHideFlags: 0
@@ -1359,6 +1397,11 @@ Transform:
   - {fileID: 547488984}
   m_Father: {fileID: 25106712}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1041112295 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1681236024148969148, guid: 47ff5d980e2d20b4d8b0f35a73e0750b, type: 3}
+  m_PrefabInstance: {fileID: 1753168467}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1152068225
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7281,7 +7324,7 @@ PrefabInstance:
     - target: {fileID: 7753233046594746121, guid: 47ff5d980e2d20b4d8b0f35a73e0750b, type: 3}
       propertyPath: exitButton
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 258312725}
     - target: {fileID: 7753233046594746121, guid: 47ff5d980e2d20b4d8b0f35a73e0750b, type: 3}
       propertyPath: _audioSource
       value: 
@@ -7301,7 +7344,7 @@ PrefabInstance:
     - target: {fileID: 7753233046594746121, guid: 47ff5d980e2d20b4d8b0f35a73e0750b, type: 3}
       propertyPath: sceneButtons.Array.data[0].button
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 258312726}
     - target: {fileID: 7753233046594746121, guid: 47ff5d980e2d20b4d8b0f35a73e0750b, type: 3}
       propertyPath: sceneButtons.Array.data[0].sceneName
       value: MainMenu
